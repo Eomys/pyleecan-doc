@@ -1,0 +1,339 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyleecan.Classes.LamSlotMag &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="../../../index.html">Home</a></li>
+    <li><a class="item" href="../../../tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="../../../pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="../../../development.html">Development</a></li>
+    <li><a class="item"href="../../../contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="../../../index.html">
+      <img src="../../../_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyleecan.Classes.LamSlotMag</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Warning : this file has been generated, you shouldn&#39;t edit it&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">linesep</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.check</span> <span class="k">import</span> <span class="n">check_init_dict</span><span class="p">,</span> <span class="n">check_var</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.LamSlot</span> <span class="k">import</span> <span class="n">LamSlot</span>
+
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.build_geometry</span> <span class="k">import</span> <span class="n">build_geometry</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.check</span> <span class="k">import</span> <span class="n">check</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.comp_masses</span> <span class="k">import</span> <span class="n">comp_masses</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.comp_radius_mec</span> <span class="k">import</span> <span class="n">comp_radius_mec</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.comp_surfaces</span> <span class="k">import</span> <span class="n">comp_surfaces</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.comp_volumes</span> <span class="k">import</span> <span class="n">comp_volumes</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.LamSlotMag.plot</span> <span class="k">import</span> <span class="n">plot</span>
+
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.check</span> <span class="k">import</span> <span class="n">InitUnKnowClassError</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Slot</span> <span class="k">import</span> <span class="n">Slot</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotMFlat</span> <span class="k">import</span> <span class="n">SlotMFlat</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotMPolar</span> <span class="k">import</span> <span class="n">SlotMPolar</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW10</span> <span class="k">import</span> <span class="n">SlotW10</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW11</span> <span class="k">import</span> <span class="n">SlotW11</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW12</span> <span class="k">import</span> <span class="n">SlotW12</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW13</span> <span class="k">import</span> <span class="n">SlotW13</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW14</span> <span class="k">import</span> <span class="n">SlotW14</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW15</span> <span class="k">import</span> <span class="n">SlotW15</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW16</span> <span class="k">import</span> <span class="n">SlotW16</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW21</span> <span class="k">import</span> <span class="n">SlotW21</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW22</span> <span class="k">import</span> <span class="n">SlotW22</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW23</span> <span class="k">import</span> <span class="n">SlotW23</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW24</span> <span class="k">import</span> <span class="n">SlotW24</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW25</span> <span class="k">import</span> <span class="n">SlotW25</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW26</span> <span class="k">import</span> <span class="n">SlotW26</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW27</span> <span class="k">import</span> <span class="n">SlotW27</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW28</span> <span class="k">import</span> <span class="n">SlotW28</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW29</span> <span class="k">import</span> <span class="n">SlotW29</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW60</span> <span class="k">import</span> <span class="n">SlotW60</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.SlotW61</span> <span class="k">import</span> <span class="n">SlotW61</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Material</span> <span class="k">import</span> <span class="n">Material</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Hole</span> <span class="k">import</span> <span class="n">Hole</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleMag</span> <span class="k">import</span> <span class="n">HoleMag</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleM50</span> <span class="k">import</span> <span class="n">HoleM50</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleM51</span> <span class="k">import</span> <span class="n">HoleM51</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleM52</span> <span class="k">import</span> <span class="n">HoleM52</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleM53</span> <span class="k">import</span> <span class="n">HoleM53</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.HoleM54</span> <span class="k">import</span> <span class="n">HoleM54</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.VentilationCirc</span> <span class="k">import</span> <span class="n">VentilationCirc</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.VentilationPolar</span> <span class="k">import</span> <span class="n">VentilationPolar</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.VentilationTrap</span> <span class="k">import</span> <span class="n">VentilationTrap</span>
+
+
+<div class="viewcode-block" id="LamSlotMag"><a class="viewcode-back" href="../../../pyleecan.Classes.LamSlotMag.html#pyleecan.Classes.LamSlotMag.LamSlotMag">[docs]</a><span class="k">class</span> <span class="nc">LamSlotMag</span><span class="p">(</span><span class="n">LamSlot</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Lamination with Slot for Magnets&quot;&quot;&quot;</span>
+
+    <span class="n">VERSION</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># cf Methods.Machine.LamSlotMag.build_geometry</span>
+    <span class="n">build_geometry</span> <span class="o">=</span> <span class="n">build_geometry</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.check</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="n">check</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.comp_masses</span>
+    <span class="n">comp_masses</span> <span class="o">=</span> <span class="n">comp_masses</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.comp_radius_mec</span>
+    <span class="n">comp_radius_mec</span> <span class="o">=</span> <span class="n">comp_radius_mec</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.comp_surfaces</span>
+    <span class="n">comp_surfaces</span> <span class="o">=</span> <span class="n">comp_surfaces</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.comp_volumes</span>
+    <span class="n">comp_volumes</span> <span class="o">=</span> <span class="n">comp_volumes</span>
+    <span class="c1"># cf Methods.Machine.LamSlotMag.plot</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">plot</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">slot</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">L1</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span>
+        <span class="n">mat_type</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">Nrvd</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">Wrvd</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">Kf1</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+        <span class="n">is_internal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">Rint</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">Rext</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">is_stator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">axial_vent</span><span class="o">=</span><span class="nb">list</span><span class="p">(),</span>
+        <span class="n">init_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor of the class. Can be use in two ways :</span>
+<span class="sd">        - __init__ (arg1 = 1, arg3 = 5) every parameters have name and default values</span>
+<span class="sd">            for Matrix, None will initialise the property with an empty Matrix</span>
+<span class="sd">            for pyleecan type, None will call the default constructor</span>
+<span class="sd">        - __init__ (init_dict = d) d must be a dictionnary wiht every properties as keys</span>
+
+<span class="sd">        ndarray or list can be given for Vector and Matrix</span>
+<span class="sd">        object or dict can be given for pyleecan Object&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">slot</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">slot</span> <span class="o">=</span> <span class="n">Slot</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">mat_type</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">mat_type</span> <span class="o">=</span> <span class="n">Material</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">init_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Initialisation by dict</span>
+            <span class="n">check_init_dict</span><span class="p">(</span>
+                <span class="n">init_dict</span><span class="p">,</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;slot&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;L1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;mat_type&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Nrvd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Wrvd&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Kf1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;is_internal&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Rint&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Rext&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;is_stator&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;axial_vent&quot;</span><span class="p">,</span>
+                <span class="p">],</span>
+            <span class="p">)</span>
+            <span class="c1"># Overwrite default value with init_dict content</span>
+            <span class="k">if</span> <span class="s2">&quot;slot&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">slot</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;slot&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;L1&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">L1</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;mat_type&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">mat_type</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;mat_type&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;Nrvd&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">Nrvd</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;Nrvd&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;Wrvd&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">Wrvd</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;Wrvd&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;Kf1&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">Kf1</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;Kf1&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;is_internal&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">is_internal</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;is_internal&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;Rint&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">Rint</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;Rint&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;Rext&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">Rext</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;Rext&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;is_stator&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">is_stator</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;is_stator&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;axial_vent&quot;</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">init_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="n">axial_vent</span> <span class="o">=</span> <span class="n">init_dict</span><span class="p">[</span><span class="s2">&quot;axial_vent&quot;</span><span class="p">]</span>
+        <span class="c1"># Initialisation by argument</span>
+        <span class="c1"># Call LamSlot init</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LamSlotMag</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">slot</span><span class="o">=</span><span class="n">slot</span><span class="p">,</span>
+            <span class="n">L1</span><span class="o">=</span><span class="n">L1</span><span class="p">,</span>
+            <span class="n">mat_type</span><span class="o">=</span><span class="n">mat_type</span><span class="p">,</span>
+            <span class="n">Nrvd</span><span class="o">=</span><span class="n">Nrvd</span><span class="p">,</span>
+            <span class="n">Wrvd</span><span class="o">=</span><span class="n">Wrvd</span><span class="p">,</span>
+            <span class="n">Kf1</span><span class="o">=</span><span class="n">Kf1</span><span class="p">,</span>
+            <span class="n">is_internal</span><span class="o">=</span><span class="n">is_internal</span><span class="p">,</span>
+            <span class="n">Rint</span><span class="o">=</span><span class="n">Rint</span><span class="p">,</span>
+            <span class="n">Rext</span><span class="o">=</span><span class="n">Rext</span><span class="p">,</span>
+            <span class="n">is_stator</span><span class="o">=</span><span class="n">is_stator</span><span class="p">,</span>
+            <span class="n">axial_vent</span><span class="o">=</span><span class="n">axial_vent</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># The class is frozen (in LamSlot init), for now it&#39;s impossible to</span>
+        <span class="c1"># add new properties</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert this objet in a readeable string (for print)&quot;&quot;&quot;</span>
+
+        <span class="n">LamSlotMag_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="c1"># Get the properties inherited from LamSlot</span>
+        <span class="n">LamSlotMag_str</span> <span class="o">+=</span> <span class="nb">super</span><span class="p">(</span><span class="n">LamSlotMag</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="o">+</span> <span class="n">linesep</span>
+        <span class="k">return</span> <span class="n">LamSlotMag_str</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compare two objects (skip parent)&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># Check the properties inherited from LamSlot</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">super</span><span class="p">(</span><span class="n">LamSlotMag</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="LamSlotMag.as_dict"><a class="viewcode-back" href="../../../pyleecan.Classes.LamSlotMag.html#pyleecan.Classes.LamSlotMag.LamSlotMag.as_dict">[docs]</a>    <span class="k">def</span> <span class="nf">as_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert this objet in a json seriable dict (can be use in __init__)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Get the properties inherited from LamSlot</span>
+        <span class="n">LamSlotMag_dict</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">LamSlotMag</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span>
+        <span class="c1"># The class name is added to the dict fordeserialisation purpose</span>
+        <span class="c1"># Overwrite the mother class name</span>
+        <span class="n">LamSlotMag_dict</span><span class="p">[</span><span class="s2">&quot;__class__&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;LamSlotMag&quot;</span>
+        <span class="k">return</span> <span class="n">LamSlotMag_dict</span></div>
+
+    <span class="k">def</span> <span class="nf">_set_None</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set all the properties to None (except pyleecan object)&quot;&quot;&quot;</span>
+
+        <span class="c1"># Set to None the properties inherited from LamSlot</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LamSlotMag</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_set_None</span><span class="p">()</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

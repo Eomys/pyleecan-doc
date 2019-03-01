@@ -1,0 +1,581 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyleecan.Tests.Methods.Geometry.test_Arc1_meth &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="../../../../../index.html">Home</a></li>
+    <li><a class="item" href="../../../../../tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="../../../../../pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="../../../../../development.html">Development</a></li>
+    <li><a class="item"href="../../../../../contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="../../../../../index.html">
+      <img src="../../../../../_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyleecan.Tests.Methods.Geometry.test_Arc1_meth</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Mon Dec 08 11:31:14 2014</span>
+
+<span class="sd">@author: pierre_b</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="k">import</span> <span class="n">TestCase</span>
+
+<span class="kn">from</span> <span class="nn">ddt</span> <span class="k">import</span> <span class="n">ddt</span><span class="p">,</span> <span class="n">data</span>
+
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Arc1</span> <span class="k">import</span> <span class="n">Arc1</span>
+
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Geometry.Arc1.check</span> <span class="k">import</span> <span class="n">PointArc1Error</span><span class="p">,</span> <span class="n">RadiusArc1Error</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Geometry.Arc1.discretize</span> <span class="k">import</span> <span class="n">NbPointArc1DError</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">array</span>
+
+
+<span class="c1"># For AlmostEqual</span>
+<span class="n">DELTA</span> <span class="o">=</span> <span class="mf">1e-6</span>
+
+<span class="n">discretize_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1"># inner left top arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.84356553</span> <span class="o">+</span> <span class="mf">1.23116594e-02</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.69098301</span> <span class="o">+</span> <span class="mf">4.89434837e-02</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.54600950</span> <span class="o">+</span> <span class="mf">1.08993476e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.41221475</span> <span class="o">+</span> <span class="mf">1.90983006e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.29289322</span> <span class="o">+</span> <span class="mf">2.92893219e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.19098301</span> <span class="o">+</span> <span class="mf">4.12214748e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.10899348</span> <span class="o">+</span> <span class="mf">5.46009500e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.04894348</span> <span class="o">+</span> <span class="mf">6.90983006e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.01231166</span> <span class="o">+</span> <span class="mf">8.43565535e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># extern left top arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">9.87688341e-01</span> <span class="o">+</span> <span class="mf">1.56434465e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">9.51056516e-01</span> <span class="o">+</span> <span class="mf">3.09016994e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.91006524e-01</span> <span class="o">+</span> <span class="mf">4.53990500e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.09016994e-01</span> <span class="o">+</span> <span class="mf">5.87785252e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">7.07106781e-01</span> <span class="o">+</span> <span class="mf">7.07106781e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">5.87785252e-01</span> <span class="o">+</span> <span class="mf">8.09016994e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">4.53990500e-01</span> <span class="o">+</span> <span class="mf">8.91006524e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">3.09016994e-01</span> <span class="o">+</span> <span class="mf">9.51056516e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">1.56434465e-01</span> <span class="o">+</span> <span class="mf">9.87688341e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># extern right top arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mf">9.87688341e-01</span> <span class="o">+</span> <span class="mf">0.15643447</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">9.51056516e-01</span> <span class="o">+</span> <span class="mf">0.30901699</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">8.91006524e-01</span> <span class="o">+</span> <span class="mf">0.4539905</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">8.09016994e-01</span> <span class="o">+</span> <span class="mf">0.58778525</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">7.07106781e-01</span> <span class="o">+</span> <span class="mf">0.70710678</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">5.87785252e-01</span> <span class="o">+</span> <span class="mf">0.80901699</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.53990500e-01</span> <span class="o">+</span> <span class="mf">0.89100652</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">3.09016994e-01</span> <span class="o">+</span> <span class="mf">0.95105652</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.56434465e-01</span> <span class="o">+</span> <span class="mf">0.98768834</span><span class="n">j</span><span class="p">,</span>
+        <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># inner right top arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mf">8.43565535e-01</span> <span class="o">+</span> <span class="mf">0.01231166</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">6.90983006e-01</span> <span class="o">+</span> <span class="mf">0.04894348</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">5.46009500e-01</span> <span class="o">+</span> <span class="mf">0.10899348</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.12214748e-01</span> <span class="o">+</span> <span class="mf">0.19098301</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">2.92893219e-01</span> <span class="o">+</span> <span class="mf">0.29289322</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.90983006e-01</span> <span class="o">+</span> <span class="mf">0.41221475</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.08993476e-01</span> <span class="o">+</span> <span class="mf">0.5460095</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.89434837e-02</span> <span class="o">+</span> <span class="mf">0.69098301</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.23116594e-02</span> <span class="o">+</span> <span class="mf">0.84356553</span><span class="n">j</span><span class="p">,</span>
+        <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># extern left bottom arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">9.87688341e-01</span> <span class="o">-</span> <span class="mf">1.56434465e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">9.51056516e-01</span> <span class="o">-</span> <span class="mf">3.09016994e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.91006524e-01</span> <span class="o">-</span> <span class="mf">4.53990500e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.09016994e-01</span> <span class="o">-</span> <span class="mf">5.87785252e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">7.07106781e-01</span> <span class="o">-</span> <span class="mf">7.07106781e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">5.87785252e-01</span> <span class="o">-</span> <span class="mf">8.09016994e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">4.53990500e-01</span> <span class="o">-</span> <span class="mf">8.91006524e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">3.09016994e-01</span> <span class="o">-</span> <span class="mf">9.51056516e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">1.56434465e-01</span> <span class="o">-</span> <span class="mf">9.87688341e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># inner left bottom arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.84356553</span> <span class="o">-</span> <span class="mf">1.23116594e-02</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.69098301</span> <span class="o">-</span> <span class="mf">4.89434837e-02</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.54600950</span> <span class="o">-</span> <span class="mf">1.08993476e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.41221475</span> <span class="o">-</span> <span class="mf">1.90983006e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.29289322</span> <span class="o">-</span> <span class="mf">2.92893219e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.19098301</span> <span class="o">-</span> <span class="mf">4.12214748e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.10899348</span> <span class="o">-</span> <span class="mf">5.46009500e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.04894348</span> <span class="o">-</span> <span class="mf">6.90983006e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.01231166</span> <span class="o">-</span> <span class="mf">8.43565535e-01</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># inner right bottom arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mf">8.43565535e-01</span> <span class="o">-</span> <span class="mf">0.01231166</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">6.90983006e-01</span> <span class="o">-</span> <span class="mf">0.04894348</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">5.46009500e-01</span> <span class="o">-</span> <span class="mf">0.10899348</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.12214748e-01</span> <span class="o">-</span> <span class="mf">0.19098301</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">2.92893219e-01</span> <span class="o">-</span> <span class="mf">0.29289322</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.90983006e-01</span> <span class="o">-</span> <span class="mf">0.41221475</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.08993476e-01</span> <span class="o">-</span> <span class="mf">0.5460095</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.89434837e-02</span> <span class="o">-</span> <span class="mf">0.69098301</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.23116594e-02</span> <span class="o">-</span> <span class="mf">0.84356553</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># extern right bottom arc</span>
+<span class="n">discretize_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;nb_point&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">discretize_test</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mf">9.87688341e-01</span> <span class="o">-</span> <span class="mf">0.15643447</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">9.51056516e-01</span> <span class="o">-</span> <span class="mf">0.30901699</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">8.91006524e-01</span> <span class="o">-</span> <span class="mf">0.4539905</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">8.09016994e-01</span> <span class="o">-</span> <span class="mf">0.58778525</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">7.07106781e-01</span> <span class="o">-</span> <span class="mf">0.70710678</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">5.87785252e-01</span> <span class="o">-</span> <span class="mf">0.80901699</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">4.53990500e-01</span> <span class="o">-</span> <span class="mf">0.89100652</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">3.09016994e-01</span> <span class="o">-</span> <span class="mf">0.95105652</span><span class="n">j</span><span class="p">,</span>
+        <span class="mf">1.56434465e-01</span> <span class="o">-</span> <span class="mf">0.98768834</span><span class="n">j</span><span class="p">,</span>
+        <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">comp_length_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">comp_length_test</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="mf">1.010721020568</span><span class="p">})</span>
+<span class="n">comp_length_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_length_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_length_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span><span class="p">),</span> <span class="s2">&quot;Radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="n">pi</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Dictionary to test get_middle</span>
+<span class="n">comp_mid_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">comp_mid_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;expect&quot;</span><span class="p">:</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_mid_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;expect&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_mid_test</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;expect&quot;</span><span class="p">:</span> <span class="mf">2.5</span> <span class="o">+</span> <span class="mf">0.031373</span><span class="n">j</span><span class="p">})</span>
+<span class="c1"># Dictionary to test rotation</span>
+<span class="n">comp_rotate_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">comp_rotate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_rotate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="o">-</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_rotate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;angle&quot;</span><span class="p">:</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.12132034</span> <span class="o">+</span> <span class="mf">0.70710678</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.1213203</span> <span class="o">-</span> <span class="mf">0.7071067</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="c1"># Dictonary to test translation</span>
+<span class="n">comp_translate_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">comp_translate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_translate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">comp_translate_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;begin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_begin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span><span class="p">,</span>
+        <span class="s2">&quot;exp_end&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="test_Arc1_meth"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth">[docs]</a><span class="nd">@ddt</span>
+<span class="k">class</span> <span class="nc">test_Arc1_meth</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;unittest for Arc1 methods&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_check_Point"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_check_Point">[docs]</a>    <span class="k">def</span> <span class="nf">test_check_Point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can detect a one point arc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">PointArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">check</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_check_Radius"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_check_Radius">[docs]</a>    <span class="k">def</span> <span class="nf">test_check_Radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can detect null radius</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">RadiusArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">check</span><span class="p">()</span></div>
+
+    <span class="nd">@data</span><span class="p">(</span><span class="o">*</span><span class="n">discretize_test</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_dicretize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can discretize an arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;begin&quot;</span><span class="p">],</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;Radius&quot;</span><span class="p">])</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">discretize</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;nb_point&quot;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">DELTA</span><span class="p">)</span>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_discretize_Point_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_discretize_Point_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_discretize_Point_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize detect a one point arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">PointArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">discretize</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_discretize_Radius_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_discretize_Radius_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_discretize_Radius_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize detect a null radius</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">RadiusArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">discretize</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_discretize_Nb_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_discretize_Nb_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_discretize_Nb_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize can detect a wrong arg</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">NbPointArc1DError</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">discretize</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_discretize_Nb_Type_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_discretize_Nb_Type_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_discretize_Nb_Type_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize can detect a wrong arg</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">NbPointArc1DError</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">discretize</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span></div>
+
+    <span class="nd">@data</span><span class="p">(</span><span class="o">*</span><span class="n">comp_length_test</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_comp_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you the length return by comp_length is correct</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;begin&quot;</span><span class="p">],</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;Radius&quot;</span><span class="p">])</span>
+
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">comp_length</span><span class="p">())</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;length&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">DELTA</span><span class="p">)</span>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_comp_length_Point_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_comp_length_Point_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_comp_length_Point_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize detect a one point arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">PointArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">comp_length</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_comp_length_Radius_error"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_comp_length_Radius_error">[docs]</a>    <span class="k">def</span> <span class="nf">test_comp_length_Radius_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that discretize detect a null radius arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">RadiusArc1Error</span><span class="p">):</span>
+            <span class="n">arc</span><span class="o">.</span><span class="n">comp_length</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="test_Arc1_meth.test_get_center"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html#pyleecan.Tests.Methods.Geometry.test_Arc1_meth.test_Arc1_meth.test_get_center">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_center</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that the can compute the center of the arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">get_center</span><span class="p">()</span>
+        <span class="n">expect</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">expect</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="n">radius</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">get_center</span><span class="p">()</span>
+        <span class="n">expect</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">expect</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">radius</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">get_center</span><span class="p">()</span>
+        <span class="n">expect</span> <span class="o">=</span> <span class="mf">2.5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">expect</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span></div>
+
+    <span class="nd">@data</span><span class="p">(</span><span class="o">*</span><span class="n">comp_mid_test</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_get_middle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can compute the arc middle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span>
+            <span class="n">begin</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;begin&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">get_middle</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;expect&quot;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+
+    <span class="nd">@data</span><span class="p">(</span><span class="o">*</span><span class="n">comp_rotate_test</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can rotate the arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span>
+            <span class="n">begin</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;begin&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">expect_radius</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">radius</span>
+        <span class="n">arc</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;angle&quot;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">begin</span> <span class="o">-</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;exp_begin&quot;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;exp_end&quot;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">radius</span> <span class="o">-</span> <span class="n">expect_radius</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="nd">@data</span><span class="p">(</span><span class="o">*</span><span class="n">comp_translate_test</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can translate the arc1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Arc1</span><span class="p">(</span>
+            <span class="n">begin</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;begin&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">expect_radius</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">radius</span>
+        <span class="n">arc</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;delta&quot;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">begin</span> <span class="o">-</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;exp_begin&quot;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="n">test_dict</span><span class="p">[</span><span class="s2">&quot;exp_end&quot;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">radius</span> <span class="o">-</span> <span class="n">expect_radius</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

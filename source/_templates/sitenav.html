@@ -1,0 +1,17 @@
+{% block sitenav %}
+
+<div class="well sidebar-nav">
+  <ul class="nav nav-list">
+      <li {% if pagename == 'Objectives & features' -%}class="active"{%- endif -%}>
+        <a href="{{ pathto('objectives&features.html', 1) }}" title="Objectives & features">Objectives & features</a></li>
+  	  <!-- add link to the main page. pathto('index')
+  	  referees to the path to index.html --
+  	  <!-- add link to pyleecan project and subpackages. pathto('pyleecan')
+  	  referees to the path to pyleecan.html -->
+      <li {% if pagename == 'code.of.conduct' -%}class="active"{%- endif -%}>
+        <a href="{{ pathto('code.of.conduct.html', 1) }}" title="Code of conduct">Code of conduct</a></li>
+      <li {% if pagename == 'licence' -%}class="active"{%- endif -%}>
+        <a href="{{ pathto('licence.html', 1) }}" title="Licence">Licence</a></li>
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyleecan.Methods.Machine.WindingDW2L.comp_connection_mat &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="../../../../../index.html">Home</a></li>
+    <li><a class="item" href="../../../../../tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="../../../../../pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="../../../../../development.html">Development</a></li>
+    <li><a class="item"href="../../../../../contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="../../../../../index.html">
+      <img src="../../../../../_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../Methods.html" >pyleecan.Methods</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../Machine.html" accesskey="U">pyleecan.Methods.Machine</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyleecan.Methods.Machine.WindingDW2L.comp_connection_mat</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;@package Methods.Machine.Winding._comp_wind_type_3</span>
+<span class="sd">Compute the Winding Matrix (for type 3) Method</span>
+<span class="sd">@date Created on Tue Dec 16 09:53:11 2014</span>
+<span class="sd">@copyright (C) 2014-2015 EOMYS ENGINEERING.</span>
+<span class="sd">@author pierre_b</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">mod</span><span class="p">,</span> <span class="n">zeros</span>
+
+<span class="kn">from</span> <span class="nn">pyleecan.Methods.Machine.Winding</span> <span class="k">import</span> <span class="n">WindingError</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Functions.Winding.reverse_wind_mat</span> <span class="k">import</span> <span class="n">reverse_wind_mat</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Functions.Winding.shift_wind_mat</span> <span class="k">import</span> <span class="n">shift_wind_mat</span>
+
+
+<div class="viewcode-block" id="comp_connection_mat"><a class="viewcode-back" href="../../../../../pyleecan.Methods.Machine.WindingDW2L.comp_connection_mat.html#pyleecan.Classes.WindingDW2L.comp_connection_mat">[docs]</a><span class="k">def</span> <span class="nf">comp_connection_mat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Zs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute the Winding Matrix (for winding type 3) (Nlay_rad=2,Nlay_tan=1)</span>
+<span class="sd">    type 3 : DISTRIBUTED SHORTED PITCH INTEGRAL WINDING</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self : Winding</span>
+<span class="sd">        A: Winding object</span>
+<span class="sd">    Zs : int</span>
+<span class="sd">        Number of Slot (Integer &gt;0)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wind_mat: numpy.ndarray</span>
+<span class="sd">        Winding Matrix (2, 1, Zs, qs)</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    WindingT3DefMsError</span>
+<span class="sd">        Zs/2/p/qs must be an integer</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="n">Zs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Zs must be &gt;0&quot;</span>
+    <span class="k">assert</span> <span class="n">Zs</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Zs must be an integer&quot;</span>
+
+    <span class="n">coil_pitch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coil_pitch</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span>
+    <span class="n">nlay</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">qs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qs</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="n">Zs</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">qs</span><span class="p">)</span>
+    <span class="n">tausp</span> <span class="o">=</span> <span class="n">Zs</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="c1"># Ncspc= Zs/(2.0*qs*self.Npcpp/nlay)  # number of coils in series per parallel circuit</span>
+    <span class="c1"># Ntspc = self.Ntcoil * Ncspc #Number of turns in series per phase</span>
+    <span class="n">Ntcoil</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Ntcoil</span>  <span class="c1"># number of turns per coils</span>
+    <span class="n">wind_mat</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Zs</span><span class="p">,</span> <span class="n">qs</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">ms</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># if ms isn&#39;t an integer</span>
+        <span class="k">raise</span> <span class="n">WindingT3DefMsError</span><span class="p">(</span>
+            <span class="s2">&quot;wrong winding definition, Zs/2/p/qs must &quot;</span> <span class="s2">&quot;be an integer !&quot;</span>
+        <span class="p">)</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ms</span><span class="p">)</span>
+    <span class="n">tausp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tausp</span><span class="p">)</span>  <span class="c1"># if ms is an integer, tausp is</span>
+
+    <span class="c1"># shorted pitch Nlay-layered integral overlapping windings</span>
+    <span class="k">for</span> <span class="n">nl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nlay</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">p</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">ph</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">qs</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ms</span><span class="p">):</span>  <span class="c1"># cf Gieras p36</span>
+                    <span class="n">s</span> <span class="o">=</span> <span class="n">mod</span><span class="p">(</span>
+                        <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">tausp</span>
+                        <span class="o">+</span> <span class="p">(</span><span class="n">ph</span><span class="p">)</span> <span class="o">*</span> <span class="n">ms</span>
+                        <span class="o">+</span> <span class="n">k</span>
+                        <span class="o">+</span> <span class="mi">1</span>
+                        <span class="o">+</span> <span class="p">(</span><span class="n">nl</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">coil_pitch</span> <span class="o">-</span> <span class="n">tausp</span><span class="p">)</span>
+                        <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="n">Zs</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">wind_mat</span><span class="p">[</span><span class="n">nl</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">ph</span><span class="p">]</span> <span class="o">+=</span> <span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">ph</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">Ntcoil</span><span class="p">)</span>
+
+    <span class="c1"># Apply the transformations</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_reverse_wind</span><span class="p">:</span>
+        <span class="n">wind_mat</span> <span class="o">=</span> <span class="n">reverse_wind_mat</span><span class="p">(</span><span class="n">wind_mat</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nslot_shift_wind</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">wind_mat</span> <span class="o">=</span> <span class="n">shift_wind_mat</span><span class="p">(</span><span class="n">wind_mat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nslot_shift_wind</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wind_mat</span></div>
+
+
+<div class="viewcode-block" id="WindingT3DefMsError"><a class="viewcode-back" href="../../../../../pyleecan.Methods.Machine.WindingDW2L.comp_connection_mat.html#pyleecan.Classes.WindingDW2L.WindingT3DefMsError">[docs]</a><span class="k">class</span> <span class="nc">WindingT3DefMsError</span><span class="p">(</span><span class="n">WindingError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+
+    <span class="k">pass</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../Methods.html" >pyleecan.Methods</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../Machine.html" >pyleecan.Methods.Machine</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

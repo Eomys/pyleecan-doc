@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tests package &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes package" href="pyleecan.Tests.Classes.html" />
+    <link rel="prev" title="get_center (method)" href="pyleecan.Methods.Slot.VentilationTrap.get_center.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="index.html">Home</a></li>
+    <li><a class="item" href="tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="development.html">Development</a></li>
+    <li><a class="item"href="contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="index.html">
+      <img src="_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Tests.Classes.html" title="Classes package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Methods.Slot.VentilationTrap.get_center.html" title="get_center (method)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div class="well previous">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyleecan.Methods.Slot.VentilationTrap.get_center.html"
+                        title="previous chapter">get_center (method)</a></p>
+</div>
+<div class="well next">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyleecan.Tests.Classes.html"
+                        title="next chapter">Classes package</a></p>
+</div>
+
+  <div class="well source" role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyleecan.Tests.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pyleecan.Tests">
+<span id="tests-package"></span><h1>Tests package<a class="headerlink" href="#module-pyleecan.Tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Tests.Classes.html">Classes package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Tests.Classes.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Classes.import_all.html">import_all (class)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Classes.test_classes.html">test_classes (class)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Tests.Methods.html">Methods package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Tests.Methods.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.html">Geometry package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Arc1_meth.html">test_Arc1_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Arc2_meth.html">test_Arc2_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Arc3_meth.html">test_Arc3_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Circle_meth.html">test_Circle_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_PolarArc_meth.html">test_PolarArc_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Segment_meth.html">test_Segment_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_SurfLine_meth.html">test_SurfLine_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html">test_Trapeze_meth module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.html">Machine package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_Magnet_Type_10_meth.html">test_Magnet_Type_10_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_Magnet_Type_11_meth.html">test_Magnet_Type_11_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_Magnet_Type_12_meth.html">test_Magnet_Type_12_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_Magnet_Type_13_meth.html">test_Magnet_Type_13_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_Magnet_Type_14_meth.html">test_Magnet_Type_14_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Machine.test_comp_mass.html">test_comp_mass module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.html">Slot package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_HoleM50_meth.html">test_HoleM50_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_HoleM51_meth.html">test_HoleM51_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_HoleM52_meth.html">test_HoleM52_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_HoleM53_meth.html">test_HoleM53_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_HoleM54_meth.html">test_HoleM54_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW10_meth.html">test_SlotW10_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW11_meth.html">test_SlotW11_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW12_meth.html">test_SlotW12_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW13_meth.html">test_SlotW13_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW14_meth.html">test_SlotW14_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW15_meth.html">test_SlotW15_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW16_meth.html">test_SlotW16_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW21_meth.html">test_SlotW21_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW22_meth.html">test_SlotW22_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW23_meth.html">test_SlotW23_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW24_meth.html">test_SlotW24_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW25_meth.html">test_SlotW25_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW26_meth.html">test_SlotW26_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW27_meth.html">test_SlotW27_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW28_meth.html">test_SlotW28_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW29_meth.html">test_SlotW29_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW60_meth.html">test_SlotW60_meth module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Methods.Slot.test_SlotW61_meth.html">test_SlotW61_meth module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Tests.Plot.html">Plot package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Tests.Plot.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.html">LamHole package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.test_Hole_50_plot.html">test_Hole_50_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.test_Hole_51_plot.html">test_Hole_51_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.test_Hole_52_plot.html">test_Hole_52_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.test_Hole_53_plot.html">test_Hole_53_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamHole.test_Hole_54_plot.html">test_Hole_54_plot module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.html">LamWind package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_10_plot.html">test_Slot_10_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_11_plot.html">test_Slot_11_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_12_plot.html">test_Slot_12_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_13_plot.html">test_Slot_13_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_14_plot.html">test_Slot_14_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_15_plot.html">test_Slot_15_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_16_plot.html">test_Slot_16_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_21_plot.html">test_Slot_21_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_22_plot.html">test_Slot_22_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_23_plot.html">test_Slot_23_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_24_plot.html">test_Slot_24_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_25_plot.html">test_Slot_25_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_26_plot.html">test_Slot_26_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_27_plot.html">test_Slot_27_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_28_plot.html">test_Slot_28_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_29_plot.html">test_Slot_29_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_60_plot.html">test_Slot_60_plot module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Tests.Plot.LamWind.test_Slot_61_plot.html">test_Slot_61_plot module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Tests.Plot.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Plot.test_Lam_Mag_inset_plot.html">test_Lam_Mag_inset_plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Plot.test_Lam_Mag_surface_plot.html">test_Lam_Mag_surface_plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Tests.Plot.test_Winding_plot.html">test_Winding_plot module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Tests.find.html">find module</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Tests.Classes.html" title="Classes package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Methods.Slot.VentilationTrap.get_center.html" title="get_center (method)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

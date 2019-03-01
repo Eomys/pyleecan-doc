@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyleecan.Tests.Methods.Geometry.test_Trapeze_meth &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="../../../../../index.html">Home</a></li>
+    <li><a class="item" href="../../../../../tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="../../../../../pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="../../../../../development.html">Development</a></li>
+    <li><a class="item"href="../../../../../contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="../../../../../index.html">
+      <img src="../../../../../_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyleecan.Tests.Methods.Geometry.test_Trapeze_meth</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="k">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Trapeze</span> <span class="k">import</span> <span class="n">Trapeze</span>
+<span class="kn">from</span> <span class="nn">pyleecan.Classes.Segment</span> <span class="k">import</span> <span class="n">Segment</span>
+<span class="kn">from</span> <span class="nn">mock</span> <span class="k">import</span> <span class="n">MagicMock</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">pi</span>
+
+
+<div class="viewcode-block" id="test_Trapeze_meth"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html#pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.test_Trapeze_meth">[docs]</a><span class="k">class</span> <span class="nc">test_Trapeze_meth</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Unittest for the Trapeze methods&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="test_Trapeze_meth.test_rotate"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html#pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.test_Trapeze_meth.test_rotate">[docs]</a>    <span class="k">def</span> <span class="nf">test_rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can rotate the trapeze</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">Trapeze</span><span class="p">(</span><span class="n">point_ref</span><span class="o">=</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W1</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">point_ref</span> <span class="o">-</span> <span class="n">expected</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Trapeze_meth.test_comp_length"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html#pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.test_Trapeze_meth.test_comp_length">[docs]</a>    <span class="k">def</span> <span class="nf">test_comp_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can compute the length of the trapeze</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">Trapeze</span><span class="p">(</span><span class="n">point_ref</span><span class="o">=</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W1</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">get_lines</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">(</span><span class="n">return_value</span><span class="o">=</span><span class="p">[</span><span class="n">Segment</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">1</span><span class="p">)])</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">comp_length</span><span class="p">()</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Trapeze_meth.test_translate"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html#pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.test_Trapeze_meth.test_translate">[docs]</a>    <span class="k">def</span> <span class="nf">test_translate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you can translate the Trapeze</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">Trapeze</span><span class="p">(</span><span class="n">point_ref</span><span class="o">=</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W1</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">point_ref</span> <span class="o">-</span> <span class="n">expected</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="test_Trapeze_meth.test_get_lines"><a class="viewcode-back" href="../../../../../pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.html#pyleecan.Tests.Methods.Geometry.test_Trapeze_meth.test_Trapeze_meth.test_get_lines">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that you get the correct lines to draw the trapeze</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">Trapeze</span><span class="p">(</span><span class="n">point_ref</span><span class="o">=</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">W1</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span>
+        <span class="n">cpt_Segment</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Segment</span><span class="p">])</span>
+            <span class="n">cpt_Segment</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">cpt_Segment</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

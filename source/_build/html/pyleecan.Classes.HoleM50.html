@@ -1,0 +1,457 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HoleM50 (class) &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="HoleM51 (class)" href="pyleecan.Classes.HoleM51.html" />
+    <link rel="prev" title="Hole (class)" href="pyleecan.Classes.Hole.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="index.html">Home</a></li>
+    <li><a class="item" href="tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="development.html">Development</a></li>
+    <li><a class="item"href="contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="index.html">
+      <img src="_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Classes.HoleM51.html" title="HoleM51 (class)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Classes.Hole.html" title="Hole (class)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyleecan.Classes.html" accesskey="U">Classes package</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div class="well previous">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyleecan.Classes.Hole.html"
+                        title="previous chapter">Hole (class)</a></p>
+</div>
+<div class="well next">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyleecan.Classes.HoleM51.html"
+                        title="next chapter">HoleM51 (class)</a></p>
+</div>
+
+  <div class="well source" role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyleecan.Classes.HoleM50.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pyleecan.Classes.HoleM50">
+<span id="holem50-class"></span><h1>HoleM50 (class)<a class="headerlink" href="#module-pyleecan.Classes.HoleM50" title="Permalink to this headline">¶</a></h1>
+<p>Warning : this file has been generated, you shouldn’t edit it</p>
+<dl class="class">
+<dt id="pyleecan.Classes.HoleM50.HoleM50">
+<em class="property">class </em><code class="descname">HoleM50</code><span class="sig-paren">(</span><em>H0=0.003</em>, <em>W0=0.003</em>, <em>H1=0</em>, <em>W1=0.013</em>, <em>H2=0.02</em>, <em>W2=0.01</em>, <em>H3=0.01</em>, <em>W3=0.01</em>, <em>H4=0</em>, <em>W4=0.01</em>, <em>magnet_0=-1</em>, <em>magnet_1=-1</em>, <em>Zh=36</em>, <em>mat_void=-1</em>, <em>init_dict=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyleecan/Classes/HoleM50.html#HoleM50"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pyleecan.Classes.HoleMag.html#pyleecan.Classes.HoleMag.HoleMag" title="pyleecan.Classes.HoleMag.HoleMag"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyleecan.Classes.HoleMag.HoleMag</span></code></a></p>
+<p>V shape slot for buried magnet</p>
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.VERSION">
+<code class="descname">VERSION</code><em class="property"> = 1</em><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.IS_SYMMETRICAL">
+<code class="descname">IS_SYMMETRICAL</code><em class="property"> = 1</em><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.IS_SYMMETRICAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.build_geometry">
+<code class="descname">build_geometry</code><span class="sig-paren">(</span><em>alpha=0</em>, <em>delta=0</em>, <em>is_simplified=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.build_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the curve (Segment) needed to plot the Slot.
+The ending point of a curve is the starting point of the next curve in
+the list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</li>
+<li><strong>alpha</strong> (<em>float</em>) – Angle to rotate the slot (Default value = 0) [rad]</li>
+<li><strong>delta</strong> (<em>complex</em>) – Complex to translate the slot (Default value = 0)</li>
+<li><strong>is_simplified</strong> (<em>bool</em>) – True to avoid line superposition</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>surf_list</strong> – List of SurfLine needed to draw the HoleM50</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that the HoleM50 object is correct</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">S50_W01CheckError</span></code> – You must have W1 &lt; W0</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">S50_H23CheckError</span></code> – You must have H2 &lt; H3</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">S50_H01CheckError</span></code> – You must have H1 &lt; H0</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">S50_W5CheckError</span></code> – You must have W5 &gt;=0</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">S50_SpCheckError</span></code> – Slot pitch too small for the slot, reduce Zh, W3 or W0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_alpha">
+<code class="descname">comp_alpha</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the alpha angle of the slot (cf schematics)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – a HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>alpha</strong> – Cf schematics [rad]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_mass_magnets">
+<code class="descname">comp_mass_magnets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_mass_magnets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the mass of the hole magnets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>Mmag</strong> – mass of the 2 Magnets [kg]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_radius">
+<code class="descname">comp_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the radius of the min and max circle that contains the slot</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>(Rmin,Rmax)</strong> – Radius of the circle that contains the slot [m]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_surface_magnets">
+<code class="descname">comp_surface_magnets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_surface_magnets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the surface of the hole magnets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>Smag</strong> – Surface of the 2 Magnets [m**2]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_volume_magnets">
+<code class="descname">comp_volume_magnets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_volume_magnets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the volume of the hole magnets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – A HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>Vmag</strong> – Volume of the 2 Magnets [m**3]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.comp_W5">
+<code class="descname">comp_W5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.comp_W5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the W5 width of the slot (cf schematics)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – a HoleM50 object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>W5</strong> – Cf schematics [m]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.remove_magnet">
+<code class="descname">remove_magnet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.remove_magnet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the magnet (set to None) of the Hole</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<a class="reference internal" href="#pyleecan.Classes.HoleM50.HoleM50" title="pyleecan.Classes.HoleM50.HoleM50"><em>HoleM50</em></a>) – a HoleM50 object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.as_dict">
+<code class="descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyleecan/Classes/HoleM50.html#HoleM50.as_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this objet in a json seriable dict (can be use in __init__)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.H0">
+<code class="descname">H0</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.H0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slot depth</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.W0">
+<code class="descname">W0</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.W0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slot opening</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.H1">
+<code class="descname">H1</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.H1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance from the lamination Bore</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.W1">
+<code class="descname">W1</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.W1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tooth width (at V bottom)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.H2">
+<code class="descname">H2</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.H2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional depth for the magnet</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.W2">
+<code class="descname">W2</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.W2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance Magnet to bottom of the V</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.H3">
+<code class="descname">H3</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.H3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnet Height</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.W3">
+<code class="descname">W3</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.W3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tooth width (at V top)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.H4">
+<code class="descname">H4</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.H4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slot top height</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.W4">
+<code class="descname">W4</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.W4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnet Width</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.magnet_0">
+<code class="descname">magnet_0</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.magnet_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>First Magnet</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pyleecan.Classes.HoleM50.HoleM50.magnet_1">
+<code class="descname">magnet_1</code><a class="headerlink" href="#pyleecan.Classes.HoleM50.HoleM50.magnet_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Second Magnet</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Classes.HoleM51.html" title="HoleM51 (class)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Classes.Hole.html" title="Hole (class)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyleecan.Classes.html" >Classes package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>

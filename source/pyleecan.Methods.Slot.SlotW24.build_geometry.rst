@@ -1,0 +1,7 @@
+build\_geometry (method)
+========================
+
+.. automodule:: pyleecan.Methods.Slot.SlotW24.build_geometry
+    :members:
+    :undoc-members:
+    :show-inheritance:

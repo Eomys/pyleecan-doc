@@ -1,0 +1,1136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Methods package &#8212; pyleecan  documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Geometry package" href="pyleecan.Methods.Geometry.html" />
+    <link rel="prev" title="read_fct module" href="pyleecan.Generator.read_fct.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: left; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script type="text/javascript">
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a class="item" href="index.html">Home</a></li>
+    <li><a class="item" href="tutorials.html">Tutorials</a></li>
+    <li><a class="item" href="pyleecan.html">Documentation</a></li>
+    <li><a class="item" href="development.html">Development</a></li>
+    <li><a class="item"href="contact.html">Contact</a></li>
+  </ul>
+  <div>
+    <a href="index.html">
+      <img src="_static/favicon.png" alt="PYLEECAN"/>
+    </a>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+         $('.sphinxsidebarwrapper li').each(function(){
+          // select href
+          var href = $(this).find('a').attr('href');
+          // Check filename
+          if(href == "#"){
+
+           // Add active class
+           $(this).addClass('active');
+          }
+         });
+    });
+</script>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Methods.Geometry.html" title="Geometry package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Generator.read_fct.html" title="read_fct module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div class="well previous">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyleecan.Generator.read_fct.html"
+                        title="previous chapter">read_fct module</a></p>
+</div>
+<div class="well next">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyleecan.Methods.Geometry.html"
+                        title="next chapter">Geometry package</a></p>
+</div>
+
+  <div class="well source" role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyleecan.Methods.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" class= "well" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pyleecan.Methods">
+<span id="methods-package"></span><h1>Methods package<a class="headerlink" href="#module-pyleecan.Methods" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="pyleecan.Methods.NotImplementedYetError">
+<em class="property">exception </em><code class="descname">NotImplementedYetError</code><a class="reference internal" href="_modules/pyleecan/Methods.html#NotImplementedYetError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyleecan.Methods.NotImplementedYetError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pyleecan.Methods.ParentMissingError">
+<em class="property">exception </em><code class="descname">ParentMissingError</code><a class="reference internal" href="_modules/pyleecan/Methods.html#ParentMissingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyleecan.Methods.ParentMissingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Methods.Geometry.html">Geometry package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Methods.Geometry.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.html">Arc1 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.get_begin.html">get_begin (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.get_center.html">get_center (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.get_end.html">get_end (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.get_middle.html">get_middle (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc1.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.html">Arc2 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.get_begin.html">get_begin (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.get_center.html">get_center (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.get_end.html">get_end (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.get_middle.html">get_middle (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc2.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.html">Arc3 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.get_begin.html">get_begin (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.get_center.html">get_center (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.get_end.html">get_end (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.get_middle.html">get_middle (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Arc3.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.html">Circle package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.get_lines.html">get_lines (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.get_patch.html">get_patch (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Circle.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.html">PolarArc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.get_lines.html">get_lines (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.get_patch.html">get_patch (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.PolarArc.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.html">Segment package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.get_begin.html">get_begin (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.get_end.html">get_end (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.get_middle.html">get_middle (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Segment.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.html">SurfLine package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.get_lines.html">get_lines (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.get_patch.html">get_patch (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.SurfLine.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.html">Trapeze package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.discretize.html">discretize (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.get_lines.html">get_lines (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.get_patch.html">get_patch (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.rotate.html">rotate (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Geometry.Trapeze.translate.html">translate (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Methods.Machine.html">Machine package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Methods.Machine.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.html">CondType11 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.comp_active_surface.html">comp_active_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.comp_width.html">comp_width (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType11.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.html">CondType12 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.comp_active_surface.html">comp_active_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.comp_width.html">comp_width (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType12.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.html">CondType21 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.comp_active_surface.html">comp_active_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.comp_width.html">comp_width (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType21.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.CondType22.html">CondType22 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.CondType22.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType22.comp_active_surface.html">comp_active_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.CondType22.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Conductor.html">Conductor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Conductor.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Conductor.check.html">check (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.html">Frame package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.comp_height_eq.html">comp_height_eq (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.comp_mass.html">comp_mass (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.comp_volume.html">comp_volume (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.get_length.html">get_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Frame.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.html">LamHole package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.comp_height_yoke.html">comp_height_yoke (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.comp_masses.html">comp_masses (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.comp_surfaces.html">comp_surfaces (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.comp_volumes.html">comp_volumes (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.get_pole_pair_number.html">get_pole_pair_number (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamHole.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.html">LamSlot package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.comp_height_yoke.html">comp_height_yoke (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.comp_radius_mec.html">comp_radius_mec (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.comp_surfaces.html">comp_surfaces (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.get_pole_pair_number.html">get_pole_pair_number (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlot.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.html">LamSlotMag package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.comp_masses.html">comp_masses (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.comp_radius_mec.html">comp_radius_mec (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.comp_surfaces.html">comp_surfaces (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.comp_volumes.html">comp_volumes (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotMag.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.html">LamSlotWind package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.comp_masses.html">comp_masses (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.comp_surfaces.html">comp_surfaces (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.comp_volumes.html">comp_volumes (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.get_pole_pair_number.html">get_pole_pair_number (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.plot.html">plot (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSlotWind.plot_winding.html">plot_winding (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.html">LamSquirrelCage package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.comp_length_ring.html">comp_length_ring (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.LamSquirrelCage.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.html">Lamination package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_length.html">comp_length (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_masses.html">comp_masses (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_radius_mec.html">comp_radius_mec (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_surface_axial_vent.html">comp_surface_axial_vent (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_surfaces.html">comp_surfaces (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.comp_volumes.html">comp_volumes (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.get_Rbo.html">get_Rbo (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.get_Ryoke.html">get_Ryoke (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.get_bore_line.html">get_bore_line (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Lamination.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.html">Machine package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.comp_masses.html">comp_masses (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.comp_width_airgap_mag.html">comp_width_airgap_mag (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.comp_width_airgap_mec.html">comp_width_airgap_mec (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.get_Rgap_mec.html">get_Rgap_mec (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.get_lamination.html">get_lamination (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Machine.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineAsync.html">MachineAsync package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineAsync.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineAsync.is_synchronous.html">is_synchronous (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineDFIM.html">MachineDFIM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineDFIM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineDFIM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineDFIM.get_machine_type.html">get_machine_type (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineIPMSM.html">MachineIPMSM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineIPMSM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineIPMSM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineIPMSM.get_machine_type.html">get_machine_type (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSCIM.html">MachineSCIM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSCIM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSCIM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSCIM.get_machine_type.html">get_machine_type (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSIPMSM.html">MachineSIPMSM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSIPMSM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSIPMSM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSIPMSM.get_machine_type.html">get_machine_type (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSyRM.html">MachineSyRM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSyRM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSyRM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSyRM.get_machine_type.html">get_machine_type (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSync.html">MachineSync package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSync.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineSync.is_synchronous.html">is_synchronous (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MachineWRSM.html">MachineWRSM package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MachineWRSM.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineWRSM.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineWRSM.get_machine_type.html">get_machine_type (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MachineWRSM.is_synchronous.html">is_synchronous (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.html">Magnet package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_mass.html">comp_mass (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_ratio_opening.html">comp_ratio_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.comp_volume.html">comp_volume (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.is_outwards.html">is_outwards (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Magnet.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType10.html">MagnetType10 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType10.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType10.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType10.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType10.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType11.html">MagnetType11 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType11.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType11.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType11.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType11.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType12.html">MagnetType12 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType12.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType12.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType12.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType12.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType13.html">MagnetType13 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType13.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType13.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType13.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType13.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType14.html">MagnetType14 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType14.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType14.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.MagnetType14.comp_height.html">comp_height (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Shaft.html">Shaft package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Shaft.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Shaft.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Shaft.comp_mass.html">comp_mass (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Shaft.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.Winding.html">Winding package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.Winding.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Winding.comp_Ncspc.html">comp_Ncspc (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.Winding.comp_Ntspc.html">comp_Ntspc (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW1L.html">WindingCW1L package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW1L.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW1L.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW1L.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LR.html">WindingCW2LR package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LR.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LR.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LR.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LT.html">WindingCW2LT package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LT.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LT.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingCW2LT.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW1L.html">WindingDW1L package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW1L.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW1L.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW1L.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW2L.html">WindingDW2L package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW2L.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW2L.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingDW2L.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingSC.html">WindingSC package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingSC.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingSC.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingSC.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Machine.WindingUD.html">WindingUD package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Machine.WindingUD.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingUD.comp_connection_mat.html">comp_connection_mat (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Machine.WindingUD.get_dim_wind.html">get_dim_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Methods.Material.html">Material package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Methods.Material.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Material.BHCurve.html">BHCurve package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Material.BHCurve.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Material.BHCurve.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveMat.html">BHCurveMat package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveMat.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveMat.comp_B.html">comp_B (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveParam.html">BHCurveParam package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveParam.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Material.BHCurveParam.comp_B.html">comp_B (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyleecan.Methods.Slot.html">Slot package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyleecan.Methods.Slot.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.html">Hole package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.get_Rbo.html">get_Rbo (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.get_is_stator.html">get_is_stator (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.has_magnet.html">has_magnet (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Hole.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.html">HoleM50 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_W5.html">comp_W5 (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_alpha.html">comp_alpha (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_mass_magnets.html">comp_mass_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_surface_magnets.html">comp_surface_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.comp_volume_magnets.html">comp_volume_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM50.remove_magnet.html">remove_magnet (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.html">HoleM51 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_alpha.html">comp_alpha (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_mass_magnets.html">comp_mass_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_surface_magnets.html">comp_surface_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_volume_magnets.html">comp_volume_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.comp_width.html">comp_width (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM51.remove_magnet.html">remove_magnet (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.html">HoleM52 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_W1.html">comp_W1 (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_alpha.html">comp_alpha (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_mass_magnets.html">comp_mass_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_surface_magnets.html">comp_surface_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.comp_volume_magnets.html">comp_volume_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM52.remove_magnet.html">remove_magnet (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.html">HoleM53 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.comp_W5.html">comp_W5 (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.comp_mass_magnets.html">comp_mass_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.comp_surface_magnets.html">comp_surface_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.comp_volume_magnets.html">comp_volume_magnets (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM53.remove_magnet.html">remove_magnet (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.html">HoleM54 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleM54.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.HoleMag.html">HoleMag package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.HoleMag.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.HoleMag.has_magnet.html">has_magnet (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.html">Slot package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.get_Rbo.html">get_Rbo (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.get_is_stator.html">get_is_stator (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.get_surface.html">get_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.is_outwards.html">is_outwards (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.Slot.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.html">SlotMFlat package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.comp_W0m.html">comp_W0m (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.comp_angle_opening_magnet.html">comp_angle_opening_magnet (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMFlat.get_point_bottom.html">get_point_bottom (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.html">SlotMPolar package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.comp_angle_opening_magnet.html">comp_angle_opening_magnet (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotMPolar.get_point_bottom.html">get_point_bottom (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.html">SlotW10 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW10.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.html">SlotW11 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW11.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.html">SlotW12 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW12.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.html">SlotW13 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW13.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.html">SlotW14 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW14.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.html">SlotW15 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW15.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.html">SlotW16 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW16.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.html">SlotW21 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW21.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.html">SlotW22 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW22.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.html">SlotW23 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW23.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.html">SlotW24 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_alphas.html">comp_alphas (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW24.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.html">SlotW25 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW25.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.html">SlotW26 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW26.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.html">SlotW27 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW27.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.html">SlotW28 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.comp_R2.html">comp_R2 (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW28.comp_surface.html">comp_surface (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.html">SlotW29 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW29.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.html">SlotW60 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW60.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.html">SlotW61 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.build_geometry_wind.html">build_geometry_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.comp_angle_opening.html">comp_angle_opening (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.comp_height.html">comp_height (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotW61.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.html">SlotWind package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.comp_angle_wind_eq.html">comp_angle_wind_eq (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.comp_height_wind.html">comp_height_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.comp_radius_mid_wind.html">comp_radius_mid_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.comp_surface_wind.html">comp_surface_wind (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.SlotWind.plot_wind.html">plot_wind (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.html">VentilationCirc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.get_center.html">get_center (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationCirc.plot.html">plot (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.html">VentilationPolar package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationPolar.get_center.html">get_center (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.html">VentilationTrap package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.build_geometry.html">build_geometry (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.check.html">check (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.comp_radius.html">comp_radius (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.comp_surface.html">comp_surface (method)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pyleecan.Methods.Slot.VentilationTrap.get_center.html">get_center (method)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Methods.Geometry.html" title="Geometry package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyleecan.Generator.read_fct.html" title="read_fct module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="pyleecan.html">pyleecan  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019 pyleecan developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+    </div>
+  </body>
+</html>
