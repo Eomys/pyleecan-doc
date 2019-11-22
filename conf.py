@@ -12,9 +12,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
+from os.path import dirname, abspath, normpath, join
 import sys
-sys.path.insert(0, r'C:\Users\quentin\Desktop\Pyleecan_Repository')
+sys.path.insert(0, normpath(abspath(join(dirname(__file__),'..'))))
 from datetime import date
 
 # -- Project information -----------------------------------------------------
