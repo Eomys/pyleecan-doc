@@ -42,7 +42,7 @@ Status of the project
 EOMYS has started an open and non-commercial project named PYLEECAN (Python Library for Electrical Engineering Computational Analysis). The starting code of PYLEECAN is based on
 `MANATEE <https://eomys.com/produits/manatee/article/logiciel-manatee?lang=en>`__ (EOMYS commercial software) but PYLEECAN is not an EOMYS only project: The initial maintainers includes other company and university. We are welcoming everyone that want to contribute.
 
-The project is still under construction and can't be used yet. All the architecture of the project is ready and we are progressively releasing the starting modules. If you are interested by a topology or a specific model, you can open an issue on this Github repository to talk
+All the architecture of the project is ready and we are progressively releasing the starting modules. If you are interested by a topology or a specific model, you can open an issue on this Github repository to talk
 about it. We will gladly explain how to add it yourself or we will add it to the development list for further release.
 
 Getting started
