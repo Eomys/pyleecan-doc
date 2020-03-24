@@ -1,5 +1,5 @@
 ########
-Licence
+License
 ########
 
 PYLEECAN is under an **Apache license**. This license is permissive (with no copyleft) which allows the use of PYLEECAN with
