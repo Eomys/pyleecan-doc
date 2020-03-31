@@ -14,28 +14,23 @@ Installation
 To install the latest version of Python, download the `installer <https://www.python.org/downloads/>`__ and run it.
 
 
-PYLEECAN will use others python scientific packages like NumPy and MatplotLib. To install those packages we recommend you
+PYLEECAN will use others python scientific packages like NumPy, MatplotLib, etc. To install those packages we recommend you
 to use **pip** a python package manager which is already installed if your python version is >= 3.4.
 
-NumPy
-------
+You can find listed below all the packages used in PYLEECAN:
 
-`NumPy <http://www.numpy.org/>`__ is the fundamental package for scientific computing with Python.
+- ddt
+- pytest
+- definitions
+- cloudpickle
+- numpy
+- scipy
+- matplotlib
+- pyfemm
+- mock
+- gmsh-sdk
+- pandas
 
-To install NumPy
-
+To install all these package, copy them in a text file (requirements.txt)and run 
 ::
-
-        python -m pip install -U numpy
-
-Matplotlib
------------
-
-`Matplotlib <https://matplotlib.org/users/installing.html>`__ is a Python 2D plotting library which produces publication
-quality figures in a variety of hardcopy formats and interactive environments across platforms.
-
-To get MatplotLib
-
-::
-
-        python -m pip install -U matplotlib
+        python -m pip install -r requirements.txt
