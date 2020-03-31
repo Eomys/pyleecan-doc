@@ -31,6 +31,6 @@ You can find listed below all the packages used in PYLEECAN:
 - gmsh-sdk
 - pandas
 
-To install all these package, copy them in a text file (requirements.txt)and run 
+To install all these package, copy them in a text file (requirements.txt) and run 
 ::
         python -m pip install -r requirements.txt
