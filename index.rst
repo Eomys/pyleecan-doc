@@ -4,31 +4,27 @@ PYLEECAN
 Presentation
 ------------
 
-PYLEECAN’s objective is to provide a **user-friendly, unified, flexible simulation framework for the multiphysic design and optimization of electrical machines and drives** based on open-source software.
+PYLEECAN™ objective is to provide a **user-friendly, unified, flexible simulation framework for the multiphysic design and optimization of electrical machines and drives** based on fully open-source software.
 
 .. image:: _static/BPMSM.png
 .. image:: _static/IPMSM.png
 .. image:: _static/SyRM.png
 
-It is meant to be used by researchers, R&D engineers and teachers in electrical engineering, both on standard topologies of electrical machines and on novel topologies (e.g. during a PhD work). An objective of PYLEECAN is that every PhD student should start with PYLEECAN instead of implementing (again) his own routines (e.g. coupling Scilab and Femm).
+It is meant to be used by researchers, R&D engineers and teachers in electrical engineering, both on standard topologies of electrical machines and on novel topologies (e.g. during a PhD work). 
+An objective of PYLEECAN is that **every PhD student should start with PYLEECAN instead of implementing his own scripts (e.g. coupling Scilab or Matlab with Femm)**.
 
 Scope
 -----
 
-The scope of the project is to simulate the following 2D radial flux
-machines:
+The initial scope of the project is to simulate the electromagnetic performances of the following 2D radial flux machines:
 
-- Surface, Surface Inset or Interior Permanent Magnet Synchronous Machines (SPMSM, SIPMSM, IPMSM) with inner or outer rotor
+- Interior, Surface and Surface Inset Permanent Magnet Synchronous Machines (IPMSM, SPMSM, SIPMSM) with inner or outer rotor
 - Squirrel Cage Induction Machines (SCIM) and Doubly Fed Induction Machines (DFIM)
-
-Then the project should address the following topologies:
-
-- Direct Current Machines (DCM).
-- Synchro Reluctant Machines (SyRM).
+- Synchro Reluctant Machines (SyRM)
 - Switched Reluctance Machines (SRM).
 
-In the long-term basis PYLEECAN will include 5 physics and several model
-for each (analytical, numerical...):
+The project should then address 3D topologies (axial flux machines, claw-pole synchronous machines) and linear machines.
+On a longer term, PYLEECAN should also include the following five physics with different model granularity (e.g. analytic, semi-analytic, finite element):
 
 - Electrical
 - Electromagnetics
@@ -36,14 +32,15 @@ for each (analytical, numerical...):
 - Structural Mechanics
 - Acoustics
 
-Status of the project
-----------------------
+Status of the project (28th March 2020)
+---------------------------------------
 
-EOMYS has started an open and non-commercial project named PYLEECAN (Python Library for Electrical Engineering Computational Analysis). The starting code of PYLEECAN is based on
-`MANATEE <https://eomys.com/produits/manatee/article/logiciel-manatee?lang=en>`__ (EOMYS commercial software) but PYLEECAN is not an EOMYS only project: The initial maintainers includes other company and university. We are welcoming everyone that want to contribute.
+EOMYS initiated in 2018 the open-source project named PYLEECAN (Python Library for Electrical Engineering Computational Analysis) under Apache license by releasing a part of `MANATEE <https://eomys.com/produits/manatee/article/logiciel-manatee?lang=en>`__ commercial software scripts. These initial scripts included a fully **object-oriented modelling** of main radial flux electrical machines, with parameterized geometry. However, PYLEECAN is not an EOMYS-only project, the initial maintainers includes other companies and universities and all contributors are welcome.
 
-All the architecture of the project is ready and we are progressively releasing the starting modules. If you are interested by a topology or a specific model, you can open an issue on this Github repository to talk
-about it. We will gladly explain how to add it yourself or we will add it to the development list for further release.
+PYLEECAN is fully coupled to `FEMM <www.femm.info>`__ to carry **non-linear magnetostatic** analysis including sliding band and symmetries.
+PYLEECAN includes a **Graphical User Interface** to define main 2D radial flux topologies parametrized geometries (PMSM, IM, SRM, SyRM) including material library.
+PYLEECAN is coupled to `Gmsh <http://gmsh.info/>`__ **2D/3D finite element mesh generator** to run third-party multiphysic solvers. 
+PYLEECAN is coupled to a **multiobjective optimization** library to carry design optimization of electrical machines.
 
 Getting started
 ----------------
