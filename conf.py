@@ -127,7 +127,7 @@ html_sidebars = {
     'prerequisite': ['localtoc.html','sourcelink.html','git_info.html'],
 }
 
-html_title = 'PYLEECAN &#8212; PYthon Library for Electrical Engineering Computational ANalysis'
+html_title = 'PYthon Library for Electrical Engineering Computational ANalysis'
 # -- Options for HTMLHelp output ---------------------------------------------
 html_favicon = '_static/favicon.png'
 # Output file base name for HTML help builder.
