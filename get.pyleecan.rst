@@ -2,39 +2,42 @@
 Install PYLEECAN
 #################
 
-Welcome to the PYLEECAN installation page, PYLEECAN code is available on Github. You can access to the code via
-`git <https://git-scm.com/>`__ or `github <https://desktop.github.com/>`__. There are two ways to install the project
-depending on how you want to use the project:
+Step 1: Getting the code
+------------------------
 
-- if you want to use PYLEECAN (Clone)
-- if you want to use and contribute to PYLEECAN (Fork)
+Welcome to the PYLEECAN installation page. As PYLEECAN is not (yet) available on `pip <https://pypi.org/project/pip/>`__, to use PYLEECAN, the first step is to get the code from `Github <https://github.com/Eomys/pyleecan/>`__:
+.. image:: _static/github_get_code.PNG
 
-Clone the project
------------------
+There are three ways of getting the code:
 
-To install PYLEECAN, you will need to clone the Github repository of the project.
+**The "quick and dirty" way**: 
+Although we don't recommend it, you can download an archive of the code by clicking on the green button "Clone or download" then **"Download Zip" **(orange square on the image). Nothing else to install, you can directly go to step 2.
+
+**The "I want to use it" way**: 
+For this method you will first need to install `git <https://git-scm.com/>`__ or `github <https://desktop.github.com/>`__. For Windows users, you may also want to install `Tortoisegit <https://tortoisegit.org/download/>`__ (or any equivalent) for a more convenient use of git.
+Once git is installed you can **"clone"** the repository (either though command line or the tool you have installed with git) with the following command (green square on the image):
 
 ::
 
         git clone https://github.com/Eomys/pyleecan
 
+This method will enable you to get the upcoming modifications of the Pyleecan's code in a more convenient way. 
 
-Fork the project
------------------
+**The "I want to contribute" way**:
+You will need a Github account to `fork <https://help.github.com/en/articles/fork-a-repo>`__ (bleu square on the image) the `pyleecan repository <https://github.com/Eomys/pyleecan>`__ which will create a copy of the repository in your Github projects. The forked repository will allow you to freely experiment with changes without affecting the original project. Later you will be able to send modifications from your fork to the main project on Github with :ref:`code.contribution:"pull-request"`.
+You can now **clone** the forked version of Pyleecan in your Github projects but following the "I want to use it" way above. 
+You can also click on "Watch" (red square on the image) to choose how you want to be notified of the activities of the community. 
+As a reminder, before contributing, please read the :ref:`project.organization:Project organization` and the :ref:`development:Development guidelines`.
 
-You will have to `fork <https://help.github.com/en/articles/fork-a-repo>`__ the `pyleecan repository <https://github.com/Eomys/pyleecan>`__
-which will create a copy of the repository in your Github projects. The forked repository will allow you to freely
-experiment with changes without affecting the original project.
+Step 2: Getting python and the dependencies
+-------------------------------------------
+Now to be able to use the code you will need to download `Python <https://www.python.org/downloads/>`__. We recommend a version >3.6 to be able to use `black <https://pypi.org/project/black/>`__ but this is not mandatory. Support with older Python version haven't been checked and can be possible. If you experience difficulties with running Pyleecan with any version of Python, please `open an issue on Github <https://github.com/Eomys/pyleecan/issues>`__ to talk about it.
 
-To fork PYLEECAN repository:
+Now that python is installed, you can download all the packages that are required to use pyleecan. All of them are gathered in the file `requirements.txt <https://github.com/Eomys/pyleecan/blob/master/requirements.txt>`__. You can install them with one single command with `pip <https://pypi.org/project/pip/>`__ (which should have been installed with python):
+::
 
- - Get to the `pyleecan repository <https://github.com/Eomys/pyleecan>`__
- - Sign in to your Github account
- - fork the project, option available in the top-right of the PYLEECAN repository page
-
-.. image:: _static/fork.png
-
-After this, you will find a copy of pyleecan repository in your Github projects. You can now clone this fork and do all the
-modifications you want, it won't affect the official version. Once you find that your modifications are ready to be shared,
-feel free to :ref:`code.contribution:Submit your contribution` to the original project. However we recommend you,
-before contributing, to read the :ref:`project.organization:Project organization` and the :ref:`development:Development guidelines`.
+        pip install -r requirements.txt
+		
+The principal of Pyleecan is to enable the user to choose between several model to compute the same quantities. Some of them call other software that you need to install as well (if you plan to use them). For now, the following software have a coupling with pyleecan:
+* `FEMM <http://www.femm.info/wiki/Download>`__
+* `GMSH <http://gmsh.info/>`__
