@@ -203,7 +203,13 @@ div.well ul li {
     line-height: 32px;
 }
 
+div.newsletter h3 a {
+    color: black;
+}
 
+div.newsletter h3 {
+    background-color: #E6AF00;
+}
 
 /* -- body styles ----------------------------------------------------------- */
 
