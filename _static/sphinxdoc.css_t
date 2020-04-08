@@ -203,7 +203,13 @@ div.well ul li {
     line-height: 32px;
 }
 
+div.newsletter h3 a {
+    color: black;
+}
 
+div.newsletter h3 {
+    background-color: #E6AF00;
+}
 
 /* -- body styles ----------------------------------------------------------- */
 
@@ -240,6 +246,7 @@ h2 {
 h3 {
     margin: 1em 0 -0.3em 0;
     font-size: 1.2em;
+    text-align: center;
 }
 
 div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a {
