@@ -4,7 +4,7 @@ Generation process
 
 .. role:: green
 
-All the generation code is gathered in **/Generator**. To simplify all the process, we have split the generation of the
+All the generation code is gathered in **pyleecan/Generator**. To simplify all the process, we have split the generation of the
 code in several independent steps. The first one is to read all the CSV files to create a complex structure
 (dictionary gen_dict) with all the reference data. Then this structure is used to generate the class. As the step are
 separated, they can evolve separately. For instance, you can change the way the data are stored in the CSV file without
@@ -28,15 +28,17 @@ The third level correspond to the data of a class (or the sheet of the CSV file)
 -	:green:`properties` : a list of dictionary with key matching the CSV sheet column: name, type, min, max, value, desc (one dictionary for each property of the class)
 -	:green:`constants`: a list of dictionary with the key name, value (one for each constant of the class)
 -	:green:`methods`: a list of all the class method name
--	:green:`daughters`: a list of all the class daughter name
+-	:green:`daughters`: a list of all the class daughter name (generated according to the "mother" columns)
 -	:green:`package`: name of the group of the class (same as the first dictionary key, but useful for generation)
 -	:green:`desc`: a string with the description of the class (for help text)
 -	:green:`mother`: a string with the mother class name (if empty, FrozenClass will be used as default)
+-	:green:`path`: path to the corresponding csv file
 
 For instance, the description of the parameter H0 of Slot_Type_1_0 is stored in:
 gen_dict[‘Slot’][‘Slot_Type_1_0’][‘properties’][0][‘desc’] (if we suppose that H0 is first in the list of properties).
 
-
+Note that a feature has been added to enable to generate "your own pyleecan" with internal code you don't intend to share.
+More information on the `corresponding issue <https://github.com/Eomys/pyleecan/issues/46>`__.
 
 File organization
 ------------------
@@ -51,6 +53,6 @@ import at the start of the file, some class are inherited, some are not, some us
 to change this code, please consider that it should work for every single class in PYLEECAN: always start by modifying the
 class generation and then check that all the test are still right.
 
-The result are saved in **/Classes/class_name.py**. As these files are completely rewritten by the generator, you must
+The result are saved in **pyleecan/Classes/<Class Name>.py**. As these files are completely rewritten by the generator, you must
 never modify them yourself. If you need to change the code of the generator, you should start by looking these files
 (for different cases with/without PYLEECAN classes, with/without inheritance…) to know what you need to generate.
