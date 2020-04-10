@@ -1,4 +1,4 @@
-How to define a machine
+How to define an electrical machine
 =======================
 
 This tutorial shows the different ways to define electrical machine. To
