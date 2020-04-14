@@ -116,3 +116,12 @@ coding rules to improve the code quality.
 
 
 - The set of functions that computes a physical quantity based on some another physical quantity (e.g. calculation of magnetic flux based on electrical currents) is called a “module” – it can be seen as a transfer function from one physics to another. The modelling methodology used to run the calculations in this module is called a “model”. This model may be only valid when fulfilling some specific conditions – additional model parameters are called “assumptions”. As an example, the Structural “module” contains an Analytical “model” with different boundary conditions “assumptions”.
+
+Geometrical convention
+----------------------
+Here is a list of article about some global geometrical conventions in pyleecan:
+.. toctree::
+    :maxdepth: 1
+
+    slot.convention
+    winding.convention
