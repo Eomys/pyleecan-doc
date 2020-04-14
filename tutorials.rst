@@ -2,4 +2,9 @@
 Tutorials
 #########
 
-**Coming soon ...**
+
+.. toctree::
+    :maxdepth: 1
+
+    tuto_Machine
+    
