@@ -117,6 +117,19 @@ coding rules to improve the code quality.
 
 - The set of functions that computes a physical quantity based on some another physical quantity (e.g. calculation of magnetic flux based on electrical currents) is called a “module” – it can be seen as a transfer function from one physics to another. The modelling methodology used to run the calculations in this module is called a “model”. This model may be only valid when fulfilling some specific conditions – additional model parameters are called “assumptions”. As an example, the Structural “module” contains an Analytical “model” with different boundary conditions “assumptions”.
 
+Commit message convention
+-------------------------
+When committing modifications, we add a tag at the beginning of the commit message to indicate the nature of the commit:
+- [VI]: (Version Information) Main development step achieved or meaningful version of the software
+- [NF]: (New Feature) Something important have been added and works (a new function, a new post-treatment…)
+- [BC]: (Bug Correction) A bug was corrected (the message should contain description of the bug or the corresponding issue number)
+- [WP]: (Work in Progress) Some intermediate changes leading to BC / NF
+- [CO]: (Code Optimization) No new functionality but the scripting is improved in terms of clarity, CPU time, etc
+- [CC]: (Code Cleaning) Nearly “passive” development (comments added, split of function in several functions, typo correction...)
+- [VR]: (Variable Renaming) Change of variable or class name, important to be tagged separately
+
+When possible, please refer to the corresponding issue in your commit message with #<issue number>, Github will automatically add a link to the commit in the issue.
+
 Geometrical convention
 ----------------------
 Here is a list of article about some global geometrical conventions in pyleecan:
