@@ -107,6 +107,8 @@ For the build_geometry method, you will need to compute the complex coordinates 
 
 You can take inspiration from the code of other slot to see how to define your own list. 
 
+For SlotCirc, the build_geometry method returns a list with only one Line object. We compute the Z1 and Z2 coordinates to match W0 then we compute the radius of the circle to define the Arc1.
+
 Defining the build_geometry_wind method
 --------------------------
 For build_geometry_wind, you will need to define the “Winding area”. You will need to create several "SurfLine" object according to the number of requested surface. Each surface must be labeled:
@@ -117,9 +119,13 @@ With <S or R> for Stator or Rotor and the radial and tangential id are defined a
 
 To create a SurfLine object, you will need to define the list of lines on the edges of this surface and to provide a “point_ref”: A point in the surface where we can apply the property for FEA software. Again, take inspiration from other slot to understand how the surfaces are defined and remember that you can ask for help on Github if needed. 
 
+For SlotCirc, the slot is intended to be used for notches so it shouldn't contain winding. But maybe someone want to add winding in such slot so we define the winding related methods anyway. We define the "Winding area" to be the complete slot surface. To define the original surface we just need to add an Arc1 between Z2 and Z1. Then we proceed to cut this surface according to Nrad, Ntan.
+
 Defining the other methods
 --------------------------
 All the other method should be more straight forward if you follow the indication from the :doc:`slot conventions</slot.convention>`. Otherwise, you can `open an issue <https://github.com/Eomys/pyleecan/issues page>`__.
+
+For SlotCirc, as the winding area matches the complete slot, comp_surface and comp_surface_wind as well as comp_height and comp_height_wind return the same values.
 
 Docstring and documentation
 ---------------------------
