@@ -20,7 +20,7 @@ from datetime import date
 # -- Project information -----------------------------------------------------
 
 project = 'pyleecan'
-copyright = u'%s pyleecan developers' % date.today().year
+copyright = u'%s pyleecan developers. Last update on %s' % (date.today().year, date.today())
 author = 'Author'
 
 # The short X.Y version
