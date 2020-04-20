@@ -46,7 +46,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.napoleon',
     'sphinx.ext.extlinks',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'nbsphinx'
 ]
 autodoc_member_order = 'bysource'
 autosectionlabel_prefix_document = True
@@ -126,6 +127,7 @@ html_sidebars = {
     'contact': ['newsletter.html','git_info.html','sourcelink.html'],
     'prerequisite': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
     'tuto_Machine': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
+    'tuto_Simulation_FEMM': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
 }
 
 html_title = 'PYthon Library for Electrical Engineering Computational ANalysis'
