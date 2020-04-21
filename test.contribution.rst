@@ -95,6 +95,7 @@ To mark a test, you just need to add it a decorator:
         assert 'foo'.upper() == 'FOO'
  
 It is also possible to set several markers to a test: 
+
 .. code-block:: python
 
     import pytest 
