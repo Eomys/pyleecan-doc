@@ -11,7 +11,7 @@ Test development guidelines
 ----------------------------
 
 The python test package was initially based on `unittest <https://docs.python.org/3/library/unittest.html#module-unittest>`__,
-but we decided to switch to `pytest <https://docs.pytest.org/en/latest/>`__ package. As pytest supports unittest, we still have some unittest for the moment but **every new test should use pytest**. To test a code, it is recommended to develop its specific test code for each method and each class.
+but we decided to switch to `pytest <https://docs.pytest.org/en/latest/>`__ package for its ease of use. As pytest supports unittest, we still have some unittest for the moment but **every new test should use pytest**. To test a code, it is recommended to develop its specific test code for each method and each class.
 
 Install pytest
 ```````````````
@@ -70,12 +70,13 @@ To run the tests, you need to open a terminal, go into the folder which contains
     
 How to mark a test
 ``````````````````
-Pytest enables to set metadata on the test functions with markers. This feature enable to exclude or include easily some tests from the test execution. This is the list of the current marker iset in PYLEECAN:
+Pytest enables to set metadata on the test functions with markers. This feature enable to exclude or include easily some tests from the test execution. This is the list of the current marker set in PYLEECAN:
 
-- validation : validations tests
+- validation : validation test, executes a workflow to check the results validity
 - long : test that last more than 30 seconds
 - FEMM : test using FEMM
 - GMSH : test using GMSH
+- DEAP : test using DEAP 
 
 
 The following command is an example to execute only validations test that don't use FEMM: 
@@ -85,7 +86,6 @@ The following command is an example to execute only validations test that don't 
     
 To mark a test, you just need to add it a decorator: 
 
-
 .. code-block:: python
 
     import pytest 
@@ -93,10 +93,25 @@ To mark a test, you just need to add it a decorator:
     @pytest.mark.validation
     def test_upper():
         assert 'foo'.upper() == 'FOO'
+ 
+It is also possible to set several markers to a test: 
+.. code-block:: python
+
+    import pytest 
+
+    @pytest.mark.long
+    @pytest.mark.FEMM
+    def test_lower():
+        assert 'FOO'.lower() == 'foo'
     
 Parametrizing test
 ``````````````````
-Pytest enables to go much further and test more cases on a single test with the *parametrize* marker : 
+Pytest enables to go much further and test more cases on a single test by running a test with different input data. To do so, you just need to use the *parametrize* marker. This marker has two arguments:
+
+- a tuple containing the test parameters names
+- a list containing tuples, each tuple contains the input data for one test run  
+
+One can also add markers to a specific input. In the following example we use the *xfail* marker to specify that the test is supposed to fail with (1, 0) in input: 
 
 .. code-block:: python
 
@@ -105,7 +120,7 @@ Pytest enables to go much further and test more cases on a single test with the 
         [
             (1, 2),
             (4, 5),
-            pytest.param(1, 0, marks=pytest.mark.xfail), # <-- The test is supposed to failwith this data
+            pytest.param(1, 0, marks=pytest.mark.xfail), # <-- The test is supposed to fail with this data
         ],
     )
     def test_increment(n, expected):
