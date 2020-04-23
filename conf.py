@@ -14,7 +14,8 @@
 #
 from os.path import dirname, abspath, normpath, join
 import sys
-sys.path.insert(0, normpath(abspath(join(dirname(__file__),'..'))))
+# sys.path.insert(0, normpath(abspath(join(dirname(__file__),'..'))))
+sys.path.insert(0, normpath(abspath(join(dirname(__file__),'../pyleecan'))))
 from datetime import date
 
 # -- Project information -----------------------------------------------------
@@ -126,8 +127,8 @@ html_sidebars = {
     'tutorials': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
     'contact': ['newsletter.html','git_info.html','sourcelink.html'],
     'prerequisite': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
-    'tuto_Machine': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
-    'tuto_Simulation_FEMM': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
+    'tuto_Machine': ['localtoc.html','newsletter.html', 'git_info.html'],
+    'tuto_Simulation_FEMM': ['localtoc.html','newsletter.html', 'git_info.html'],
 }
 
 html_title = 'PYthon Library for Electrical Engineering Computational ANalysis'
