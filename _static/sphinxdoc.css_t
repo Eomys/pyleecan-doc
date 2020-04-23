@@ -95,7 +95,7 @@ div.document {
 }
 
 div.bodywrapper {
-    margin: 0 0 0 calc(230px + 10px);
+    margin: 0 0 0 calc(230px + 110px);
     border-left: 1px solid #ccc;
 }
 
@@ -145,7 +145,7 @@ div.sphinxsidebarwrapper {
 div.sphinxsidebar {
     margin: 0;
     padding: 0.5em 0 15px 15px;
-    width: calc(230px - 20px);
+    width: 320px;
     float: left;
     font-size: 1em;
     text-align: left;
@@ -203,12 +203,26 @@ div.well ul li {
     line-height: 32px;
 }
 
-div.newsletter h3 a {
-    color: black;
+div.newsletter {
+    text-align: center;
 }
-
-div.newsletter h3 {
+div.newsletter button {
+    color: black;
     background-color: #E6AF00;
+    margin: 1em 0 0.5em 0;
+    font-size: 1em;
+    padding: 0.1em 0 0.1em 0.5em;
+    border-radius: 4px;
+    overflow-wrap: break-word;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+    text-align: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    line-height: 150%;
 }
 
 /* -- body styles ----------------------------------------------------------- */
@@ -243,7 +257,7 @@ h2 {
     padding: 0;
 }
 
-h3 {
+h3, h4 {
     margin: 1em 0 -0.3em 0;
     font-size: 1.2em;
     text-align: center;

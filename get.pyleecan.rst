@@ -6,12 +6,13 @@ Step 1: Getting the code
 ------------------------
 
 Welcome to the PYLEECAN installation page. As PYLEECAN is not (yet) available on `pip <https://pypi.org/project/pip/>`__, to use PYLEECAN, the first step is to get the code from `Github <https://github.com/Eomys/pyleecan/>`__:
+
 .. image:: _static/github_get_code.PNG
 
 There are three ways of getting the code:
 
 **The "quick and dirty" way**: 
-Although we don't recommend it, you can download an archive of the code by clicking on the green button "Clone or download" then **"Download Zip" **(orange square on the image). Nothing else to install, you can directly go to step 2.
+Although we don't recommend it, you can download an archive of the code by clicking on the green button "Clone or download" then **"Download Zip"** (orange square on the image). Nothing else to install, you can directly go to step 2.
 
 **The "I want to use it" way**: 
 For this method you will first need to install `git <https://git-scm.com/>`__ or `github <https://desktop.github.com/>`__. For Windows users, you may also want to install `Tortoisegit <https://tortoisegit.org/download/>`__ (or any equivalent) for a more convenient use of git.
@@ -39,5 +40,6 @@ Now that python is installed, you can download all the packages that are require
         pip install -r requirements.txt
 		
 The principal of Pyleecan is to enable the user to choose between several model to compute the same quantities. Some of them call other software that you need to install as well (if you plan to use them). For now, the following software have a coupling with pyleecan:
+
 * `FEMM <http://www.femm.info/wiki/Download>`__
 * `GMSH <http://gmsh.info/>`__
