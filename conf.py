@@ -46,10 +46,15 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.napoleon',
     'sphinx.ext.extlinks',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinxcontrib.googleanalytics'
 ]
 autodoc_member_order = 'bysource'
 autosectionlabel_prefix_document = True
+
+# Defning Google analytics_id
+googleanalytics_id = 'UA-161753839-3'
+googleanalytics_enabled = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
