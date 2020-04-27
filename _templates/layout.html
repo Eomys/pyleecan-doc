@@ -45,6 +45,15 @@
       .related { display: none; }
       {% endif %}
     </style>
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">
+        function popUp() {
+            window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"8f9080f46f961e513d56be661","lid":"49e68177d8","uniqueMethods":true}) });
+            document.cookie = "MCPopupClosed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+            document.cookie = "MCPopupSubscribed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        };
+      $('#newsletter').onclick = function() {popUp()};
+    </script>
     <script type="text/javascript">
       // intelligent scrolling of the sidebar content
       $(window).scroll(function() {
