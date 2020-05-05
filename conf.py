@@ -132,6 +132,7 @@ html_sidebars = {
     'prerequisite': ['localtoc.html','newsletter.html', 'git_info.html','sourcelink.html'],
     'tuto_Machine': ['localtoc.html','newsletter.html', 'git_info.html'],
     'tuto_Simulation_FEMM': ['localtoc.html','newsletter.html', 'git_info.html'],
+    'tuto_Plots': ['localtoc.html','newsletter.html', 'git_info.html'],
 }
 
 html_title = 'PYthon Library for Electrical Engineering Computational ANalysis'
