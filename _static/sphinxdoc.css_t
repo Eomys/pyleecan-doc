@@ -30,7 +30,7 @@ body {
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    min-width: 780px;
+    min-width: 850px;
     max-width: 1200px;
 }
 
@@ -532,4 +532,10 @@ pre {
 
 }
 
+@media (min-width: 993px) and (max-width:1500px){
+div.bodywrapper {
+    margin-left: 320px;
+    border-left: 1px solid #ccc;
+}
+}
 
