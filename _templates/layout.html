@@ -1,16 +1,30 @@
 {#
-    sphinxdoc/layout.html
-    ~~~~~~~~~~~~~~~~~~~~~
+    basic/layout.html
+    ~~~~~~~~~~~~~~~~~
 
-    Sphinx layout template for the sphinxdoc theme.
+    Master layout template for Sphinx themes.
 
     :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 #}
-{%- extends "basic/layout.html" %}
-{# put the sidebar before the body #}
-{% block sidebar1 %}{{ sidebar() }}{% endblock %}
-{% block sidebar2 %}{% endblock %}
+{%- block doctype -%}{%- if html5_doctype %}
+<!DOCTYPE html>
+{%- else %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%- endif %}{%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &#187;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and
+                         (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+{# XXX necessary? #}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- if not embedded and docstitle %}
+  {%- set titlesuffix = " &#8212; "|safe + docstitle|e %}
+{%- else %}
+  {%- set titlesuffix = "" %}
+{%- endif %}
 
 {%- macro relbar() %}
     <div class="related" role="navigation" aria-label="related navigation">
@@ -33,10 +47,127 @@
     </div>
 {%- endmacro %}
 
+{%- macro sidebar() %}
+      {%- if render_sidebar %}
+        <div class="sphinxsidebar" role="navigation"  aria-label="main navigation">
+            <div class="sphinxsidebarwrapper w3-sidebar w3-collapse" id="mySidebar">
+            {%- block sidebarlogo %}
+            {%- if logo %}
+                <p class="logo"><a href="{{ pathto(master_doc) }}">
+                <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+                </a></p>
+            {%- endif %}
+            {%- endblock %}
+            <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+            {%- if sidebars != None %}
+                {#- new style sidebar: explicitly include/exclude templates #}
+                {%- for sidebartemplate in sidebars %}
+                {%- include sidebartemplate %}
+                {%- endfor %}
+            {%- else %}
+                {#- old style sidebars: using blocks -- should be deprecated #}
+                {%- block sidebartoc %}
+                {%- include "localtoc.html" %}
+                {%- endblock %}
+                {%- block sidebarrel %}
+                {%- include "relations.html" %}
+                {%- endblock %}
+                {%- block sidebarsourcelink %}
+                {%- include "sourcelink.html" %}
+                {%- endblock %}
+                {%- if customsidebar %}
+                {%- include customsidebar %}
+                {%- endif %}
+                {%- block sidebarsearch %}
+                {%- include "searchbox.html" %}
+                {%- endblock %}
+            {%- endif %}
+            </div>
+        </div>
+      {%- endif %}
+{%- endmacro %}
+
+{%- macro script() %}
+    <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+    {%- for js in script_files %}
+    {{ js_tag(js) }}
+    {%- endfor %}
+{%- endmacro %}
+
+{%- macro css() %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    
+    {%- for css in css_files %}
+      {%- if css|attr("filename") %}
+    {{ css_tag(css) }}
+      {%- else %}
+    <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+      {%- endif %}
+    {%- endfor %}
+{%- endmacro %}
+
+{%- if html_tag %}
+{{ html_tag }}
+{%- else %}
+<html xmlns="http://www.w3.org/1999/xhtml"{% if language is not none %} lang="{{ language }}"{% endif %}>
+{%- endif %}
+  <head>
+    {%- if not html5_doctype and not skip_ua_compatible %}
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    {%- endif %}
+    {%- if use_meta_charset or html5_doctype %}
+    <meta charset="{{ encoding }}" />
+    {%- else %}
+    <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+    {%- endif %}
+    {{- metatags }}
+    {%- block htmltitle %}
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {%- endblock %}
+    {%- block css %}
+    {{- css() }}
+    {%- endblock %}
+    {%- if not embedded %}
+    {%- block scripts %}
+    {{- script() }}
+    {%- endblock %}
+    {%- if pageurl %}
+    <link rel="canonical" href="{{ pageurl }}" />
+    {%- endif %}
+    {%- if use_opensearch %}
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+    {%- endif %}
+    {%- if favicon %}
+    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- endif %}
+    {%- endif %}
+{%- block linktags %}
+    {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif %}
+    {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+    {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif %}
+    {%- if next %}
+    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+    {%- endif %}
+    {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+    {%- endif %}
+{%- endblock %}
 {% block extrahead %}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
-{{ super() }}
 {%- if not embedded %}
     <style type="text/css">
       table.right { float: left; margin-left: 20px; }
@@ -54,7 +185,7 @@
         };
       $('#newsletter').onclick = function() {popUp()};
     </script>
-    <script type="text/javascript">
+     <script type="text/javascript">
       // intelligent scrolling of the sidebar content
       $(window).scroll(function() {
         var sb = $('.sphinxsidebarwrapper');
@@ -82,37 +213,95 @@
         }
       });
     </script>
-{%- endif %}
+  {%- endif %}
 {% endblock %}
+  </head>
+  {%- block body_tag %}<body>{% endblock %}
+    {% block header %}
+    <div class="pageheader">
+      <ul>
+        <li><a class="item" href="{{ pathto('index') }}">Home</a></li>
+        <li><a class="item" href="{{ pathto('tutorials') }}">Tutorials</a></li>
+        <li><a class="item" href="{{ pathto('documentation') }}">Documentation</a></li>
+        <li><a class="item" href="{{ pathto('development') }}">Development</a></li>
+        <li><a class="item"href="{{ pathto('contact') }}">Contact</a></li>
+      </ul>
+      <div>
+        <a href="{{ pathto('index') }}">
+          <img src="{{ pathto('_static/favicon.png', 1) }}" alt="PYLEECAN"/>
+        </a>
+      </div>
+    </div>
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+             $('.sphinxsidebarwrapper li').each(function(){
+              // select href
+              var href = $(this).find('a').attr('href');
+              // Check filename
+              if(href == "#"){
+    
+               // Add active class
+               $(this).addClass('active');
+              }
+             });
+        });
+    </script>
+    {% endblock %}
+<div style="text-align: left; padding: 0.5em 0 15px 15px;"><button class="w3-button w3-dark-grey w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button></div>
+{%- block relbar1 %}{{ relbar() }}{% endblock %}
+{%- block sidebar1 %}{{ sidebar() }}{% endblock %}
+{%- block content %}
+    <div class="document">
+  {%- block document %}
+      <div class="documentwrapper">
+          {%- if render_sidebar %}
+          <div class="bodywrapper">
+          {%- endif %}
+              <div class="body" role="main" >
+                  {% block body %} {% endblock %}
+                </div>
+        
+          {%- if render_sidebar %}
+          </div>
+        
+          {%- endif %}
+      </div>
 
-{% block header %}
-<div class="pageheader">
-  <ul>
-    <li><a class="item" href="{{ pathto('index') }}">Home</a></li>
-    <li><a class="item" href="{{ pathto('tutorials') }}">Tutorials</a></li>
-    <li><a class="item" href="{{ pathto('documentation') }}">Documentation</a></li>
-    <li><a class="item" href="{{ pathto('development') }}">Development</a></li>
-    <li><a class="item"href="{{ pathto('contact') }}">Contact</a></li>
-  </ul>
-  <div>
-    <a href="{{ pathto('index') }}">
-      <img src="{{ pathto('_static/favicon.png', 1) }}" alt="PYLEECAN"/>
-    </a>
-  </div>
-</div>
-<script type="text/javascript">
+  {%- endblock %}
 
-    $(document).ready(function() {
-         $('.sphinxsidebarwrapper li').each(function(){
-          // select href
-          var href = $(this).find('a').attr('href');
-          // Check filename
-          if(href == "#"){
+ 
+      <div class="clearer"></div>
+    </div>
+{%- endblock %}
 
-           // Add active class
-           $(this).addClass('active');
-          }
-         });
-    });
-</script>
-{% endblock %}
+{%- block relbar2 %}{{ relbar() }}{% endblock %}
+
+{%- block footer %}
+    <div class="footer" role="contentinfo">
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+      {%- else %}
+        {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+      {%- endif %}
+    {%- endif %}
+    {%- if last_updated %}
+      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+    {%- endif %}
+    {%- if show_sphinx %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+    {%- endif %}
+    </div>
+{%- endblock %}
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+  </body>
+</html>
