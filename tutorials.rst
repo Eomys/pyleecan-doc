@@ -24,7 +24,7 @@ Upcoming tutorials:
 -  How to generate the 3D mesh of a Lamination with GMSH
 
 
-If you have any question or if you want to request a new tutorial please `contact us`_:
+If you have any question or if you want to request a new tutorial please `contact us`_.
 
 .. _on GitHub: https://github.com/Eomys/pyleecan/tree/master/Tutorials
-.. _contact us: https://www.pyleecan.org/contact.html
+.. _contact us: contact.html
