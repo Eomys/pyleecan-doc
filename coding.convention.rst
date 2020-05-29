@@ -133,6 +133,7 @@ When possible, please refer to the corresponding issue in your commit message wi
 Geometrical convention
 ----------------------
 Here is a list of article about some global geometrical conventions in pyleecan:
+
 .. toctree::
     :maxdepth: 1
 
