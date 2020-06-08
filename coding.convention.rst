@@ -120,6 +120,7 @@ coding rules to improve the code quality.
 Commit message convention
 -------------------------
 When committing modifications, we add a tag at the beginning of the commit message to indicate the nature of the commit:
+
 - [VI]: (Version Information) Main development step achieved or meaningful version of the software
 - [NF]: (New Feature) Something important have been added and works (a new function, a new post-treatment…)
 - [BC]: (Bug Correction) A bug was corrected (the message should contain description of the bug or the corresponding issue number)
@@ -133,6 +134,7 @@ When possible, please refer to the corresponding issue in your commit message wi
 Geometrical convention
 ----------------------
 Here is a list of article about some global geometrical conventions in pyleecan:
+
 .. toctree::
     :maxdepth: 1
 

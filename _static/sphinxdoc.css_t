@@ -139,7 +139,6 @@ div.related ul li a:hover {
 div.sphinxsidebar{
     margin: 0;
     padding: 0.5em 0.5em 15px 15px;
-    width: 340px;
     float: left;
     font-size: 1em;
     text-align: left;
