@@ -209,7 +209,7 @@ The next step is to synchronize your local repository with the official pyleecan
 .. image:: _static/tuto_slot_sync.PNG
 The goal is to get the status of pyleecan into the "new_slot" branch. For that we first need to create a new "remote" by clicking on "Manage" (black rectangle on the image). The following window will open and should be completed as follow:
 
-.. image:: _static/tuto_slot_remote.PNG
+.. image:: _static/tuto_slot_add_remote.PNG
 We now have a new remote that links to the official pyleecan repository on Github.
 The current version of pyleecan is stored in the branch "master" on the official repository. So to get the latest modifications: 
 
