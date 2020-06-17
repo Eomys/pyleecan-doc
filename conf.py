@@ -46,6 +46,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.napoleon',
     'sphinx.ext.extlinks',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.autosectionlabel',
     'nbsphinx',
     'sphinxcontrib.googleanalytics'
 ]
