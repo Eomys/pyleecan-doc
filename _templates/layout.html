@@ -1,111 +1,116 @@
 {#
-    basic/layout.html
-    ~~~~~~~~~~~~~~~~~
+  basic/layout.html
+  ~~~~~~~~~~~~~~~~~
 
-    Master layout template for Sphinx themes.
+  Master layout template for Sphinx themes.
 
-    :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
+  :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
+  :license: BSD, see LICENSE for details.
 #}
 {%- block doctype -%}{%- if html5_doctype %}
 <!DOCTYPE html>
 {%- else %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {%- endif %}{%- endblock %}
 {%- set reldelim1 = reldelim1 is not defined and ' &#187;' or reldelim1 %}
 {%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
 {%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and
-                         (sidebars != []) %}
+                       (sidebars != []) %}
 {%- set url_root = pathto('', 1) %}
 {# XXX necessary? #}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &#8212; "|safe + docstitle|e %}
+{%- set titlesuffix = " &#8212; "|safe + docstitle|e %}
 {%- else %}
-  {%- set titlesuffix = "" %}
+{%- set titlesuffix = "" %}
 {%- endif %}
 
 {%- macro relbar() %}
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>{{ _('Navigation') }}</h3>
-      <ul>
-        {%- for rellink in rellinks %}
-        <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
-          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
-             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
-          {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
-        {%- endfor %}
-        {%- block rootrellink %}
-        <li class="nav-item nav-item-0"><a href="{{ pathto(master_doc) }}">{{ _('Documentation')|e}}</a>{{ reldelim1 }}</li>
-        {%- endblock %}
-        {%- for parent in parents %}
-          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
-        {%- endfor %}
-        {%- block relbaritems %} {% endblock %}
-      </ul>
-    </div>
+  <div class="related" role="navigation" aria-label="related navigation">
+    <h3>{{ _('Navigation') }}</h3>
+    <ul>
+      {%- for rellink in rellinks %}
+      <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+        <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+           {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+        {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+      {%- endfor %}
+      {%- block rootrellink %}
+      <li class="nav-item nav-item-0"><a href="{{ pathto(master_doc) }}">{{ _('Documentation')|e}}</a>{{ reldelim1 }}</li>
+      {%- endblock %}
+      {%- for parent in parents %}
+        <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+      {%- endfor %}
+      {%- block relbaritems %} {% endblock %}
+    </ul>
+  </div>
 {%- endmacro %}
 
 {%- macro sidebar() %}
-      {%- if render_sidebar %}
-        <div class="sphinxsidebar" role="navigation"  aria-label="main navigation">
-            <div class="sphinxsidebarwrapper w3-sidebar w3-collapse" id="mySidebar">
-            {%- block sidebarlogo %}
-            {%- if logo %}
-                <p class="logo"><a href="{{ pathto(master_doc) }}">
-                <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-                </a></p>
-            {%- endif %}
-            {%- endblock %}
-            <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-            {%- if sidebars != None %}
-                {#- new style sidebar: explicitly include/exclude templates #}
-                {%- for sidebartemplate in sidebars %}
-                {%- include sidebartemplate %}
-                {%- endfor %}
-            {%- else %}
-                {#- old style sidebars: using blocks -- should be deprecated #}
-                {%- block sidebartoc %}
-                {%- include "localtoc.html" %}
-                {%- endblock %}
-                {%- block sidebarrel %}
-                {%- include "relations.html" %}
-                {%- endblock %}
-                {%- block sidebarsourcelink %}
-                {%- include "sourcelink.html" %}
-                {%- endblock %}
-                {%- if customsidebar %}
-                {%- include customsidebar %}
-                {%- endif %}
-                {%- block sidebarsearch %}
-                {%- include "searchbox.html" %}
-                {%- endblock %}
-            {%- endif %}
-            </div>
-        </div>
-      {%- endif %}
+    {%- if render_sidebar %}
+      <div class="sphinxsidebar" role="navigation"  aria-label="main navigation">
+          <div class="sphinxsidebarwrapper w3-sidebar w3-collapse" id="mySidebar">
+          {%- block sidebarlogo %}
+          {%- if logo %}
+              <p class="logo"><a href="{{ pathto(master_doc) }}">
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+              </a></p>
+          {%- endif %}
+          {%- endblock %}
+          <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+          {%- if sidebars != None %}
+              {#- new style sidebar: explicitly include/exclude templates #}
+              {%- for sidebartemplate in sidebars %}
+              {%- include sidebartemplate %}
+              {%- endfor %}
+          {%- else %}
+              {#- old style sidebars: using blocks -- should be deprecated #}
+              {%- block sidebartoc %}
+              {%- include "localtoc.html" %}
+              {%- endblock %}
+              {%- block sidebarrel %}
+              {%- include "relations.html" %}
+              {%- endblock %}
+              {%- block sidebarsourcelink %}
+              {%- include "sourcelink.html" %}
+              {%- endblock %}
+              {%- if customsidebar %}
+              {%- include customsidebar %}
+              {%- endif %}
+              {%- block sidebarsearch %}
+              {%- include "searchbox.html" %}
+              {%- endblock %}
+          {%- endif %}
+          </div>
+      </div>
+    {%- endif %}
 {%- endmacro %}
 
 {%- macro script() %}
-    <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
-    {%- for js in script_files %}
-    {{ js_tag(js) }}
-    {%- endfor %}
+  <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+  {%- for js in script_files %}
+  {{ js_tag(js) }}
+  {%- endfor %}
 {%- endmacro %}
 
 {%- macro css() %}
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    
-    {%- for css in css_files %}
-      {%- if css|attr("filename") %}
-    {{ css_tag(css) }}
-      {%- else %}
-    <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
-      {%- endif %}
-    {%- endfor %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+  
+  {%- for css in css_files %}
+    {%- if css|attr("filename") %}
+  {{ css_tag(css) }}
+    {%- else %}
+  <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+    {%- endif %}
+  {%- endfor %}
 {%- endmacro %}
 
 {%- if html_tag %}
@@ -113,195 +118,258 @@
 {%- else %}
 <html xmlns="http://www.w3.org/1999/xhtml"{% if language is not none %} lang="{{ language }}"{% endif %}>
 {%- endif %}
-  <head>
-    {%- if not html5_doctype and not skip_ua_compatible %}
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    {%- endif %}
-    {%- if use_meta_charset or html5_doctype %}
-    <meta charset="{{ encoding }}" />
-    {%- else %}
-    <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
-    {%- endif %}
-    {{- metatags }}
-    {%- block htmltitle %}
-    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-    {%- endblock %}
-    {%- block css %}
-    {{- css() }}
-    {%- endblock %}
-    {%- if not embedded %}
-    {%- block scripts %}
-    {{- script() }}
-    {%- endblock %}
-    {%- if pageurl %}
-    <link rel="canonical" href="{{ pageurl }}" />
-    {%- endif %}
-    {%- if use_opensearch %}
-    <link rel="search" type="application/opensearchdescription+xml"
-          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
-          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {%- endif %}
-    {%- if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-    {%- endif %}
-    {%- endif %}
+<head>
+  {%- if not html5_doctype and not skip_ua_compatible %}
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  {%- endif %}
+  {%- if use_meta_charset or html5_doctype %}
+  <meta charset="{{ encoding }}" />
+  {%- else %}
+  <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+  {%- endif %}
+  {{- metatags }}
+  {%- block htmltitle %}
+  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+  {%- endblock %}
+  {%- block css %}
+  {{- css() }}
+  {%- endblock %}
+  {%- if not embedded %}
+  {%- block scripts %}
+  {{- script() }}
+  {%- endblock %}
+  {%- if pageurl %}
+  <link rel="canonical" href="{{ pageurl }}" />
+  {%- endif %}
+  {%- if use_opensearch %}
+  <link rel="search" type="application/opensearchdescription+xml"
+        title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+        href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+  {%- endif %}
+  {%- if favicon %}
+  <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+  {%- endif %}
+  {%- endif %}
 {%- block linktags %}
-    {%- if hasdoc('about') %}
-    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
-    {%- endif %}
-    {%- if hasdoc('search') %}
-    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
-    {%- endif %}
-    {%- if next %}
-    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
-    {%- endif %}
-    {%- if prev %}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-    {%- endif %}
+  {%- if hasdoc('about') %}
+  <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+  {%- endif %}
+  {%- if hasdoc('genindex') %}
+  <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+  {%- endif %}
+  {%- if hasdoc('search') %}
+  <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+  {%- endif %}
+  {%- if hasdoc('copyright') %}
+  <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+  {%- endif %}
+  {%- if next %}
+  <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+  {%- endif %}
+  {%- if prev %}
+  <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+  {%- endif %}
 {%- endblock %}
 {% block extrahead %}
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
-          rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+        rel='stylesheet' type='text/css' />
 {%- if not embedded %}
-    <style type="text/css">
-      table.right { float: left; margin-left: 20px; }
-      table.right td { border: 1px solid #ccc; }
-      {% if not("pyleecan" in pagename) and not("Tests" in pagename) and not ("documentation" in pagename)%}
-      .related { display: none; }
-      {% endif %}
-    </style>
-    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-    <script type="text/javascript">
-        function popUp() {
-            window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"8f9080f46f961e513d56be661","lid":"49e68177d8","uniqueMethods":true}) });
-            document.cookie = "MCPopupClosed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
-            document.cookie = "MCPopupSubscribed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        };
-      $('#newsletter').onclick = function() {popUp()};
-    </script>
-     <script type="text/javascript">
-      // intelligent scrolling of the sidebar content
-      $(window).scroll(function() {
-        var sb = $('.sphinxsidebarwrapper');
-        var win = $(window);
-        var sbh = sb.height();
-        var offset = $('.sphinxsidebar').position()['top'];
-        var wintop = win.scrollTop();
-        var winbot = wintop + win.innerHeight();
-        var curtop = sb.position()['top'];
-        var curbot = curtop + sbh;
-        // does sidebar fit in window?
-        if (sbh < win.innerHeight()) {
-          // yes: easy case -- always keep at the top
-          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+  <style type="text/css">
+    table.right { float: left; margin-left: 20px; }
+    table.right td { border: 1px solid #ccc; }
+    {% if not("pyleecan" in pagename) and not("Tests" in pagename) and not ("documentation" in pagename)%}
+    .related { display: none; }
+    {% endif %}
+  </style>
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+  <script type="text/javascript">
+      function popUp() {
+          window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"8f9080f46f961e513d56be661","lid":"49e68177d8","uniqueMethods":true}) });
+          document.cookie = "MCPopupClosed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+          document.cookie = "MCPopupSubscribed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      };
+    $('#newsletter').onclick = function() {popUp()};
+  </script>
+   <script type="text/javascript">
+    // intelligent scrolling of the sidebar content
+    $(window).scroll(function() {
+      var sb = $('.sphinxsidebarwrapper');
+      var win = $(window);
+      var sbh = sb.height();
+      var offset = $('.sphinxsidebar').position()['top'];
+      var wintop = win.scrollTop();
+      var winbot = wintop + win.innerHeight();
+      var curtop = sb.position()['top'];
+      var curbot = curtop + sbh;
+      // does sidebar fit in window?
+      if (sbh < win.innerHeight()) {
+        // yes: easy case -- always keep at the top
+        sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                              $(document).height() - sbh - 200]));
+      } else {
+        // no: only scroll if top/bottom edge of sidebar is at
+        // top/bottom edge of window
+        if (curtop > wintop && curbot > winbot) {
+          sb.css('top', $u.max([wintop - offset - 10, 0]));
+        } else if (curtop < wintop && curbot < winbot) {
+          sb.css('top', $u.min([winbot - sbh - offset - 20,
                                 $(document).height() - sbh - 200]));
-        } else {
-          // no: only scroll if top/bottom edge of sidebar is at
-          // top/bottom edge of window
-          if (curtop > wintop && curbot > winbot) {
-            sb.css('top', $u.max([wintop - offset - 10, 0]));
-          } else if (curtop < wintop && curbot < winbot) {
-            sb.css('top', $u.min([winbot - sbh - offset - 20,
-                                  $(document).height() - sbh - 200]));
-          }
         }
-      });
-    </script>
-  {%- endif %}
+      }
+    });
+  </script>
+{%- endif %}
 {% endblock %}
-  </head>
-  {%- block body_tag %}<body>{% endblock %}
-    {% block header %}
-    <div class="pageheader">
-      <ul>
-        <li><a class="item" href="{{ pathto('index') }}">Home</a></li>
-        <li><a class="item" href="{{ pathto('tutorials') }}">Tutorials</a></li>
-        <li><a class="item" href="{{ pathto('documentation') }}">Documentation</a></li>
-        <li><a class="item" href="{{ pathto('development') }}">Development</a></li>
-        <li><a class="item"href="{{ pathto('contact') }}">Contact</a></li>
-      </ul>
-      <div>
-        <a href="{{ pathto('index') }}">
-          <img src="{{ pathto('_static/favicon.png', 1) }}" alt="PYLEECAN"/>
-        </a>
-      </div>
-    </div>
-    <script type="text/javascript">
+</head>
+{%- block body_tag %}<body>{% endblock %}
+  {% block header %}
+  <div class="pageheader" id="head">
+    <nav class="navbar navbar-expand-xl">
+      <a class="navbar-brand" href="{{ pathto('index') }}">
+        <img src="{{ pathto('_static/favicon.png', 1) }}" alt="PYLEECAN"/>
+      </a>
+      <script type="text/javascript">
+
+        function first() { 
+          //$('#head').css('background-image', 'none');
+          //$('#head').css('background-color','white');
+          $('#icon-menu').attr("src", "_static/icons8-fermer-la-fenêtre-50.png");
+
+         };
+        function second() { 
+          //$('#head').css('background-color','none');
+          //$('#head').css('background-image','url("_static/background.PNG")'); 
+          $('#icon-menu').attr("src", "_static/icons8-menu-24.png");
+          
+        };
+    
+        var toggleFlag = true;
     
         $(document).ready(function() {
-             $('.sphinxsidebarwrapper li').each(function(){
-              // select href
-              var href = $(this).find('a').attr('href');
-              // Check filename
-              if(href == "#"){
-    
-               // Add active class
-               $(this).addClass('active');
-              }
-             });
+          $('#toggle').click(function(){
+                      toggleFlag ? first() : second();
+                      toggleFlag = !toggleFlag;
+          });
         });
+
+        $(document).ready(function () {
+            updateContainer()
+            $(window).resize(function() {
+                if(!document.querySelector("html").classList.contains("stop-scrolling")){
+                  updateContainer();
+                }/*  */
+            });
+    });
+    function updateContainer() {
+      // Reorganize web page depending on screen size
+        var $containerHeight = $(window).width();
+        if ($containerHeight >= 993) {
+          document.getElementById("sidebar_open").style.display = "none";
+          document.getElementsByClassName("document")[0].style.display = "block";
+        }
+        if ($containerHeight < 993) {
+          document.getElementById("sidebar_open").style.display = "block";
+          document.getElementsByClassName("document")[0].style.display = "inline-flex";
+        }
+
+        }
+    function w3_open() {
+      // Open the side bar
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementsByClassName("document")[0].style.display = "block";
+      document.getElementsByClassName("document")[0].style.filter = "blur(2px)";
+      document.getElementById("sidebar_open").style.display = "none";
+      document.querySelector("html").classList.add("stop-scrolling");
+
+    }
+  
+  function w3_close() {
+    // Close the side bar 
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("sidebar_open").style.display = "block";
+    document.getElementsByClassName("document")[0].style.filter = "none";
+    document.getElementsByClassName("document")[0].style.display = "inline-flex";
+    document.querySelector("html").classList.remove("stop-scrolling");    
+  }
+    
     </script>
-    {% endblock %}
-<div style="text-align: left; padding: 0.5em 0 15px 15px;"><button class="w3-button w3-dark-grey w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button></div>
+      <button id="toggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23">
+      <div><img id= "icon-menu" src="_static/icons8-menu-24.png"></img><span></span><span></span><span></span><span></span></div></button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+        <ul class="navbar-nav ">
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('index') }}">Home</a></li>
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('tutorials') }}">Tutorials</a></li>
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('media') }}">Media</a></li>
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('documentation') }}">Documentation</a></li>
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('development') }}">Development</a></li>
+          <li class="nav-item"><a class="item nav-link" href="{{ pathto('contact') }}">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+  </div>
+  <script type="text/javascript">
+  
+      $(document).ready(function() {
+           $('.sphinxsidebarwrapper li').each(function(){
+            // select href
+            var href = $(this).find('a').attr('href');
+            // Check filename
+            if(href == "#"){
+  
+             // Add active class
+             $(this).addClass('active');
+            }
+           });
+      });
+  </script>
+  {% endblock %}
 {%- block relbar1 %}{{ relbar() }}{% endblock %}
 {%- block sidebar1 %}{{ sidebar() }}{% endblock %}
 {%- block content %}
-    <div class="document">
-  {%- block document %}
-      <div class="documentwrapper">
-          {%- if render_sidebar %}
-          <div class="bodywrapper">
-          {%- endif %}
-              <div class="body" role="main" >
-                  {% block body %} {% endblock %}
-                </div>
-        
-          {%- if render_sidebar %}
-          </div>
-        
-          {%- endif %}
-      </div>
-
-  {%- endblock %}
-
- 
-      <div class="clearer"></div>
+  <div class="document">
+    <div id= "sidebar_open" style="text-align: left;"><button class="w3-button w3-teal w3-dark-grey w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button></div>
+{%- block document %}
+    <div class="documentwrapper">
+        {%- if render_sidebar %}
+        <div class="bodywrapper">
+        {%- endif %}
+            <div class="body" role="main" >
+                {% block body %} {% endblock %}
+              </div>
+      
+        {%- if render_sidebar %}
+        </div>
+      
+        {%- endif %}
     </div>
+
+{%- endblock %}
+
+
+    <div class="clearer"></div>
+  </div>
 {%- endblock %}
 
 {%- block relbar2 %}{{ relbar() }}{% endblock %}
 
 {%- block footer %}
-    <div class="footer" role="contentinfo">
-    {%- if show_copyright %}
-      {%- if hasdoc('copyright') %}
-        {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-      {%- else %}
-        {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
-      {%- endif %}
+  <div class="footer" role="contentinfo">
+  {%- if show_copyright %}
+    {%- if hasdoc('copyright') %}
+      {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+    {%- else %}
+      {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
     {%- endif %}
-    {%- if last_updated %}
-      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-    {%- endif %}
-    {%- if show_sphinx %}
-      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-    {%- endif %}
-    </div>
+  {%- endif %}
+  {%- if last_updated %}
+    {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+  {%- endif %}
+  {%- if show_sphinx %}
+    {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+  {%- endif %}
+  </div>
 {%- endblock %}
-<script>
-    function w3_open() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
-    
-    function w3_close() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-    </script>
-  </body>
+</body>
 </html>

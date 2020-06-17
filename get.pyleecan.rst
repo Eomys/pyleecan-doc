@@ -42,7 +42,7 @@ Now that python is installed, you can download all the packages that are require
 ::
 
         pip install -r requirements.txt
-		
+
 The principal of Pyleecan is to enable the user to choose between several model to compute the same quantities. Some of them call other software that you need to install as well (if you plan to use them). For now, the following software have a coupling with pyleecan:
 
 * `FEMM <http://www.femm.info/wiki/Download>`__
