@@ -91,7 +91,7 @@ max-width: 30%;
 
 div.document {
     background-color: white;
-    text-align: left;
+    text-align: left; 
     background-image: url(contents.png);
     background-repeat: repeat-x;
 }
@@ -516,15 +516,17 @@ div.sphinxsidebar{
 }
 div.sphinxsidebarwrapper {
     font-size: 25px;
+    background-image: url(contents.png);
+    background-repeat: repeat-x;
 }
 div.well ul li {
     line-height: 45px;
 }
 
 .sphinxsidebarwrapper div {
-    margin-right: 15px;
     height: auto;
     width: %;
+
 }
 div.pageheader li {
     float: none;
@@ -551,7 +553,7 @@ pre {
 
 @media (min-width: 993px) and (max-width:1500px){
 div.bodywrapper {
-    margin-left: 320px;
+    margin-left: 340px;
     border-left: 1px solid #ccc;
 }
 }
