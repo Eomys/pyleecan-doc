@@ -12,6 +12,8 @@ order.
     tuto_Machine
     tuto_Simulation_FEMM
     tuto_Plots
+    tuto_Optimization
+    tuto.add.slot
 
 Each tutorial is generated from a Jupyter Notebook and can be downloaded
 `on GitHub`_.
@@ -19,8 +21,6 @@ Validation simulations are also available in the Tests/Validation folder for ins
 
 Upcoming tutorials:
 
--  How to add a slot in Pyleecan
--  How to define an optimization
 -  How to generate the 3D mesh of a Lamination with GMSH
 
 

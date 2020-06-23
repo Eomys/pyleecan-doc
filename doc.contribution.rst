@@ -95,7 +95,7 @@ There are two different ways to contribute to documentation:
         res =  param1 ** 2
         return res
 
-In this case you then need to commit your modifications and make a pull request to :ref:`code.contribution:Submit your contribution`
+In this case you then need to commit your modifications and make a pull request to :doc:`submit your contribution <code.contribution>`
 to the `pyleecan code <https://github.com/Eomys/pyleecan>`__ repository. Once your modifications merged, we will regenerate the
 doc and update the website ourselves.
 
@@ -108,6 +108,6 @@ doc and update the website ourselves.
       You can do that directly though Github (it will automatically create a fork of the repository in your github account).
 
 
-Then you should :ref:`code.contribution:Submit your contribution` on `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__ to
+Then you should :doc:`submit your contribution <code.contribution>` on `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__ to
 share with the community. After your modifications merged and the html pages regenerated, the submitted documentation will be
 available on the PYLEECAN website.
