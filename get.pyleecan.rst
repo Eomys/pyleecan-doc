@@ -45,7 +45,7 @@ Now that python is installed, you can download all the packages that are require
 
 The principal of Pyleecan is to enable the user to choose between several model to compute the same quantities. Some of them call other software that you need to install as well (if you plan to use them). For now, the following software have a coupling with pyleecan:
 
-* `FEMM <http://www.femm.info/wiki/Download>`__
+* `FEMM <http://www.femm.info/wiki/Download>`__ (Windows only for now)
 * `GMSH <http://gmsh.info/>`__
 
 If you want to contribute, we recommend to set a pre-commit hook to automatically apply `black <https://pypi.org/project/black/>`__ before every commit (if you are using python >=3.6).
