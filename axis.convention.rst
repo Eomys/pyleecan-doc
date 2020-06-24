@@ -39,7 +39,7 @@ LamSlotWind
 
 The LamSlotWind D axis is defined so its angle is the first angle where the fundamental of the unit mmf (and of the flux) is maximum at t=0. This definition also matches the alpha axis.
 
-This definition was set to enable to define the Machine method comp_angle_offset_initial (initial position of the rotor for electromagnetic computation) as the different between the D axis of both laminations whatever their type.
+This definition was set to enable to define the Machine method comp_angle_offset_initial (initial position of the rotor for electromagnetic computation) as the difference between the D axis of both laminations whatever their type. 
 
 .. image:: _static/axis_LamWind_mmf.png
 
