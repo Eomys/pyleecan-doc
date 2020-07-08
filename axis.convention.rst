@@ -37,7 +37,7 @@ LamSlotWind
 
 .. image:: _static/axis_LamWind.png
 
-The LamSlotWind D axis is defined so its angle is the first angle where the fundamental of the unit mmf (and of the flux) is maximum at t=0. This definition also matches the alpha axis, since the first phase current has its maximum at t=0.
+The LamSlotWind D axis is defined so its angle is the first angle where the fundamental of the unit mmf (and of the flux) is maximum at t=0. This definition also matches the alpha axis, since the first phase current has its maximum at t=0. The unit mmf computation follows the :doc:`winding conventions</winding.convention>` and by definition LamSlotWind has evenly distributed slots.
 
 This definition was set to enable to define the Machine method comp_angle_offset_initial (initial position of the rotor for electromagnetic computation). The inital rotor position is calculated as the different between the D axis of both laminations whatever their type, i.e. stator D axis minus rotor D axis. 
 

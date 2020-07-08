@@ -18,6 +18,8 @@ The “tangential layers” are defined in the trigonometric way, and “radial 
 
 .. image:: _static/winding_convention_1.PNG
 
+Image generated with Tests/Plot/test_wind_schematics.py
+
 Winding architecture
 --------------------
 In Pyleecan, the following naming convention is used:
