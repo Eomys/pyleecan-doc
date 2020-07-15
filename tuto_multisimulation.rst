@@ -5,35 +5,32 @@ The objective of this tutorial is to explain the definition, the postprocessings
 
 The following organization aims to enable:
 
--  multisimulation of a single model or a complete workflow
--  multisimulation of multisimulation
+-  multi-simulation of a single model or a complete workflow
+-  multi-simulation of multi-simulation
 -  parallelization to speed up calculations
 -  errors management
 -  built-in postprocessings
 -  efficient storage 
 
-*MultiSimulation* class
-~~~~~~~~~~~~~~~~~~~~~~~
+*VarParam* class
+~~~~~~~~~~~~~~~
 
-A simulation corresponds to the computation of machine quantities at a single speed. 
-*MultiSimulation* is designed to perform different simulations based on a default simulation and variations of its parameters.
-To do so, *MultiSimulation* is devised to be an attribute of *Simulation* which is the default simulation. 
-*MultiSimulation* contains :
+A simulation, as defined by the *Simulation* object, corresponds to the computation of machine quantities on a single operating point. 
+A multi-simulation is defined as a list of simulations, all based on a reference simulation with variations of its parameters.
 
-=============== ============== ===============================
-Attribute       Type           Description
-=============== ============== ===============================
-parent          *Simulation*   default simulation
-dict_variable   *dict*         simulation variables to variate
-list_datakeeper *[DataKeeper]* output data to keep
-nb_proc         *int*          number of processes used
-no_fail         *bool*         error tolerance
-=============== ============== ===============================
+To define a multi-simulation in pyleecan, first the reference simulation must be defined as a Simulation object. Then an optional *VarParam* object (that inherit from an abstract VarSimu class) is set as a property of the reference simulation object. The *VarParam* object defines how to generate the simulation list, how to parallelize (or not) the computation and which data to gather. To do so, the *VarParam* class contains :
 
-Default simulation
-^^^^^^^^^^^^^^^^^^
+================== ============== ===============================
+Attribute           Type           Description
+================== ============== ===============================
+dict_variable       *dict*         simulation parameters to variate
+list_datakeeper     *[DataKeeper]* output data to keep
+nb_proc             *int*          number of processes used
+is_keep_all_output  *bool*         True to keep all the outputs
+no_fail             *bool*         error tolerance
+================== ============== ===============================
 
-The default simulation is mandatory, *MultiSimulation* must be contained in a *Simulation* object.
+On a side note, as all pyleecan object, *VarParam* also have a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
 
 Input variables
 ^^^^^^^^^^^^^^^
@@ -43,7 +40,7 @@ These variables will variate according to a dictionnary containing :
 - accessors (list): contains the accessors to the default simulation parameters to variate, e.g. *"simu.machine.stator.slot.W0"* 
 - values (list): contains the values of variables stored in a list
 
-*MultiSimulation* creates every simulation by making the cartesian product of every values.
+*VarParam* creates every simulation by making the cartesian product of every values.
 
 To link some variables accessors and list in values contains tuple, e.g.:
 
@@ -69,8 +66,7 @@ This dict creates 5×3=15 simulations.
 Variables to keep: *DataKeeper*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The *MultiSimulation* contains a list
-of *DataKeeper* to specify which data to keep after each simulation by defining post-processing on *Output* object. 
+The *VarParam** contains a list of *DataKeeper* to specify which data to keep after each simulation by defining post-processing on *Output* object. 
 A *DataKeeper* is a class whith five attributes: 
 
 +--------------+------------+----------------------------------------+
@@ -116,19 +112,14 @@ This is an example of datakeepers:
        )
    ]
 
-Results from DataKeepers are stored in a dict containing ndarray with
-DataKeeper.keeper(output) or DataKeeper.error_keeper(simu) results. Each ndarray has the shape of the
-multisimulation.
+Results from DataKeepers are stored in a dict containing ndarray with DataKeeper.keeper(output) or DataKeeper.error_keeper(simu) results. Each ndarray has the shape of the multi-simulation.
 
-Running *MultiSimulation*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Running *VarParam*
+^^^^^^^^^^^^^^^^^^
 
-``Simulation.run`` method enables to run the MultiSimulation. When the method is called, it checks if a MultiSimulation is defined and runs it if needed.
-If a multisimulation is defined, the method returns the new object *XOutput* else it
-returns an *Output*.
+When the method ``Simulation.run`` is called, we first run the reference simulation. Then, if a VarParam is defined, the corresponding list of simulation is generated and run. If a VarParam is defined, ``Simulation.run`` returns a *XOutput* object else it returns an *Output*.
 
-If the simulation has no *Output* defined as a parent, it is now created in the
-method.
+If the simulation has no *Output* defined as a parent, it is now created in the method.
 
 *XOutput* class
 ~~~~~~~~~~~~~~~
@@ -138,24 +129,24 @@ method.
 +----------------+--------------+------------------------------------+
 | Attribute      | Type         | Description                        |
 +================+==============+====================================+
-| simu           | *Simulation* | Default *Simulation*               |
+| simu           | *Simulation* | Reference *Simulation*               |
 +----------------+--------------+------------------------------------+
-| geo            | *OutGeo*     | Default *Simulation* geometry      |
+| geo            | *OutGeo*     | Reference *Simulation* geometry      |
 |                |              | output                             |
 +----------------+--------------+------------------------------------+
-| elec           | *OutElec*    | Default *Simulation* electrical    |
+| elec           | *OutElec*    | Reference *Simulation* electrical    |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| mag            | *OutMag*     | Default *Simulation* magnetic      |
+| mag            | *OutMag*     | Reference *Simulation* magnetic      |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| force          | *OutForce*   | Default *Simulation* force module  |
+| force          | *OutForce*   | Reference *Simulation* force module  |
 |                |              | output                             |
 +----------------+--------------+------------------------------------+
-| struct         | *OutGeo*     | Default *Simulation* structural    |
+| struct         | *OutGeo*     | Reference *Simulation* structural    |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| post           | *OutPost*    | Default *Simulation*               |
+| post           | *OutPost*    | Reference *Simulation*               |
 |                |              | post-processing settings           |
 +----------------+--------------+------------------------------------+
 | input_variable | *ndarray*    | Variables values for each          |
@@ -168,13 +159,9 @@ method.
 |                |              | results in ndarray                 |
 +----------------+--------------+------------------------------------+
 
-Default simulation results are stored in the properties inherited from Output and other simulation
-results are stored in a list of *Output* and/or in a dict containing
-ndarray, according to *MultiSimulation* parameters. Variables that vary are stored in a specific
-dictionnary.
+Reference simulation results are stored in the properties inherited from Output and other simulation results are stored in a list of *Output* and/or in a dict containing ndarray, according to *MultiSimulation* parameters. Variables that vary are stored in a specific dictionnary.
 
-If the *MultiSimulation* has no *DataKeeper*, each output is stored in the
-output_list. This mod should be avoided for memory reasons. 
+If the VarParam.is_keep_all_output is True, each output of each simulation is stored in the output_list. This option is by default at False to avoid memory issues. 
 
 The class has some getters to gather results: *ndarray* slices can be extracted according to some input values
 e.g. extract average torque for simulations with a specific value of slot angle or a specific
