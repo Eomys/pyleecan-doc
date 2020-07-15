@@ -20,39 +20,85 @@ A multi-simulation is defined as a list of simulations, all based on a reference
 
 To define a multi-simulation in pyleecan, first the reference simulation must be defined as a Simulation object. Then an optional *VarParam* object (that inherit from an abstract VarSimu class) is set as a property of the reference simulation object. The *VarParam* object defines how to generate the simulation list, how to parallelize (or not) the computation and which data to gather. To do so, the *VarParam* class contains :
 
-================== ============== ===============================
-Attribute           Type           Description
-================== ============== ===============================
-dict_variable       *dict*         simulation parameters to variate
-list_datakeeper     *[DataKeeper]* output data to keep
-nb_proc             *int*          number of processes used
-is_keep_all_output  *bool*         True to keep all the outputs
-no_fail             *bool*         error tolerance
-================== ============== ===============================
++--------------------+-----------------+------------------------+
+| Attribute          | Type            | Description            |
++====================+=================+========================+
+| dict_variable      |    *dict*       |    simulation          |
+|                    |                 |    parameters to       |
+|                    |                 |    variate             |
++--------------------+-----------------+------------------------+
+| list_datakeeper    |                 |    output data to keep |
+|                    |  *[DataKeeper]* |                        |
++--------------------+-----------------+------------------------+
+| nb_proc            |    *int*        |    number of processes |
+|                    |                 |    used                |
++--------------------+-----------------+------------------------+
+| is_keep_all_output |    *bool*       |    True to keep every  |
+|                    |                 |    output              |
++--------------------+-----------------+------------------------+
+| no_fail            |    *bool*       |    error tolerance     |
++--------------------+-----------------+------------------------+
 
 On a side note, as all pyleecan object, *VarParam* also have a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
 
 Input variables
 ^^^^^^^^^^^^^^^
 
-These variables will variate according to a dictionnary containing : 
+These variables variate according to a dictionnary containing : 
 
 - accessors (list): contains the accessors to the default simulation parameters to variate, e.g. *"simu.machine.stator.slot.W0"* 
 - values (list): contains the values of variables stored in a list
 
-*VarParam* creates every simulation by making the cartesian product of every values.
-
-To link some variables accessors and list in values contains tuple, e.g.:
+*VarParam* creates every simulation by making the cartesian product of every values:
 
 .. code:: python
 
-   {
+   dict_variable={
+       "accessors": [
+           "simu.machine.stator.slot.W0",
+           "simu.input.Is.value
+       ],
+       "values": [
+           [0.001, 0.002],
+           [array_current1, array_current2, array_current3]
+       ]
+   }
+
+The dict above creates the six following simulations:
+
++-------------------+-----------------------------+----------------------+
+| simulation number | simu.machine.stator.slot.W0 | simu.input.Is.value  |
++===================+=============================+======================+
+| 1                 | 0.001                       | array_current1       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+| 2                 | 0.001                       | array_current2       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+| 3                 | 0.001                       | array_current3       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+| 4                 | 0.002                       | array_current1       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+| 5                 | 0.002                       | array_current2       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+| 6                 | 0.002                       | array_current3       |
+|                   |                             |                      |
++-------------------+-----------------------------+----------------------+
+
+It is also possible to link some variables by using tuple in accessors and values lists. For instance, the following dictionnary enables to link time vector and current value to perform 3 simulations:
+
+.. code:: python
+
+   dict_variable={
        "accessors": [
            "simu.machine.stator.slot.W0",
            ("simu.input.time.value", "simu.input.Is.value")
        ],
        "values": [
-           [0.001, 0.0011, 0.0012, 0.0013, 0.0014],
+           [0.001, 0.002],
            [
                (array_time1, array_current1),
                (array_time2, array_current2),
@@ -61,7 +107,29 @@ To link some variables accessors and list in values contains tuple, e.g.:
        ]
    }
 
-This dict creates 5×3=15 simulations.
+This dict creates the following simulations:
+
++-------------------+-----------------------------+-----------------------+----------------------+
+| simulation number | simu.machine.stator.slot.W0 | simu.input.time.value | simu.input.Is.value  |
++===================+=============================+=======================+======================+
+| 1                 | 0.001                       | array_time1           | array_current1       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
+| 2                 | 0.001                       | array_time2           | array_current2       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
+| 3                 | 0.001                       | array_time3           | array_current3       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
+| 4                 | 0.002                       | array_time1           | array_current1       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
+| 5                 | 0.002                       | array_time2           | array_current2       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
+| 6                 | 0.002                       | array_time3           | array_current3       |
+|                   |                             |                       |                      |
++-------------------+-----------------------------+-----------------------+----------------------+
 
 Variables to keep: *DataKeeper*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,7 +157,7 @@ A *DataKeeper* is a class whith five attributes:
 +--------------+------------+----------------------------------------+
 
 
-This is an example of datakeepers:
+This following datakeepers enable to store the average torque and the radial magnetic flux for each of the six simulations:
 
 .. code:: python
 
@@ -112,7 +180,7 @@ This is an example of datakeepers:
        )
    ]
 
-Results from DataKeepers are stored in a dict containing ndarray with DataKeeper.keeper(output) or DataKeeper.error_keeper(simu) results. Each ndarray has the shape of the multi-simulation.
+Results from DataKeepers are stored in a dict containing ndarray with DataKeeper.keeper(output) or DataKeeper.error_keeper(simu) results. Each ndarray has the shape of the multi-simulation: 2×3 in this case.
 
 Running *VarParam*
 ^^^^^^^^^^^^^^^^^^
@@ -129,24 +197,24 @@ If the simulation has no *Output* defined as a parent, it is now created in the 
 +----------------+--------------+------------------------------------+
 | Attribute      | Type         | Description                        |
 +================+==============+====================================+
-| simu           | *Simulation* | Reference *Simulation*               |
+| simu           | *Simulation* | Reference *Simulation*             |
 +----------------+--------------+------------------------------------+
-| geo            | *OutGeo*     | Reference *Simulation* geometry      |
+| geo            | *OutGeo*     | Reference *Simulation* geometry    |
 |                |              | output                             |
 +----------------+--------------+------------------------------------+
-| elec           | *OutElec*    | Reference *Simulation* electrical    |
+| elec           | *OutElec*    | Reference *Simulation* electrical  |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| mag            | *OutMag*     | Reference *Simulation* magnetic      |
+| mag            | *OutMag*     | Reference *Simulation* magnetic    |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| force          | *OutForce*   | Reference *Simulation* force module  |
-|                |              | output                             |
-+----------------+--------------+------------------------------------+
-| struct         | *OutGeo*     | Reference *Simulation* structural    |
+| force          | *OutForce*   | Reference *Simulation* force       |
 |                |              | module output                      |
 +----------------+--------------+------------------------------------+
-| post           | *OutPost*    | Reference *Simulation*               |
+| struct         | *OutGeo*     | Reference *Simulation* structural  |
+|                |              | module output                      |
++----------------+--------------+------------------------------------+
+| post           | *OutPost*    | Reference *Simulation*             |
 |                |              | post-processing settings           |
 +----------------+--------------+------------------------------------+
 | input_variable | *ndarray*    | Variables values for each          |
@@ -165,7 +233,7 @@ If the VarParam.is_keep_all_output is True, each output of each simulation is st
 
 The class has some getters to gather results: *ndarray* slices can be extracted according to some input values
 e.g. extract average torque for simulations with a specific value of slot angle or a specific
-speed.
+speed. In this example, the following call returns a 1×3 matrix containing the average torque for each simulation with simu.machine.stator.slot.W0=0.001. 
 
 .. code:: python
 
