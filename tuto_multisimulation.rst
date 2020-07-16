@@ -36,7 +36,7 @@ To define a multi-simulation in pyleecan, first the reference simulation must be
 | is_keep_all_output |    *bool*       |    True to keep every  |
 |                    |                 |    output              |
 +--------------------+-----------------+------------------------+
-| no_fail            |    *bool*       |    error tolerance     |
+| stop_if_error      |    *bool*       |    error tolerance     |
 +--------------------+-----------------+------------------------+
 
 On a side note, as all pyleecan object, *VarParam* also have a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
@@ -44,8 +44,8 @@ On a side note, as all pyleecan object, *VarParam* also have a parent property t
 Input parameters: *ParamSetter*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*ParamSetter* enables to set the parameters variations by defining a function that takes a *Simulation* and a value in argument and a list of possible values. 
-The function is executed before running the simulation to set the parameters as expected. Using such function enable to link some input parameters together.
+*ParamSetter* enables to set the parameters variations by defining a function that takes a *Simulation* and a value in argument. Using such function enable to link some input parameters together. This setter can also be defined as a string to target directly a parameter. 
+When generating the list of simulation to run, the function is executed before running the simulation to set the parameters as expected. 
 The object has five attributes:
 
 +--------------+------------+----------------------------------------+
@@ -97,7 +97,7 @@ The object has five attributes:
            name = "Current",
            symbol = "I",
            unit="A",
-           setter=lambda simu, value: setattr(simu.input.Is, "value", value), # simu.input.Is.value = value 
+           setter="simu.input.Is.value",
            value_list = [array_current1, array_current2, array_current3]
        ),
    ]
@@ -217,7 +217,7 @@ If the simulation has no *Output* defined as a parent, it is now created in the 
 +----------------+--------------+------------------------------------+
 | output_list    | *list*       | List containing each *Output*      |
 +----------------+--------------+------------------------------------+
-| xout_dict      | *dict*       | Dictionnary containing             |
+| xoutput_dict   | *dict*       | Dictionnary containing             |
 |                |              | *VarParam* *DataKeeper*            |
 |                |              | results in ndarray                 |
 +----------------+--------------+------------------------------------+
