@@ -33,7 +33,14 @@ the class it self but you will have to develop the tests for the methods defined
 All the methods tests are gathered in **Tests/Methods/<subfolder>** with **Subfolder** the type of the class (*Geometry*,
 *Machine*, *Slot*, etc.).
 
+Validation tests
+````````````````
 
+A validation test is a test running one or several simulations composed of one or several modules to compare pyleecan results with other software or publication results. The source of the comparison data must be clearly referenced in the header of the file. A validation test can also compare several way of computing the same quantity in pyleecan (with/without symmetry, with different model…).
+
+The machine and material for validation tests must be added in pyleecan/Data. They are the reference machine and material that are available as template in the GUI. When adding a new validation cases, if possible, use an existing validation machine/material. The more a machine is used by different validation cases, the more the results can be trusted.
+
+A validation test must call the run method of Simulation objects and compare (if possible) the resulting output with the out_list parameter of the Output post-processing.
 
 How to write a test with pytest
 ```````````````````````````````
