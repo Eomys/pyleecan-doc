@@ -77,7 +77,7 @@ To run the tests, you need to open a terminal, go into the folder which contains
     
 How to mark a test
 ``````````````````
-Pytest enables to set metadata on the test functions with markers. This feature enable to exclude or include easily some tests from the test execution. This is the list of the current marker set in PYLEECAN:
+Pytest enables to set metadata on the test functions with markers. This feature enable to exclude or include easily some tests from the test execution. Here is the list of some of the current markers used in PYLEECAN:
 
 - validation : validation test, executes a workflow to check the results validity
 - long : test that last more than 30 seconds
@@ -85,6 +85,7 @@ Pytest enables to set metadata on the test functions with markers. This feature 
 - GMSH : test using GMSH
 - DEAP : test using DEAP 
 
+The complete list is available in the file pyleecan/pytest.ini
 
 The following command is an example to execute only validations test that don't use FEMM: 
 ::
