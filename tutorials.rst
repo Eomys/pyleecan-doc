@@ -3,7 +3,7 @@ Tutorials
 #########
 
 The purpose of this section is to present some global tutorial on how to use Pyleecan.
-These three first tutorials are an introduction to Pyleecan that we recommand to read in
+These first tutorials are an introduction to Pyleecan that we recommand to read in
 order.
 
 .. toctree::
@@ -11,8 +11,11 @@ order.
 
     tuto_Machine
     tuto_Simulation_FEMM
+    tuto_Operating_point
+    tuto_Elec
     tuto_Plots
     tuto_Optimization
+    tuto_Force
     tuto.add.slot
 
 Each tutorial is generated from a Jupyter Notebook and can be downloaded
