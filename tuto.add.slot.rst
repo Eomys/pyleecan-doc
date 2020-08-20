@@ -1,5 +1,5 @@
 ##################################
-How to add a new slot in Pyleecan?
+How to add a new slot in Pyleecan
 ##################################
 Introduction
 ============
