@@ -1,5 +1,5 @@
 ##################
-Winding convension
+Winding convention
 ##################
 
 Connection matrix
