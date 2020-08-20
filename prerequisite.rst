@@ -30,6 +30,14 @@ You can find listed below all the packages used in PYLEECAN:
 - mock
 - gmsh-sdk
 - pandas
+- PyQt5
+- PyQt5-sip
+- xlrd
+- deap
+- SciDataTool
+- pyvista
+- meshio
+- h5py
 
 To install all these package, copy them in a text file (requirements.txt) and run 
 ::
