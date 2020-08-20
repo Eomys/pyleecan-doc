@@ -68,14 +68,13 @@ Generated code
 
 You will find the generated classes in **pyleecan/Classes/**. The code generated in each class consists of:
 
-- the automatic import of all the class methods from **pyleecan/Methods/<Group>/<Class Name>/**. The import takes into account that the import may fail
-because some methods use some non-mandatory dependencies. If the dependencies are missing, the error will occur only if you use the corresponding method.
+- the automatic import of all the class methods from **pyleecan/Methods/<Group>/<Class Name>/**. The import takes into account that the import may fail because some methods use some non-mandatory dependencies. If the dependencies are missing, the error will occur only if you use the corresponding method.
 - an init() method with the possiblitiy to define the class according to a dictionary named "init_dict".
 - the  method to convert the class to string.
 - the method to convert the class to a dictionary (in general used to generate the init_dict).
 - the getter and setter of each property. The setter checks the type, min and/or max of the user input value before setting the property.
-- automatic docstring is also added following the CSV documentation so that the user can have inline help.
 - the method to save the class to json.
+- automatic docstring is also added following the CSV documentation so that the user can have inline help.
 
 For futher information about the class generation process:
 
