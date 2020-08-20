@@ -2,8 +2,8 @@
 Test contribution
 ##################
 
-The only way to ensure that the implemented code is working and will always do, is to develop validation test. This page will
-present **how to develop test for PYLEECAN**.
+The only way to ensure that the implemented code is working and will always do, is to develop validation tests. This page will
+present **how to develop tests for PYLEECAN**.
 
 We invite everyone contributing to the project to systematically add tests to all their contributions if possible.
 
@@ -27,8 +27,8 @@ Class tests
 ````````````
 
 PYLEECAN classes are generated automatically, all the classes are built in the same way. This fact enables us
-to test all the classes with one test file which you can find in **Tests/Classes**. So you won't need to develop test for
-the class it self but you will have to develop the tests for the methods defined in the :ref:`class.generation:Class creation`.
+to test all the classes with one test file which you can find in **Tests/Classes**. So you won't need to develop tests for
+the class itself but you will have to develop the tests for the methods defined in the :ref:`class.generation:Class creation`.
 
 All the methods tests are gathered in **Tests/Methods/<subfolder>** with **Subfolder** the type of the class (*Geometry*,
 *Machine*, *Slot*, etc.).
@@ -38,7 +38,7 @@ Validation tests
 
 A validation test is a test running one or several simulations composed of one or several modules to compare pyleecan results with other software or publication results. The source of the comparison data must be clearly referenced in the header of the file. A validation test can also compare several way of computing the same quantity in pyleecan (with/without symmetry, with different model…).
 
-The machine and material for validation tests must be added in pyleecan/Data. They are the reference machine and material that are available as template in the GUI. When adding a new validation cases, if possible, use an existing validation machine/material. The more a machine is used by different validation cases, the more the results can be trusted.
+The machine and material for validation tests must be added in pyleecan/Data. They are the reference machine and material that are available as template in the GUI. When adding a new validation case, if possible, use an existing validation machine/material. The more a machine is used by different validation cases, the more the results can be trusted.
 
 A validation test must call the run method of Simulation objects and compare (if possible) the resulting output with the out_list parameter of the Output post-processing.
 
@@ -77,7 +77,7 @@ To run the tests, you need to open a terminal, go into the folder which contains
     
 How to mark a test
 ``````````````````
-Pytest enables to set metadata on the test functions with markers. This feature enable to exclude or include easily some tests from the test execution. Here is the list of some of the current markers used in PYLEECAN:
+Pytest enables to set metadata on the test functions with markers. This feature enables to easily exclude or include some tests from the test execution. Here is the list of some of the current markers used in PYLEECAN:
 
 - validation : validation test, executes a workflow to check the results validity
 - long : test that last more than 30 seconds
@@ -136,10 +136,10 @@ One can also add markers to a specific input. In the following example we use th
         assert n + 1 == expected
 
 
-Which test to develop
+Which tests to develop
 ----------------------
 
-An easy way to find a PYLEECAN part that need to be tested is to use `pytest-cov <https://github.com/pytest-dev/pytest-cov>`_.
+An easy way to find a PYLEECAN part that needs to be tested is to use `pytest-cov <https://github.com/pytest-dev/pytest-cov>`_.
 This pytest extension enables to see which lines in the code are not executed by the existing tests. It can be installed with this command:
 
 ::
@@ -157,7 +157,7 @@ The report is located in *report_folder*. Then open the index.html file:
 
 .. image:: _static/coverage_report.png
 
-**With the report, you will see which files and which code lines are not covered and find what to test next.**
+**Within the report, you will see which files and which code lines are not covered and find what to test next.**
 
 
 .. image:: _static/coverage.png
