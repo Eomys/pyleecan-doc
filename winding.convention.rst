@@ -4,17 +4,17 @@ Winding convension
 
 Connection matrix
 -----------------
-For the winding connection matrix, Pyleecan provides several automated winding algorithms they correspond to the daugthers of the "Winding class" (in particular, the "comp_connection_mat" method)
+For the winding connection matrix, Pyleecan provides several automated winding algorithms that correspond to the daugthers of the "Winding class" (in particular, the "comp_connection_mat" method)
 The winding connection matrix is a matrix representing the number of turns and current direction inside each Slot layer. The shape of this matrix is
 (Nlay_rad, Nlay_tan, Zs, qs):
 
--	Nlay_rad and Nlay_tan are the number of radial and tangential layers in each slot
--	Zs is the number of slots (see Figure below)
+-	Nlay_rad and Nlay_tan are the number of radial and tangential layers in each slot.
+-	Zs is the number of slots (see Figure below).
 -	qs the number of phases. 
 
-The winding connection matrix is a matrix of relative integer. wind_mat[a,b,c,d] is the number of coil turns Ntcoil in the layer (a,b) of the Slot n°c for the phase d. If the number of turns is positive (resp. negative), the winding is going toward the reader along Oz+ (resp Oz-). The sum of all element of the winding connection matrix for any phase is null.
+The winding connection matrix is a matrix of relative integer. wind_mat[a,b,c,d] is the number of coil turns Ntcoil in the layer (a,b) of the Slot n°c for the phase d. If the number of turns is positive (resp. negative), the winding is going towards the reader along Oz+ (resp Oz-). The sum of all elements of the winding connection matrix for any phase is null.
 
-The “tangential layers” are defined in the trigonometric way, and “radial layers” from top to bottom slot (aka from the lamination bore to the yoke). The slots are filled in the trigonometric direction. 
+The “tangential layers” are defined in the trigonometric way, and “radial layers” from top to bottom slot (i.e. from the lamination bore to the yoke). The slots are filled in the trigonometric direction. 
 
 .. image:: _static/winding_convention_1.PNG
 
