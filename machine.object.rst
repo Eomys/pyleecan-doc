@@ -13,7 +13,7 @@ Methods organization
 The object-oriented approach helps to integrate a new topology by listing all the methods that need to be implemented.
 Therefore, to ease the creation of new topologies, the number of methods in the machine object must be limited.
 
-As  an  example,  the  Machine  methods  include  a  comp_coefficient_Carter()(calculation of the Carter slotting
+As  an  example,  the  Machine  methods  include  a  comp_coefficient_Carter() (calculation of the Carter slotting
 coefficient) and a comp_resistance_winding() method (calculation of  the total  electric  resistance  per  phase),
 but  no comp_flux_airgap() nor comp_circuit_equivalent() method in the Machine. The methods comp_flux_airgap() and
 comp_circuit_equivalent() are defined within the Simulation object and sorted by physics. This way, the Machine object
