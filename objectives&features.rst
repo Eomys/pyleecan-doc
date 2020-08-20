@@ -25,13 +25,13 @@ PYLEECAN will include all the following key features to fulfill its objectives:
 +-------------------------------------------------------------------------+-------------------------+
 | Object-oriented modeling of electrical machines and drives              |         Yes             |
 +-------------------------------------------------------------------------+-------------------------+
-| Multi-physic simulation of electrical machines                          | No(only magnetostatics) |
+| Multi-physic simulation of electrical machines                          | Yes (electric, magnetic, and force modules) |
 +-------------------------------------------------------------------------+-------------------------+
 | Different levels of modeling accuracy (e.g. analytic and numeric)       |         Yes             |
 +-------------------------------------------------------------------------+-------------------------+
-| Multi-objective optimization loops including parallelization            |         No              |
+| Multi-objective optimization loops including parallelization            |         Yes (MOO)       |
 +-------------------------------------------------------------------------+-------------------------+
 | Output data visualization scripts                                       |         Yes             |
 +-------------------------------------------------------------------------+-------------------------+
-| Online detailed documentation                                           |         No              |
+| Online detailed documentation                                           |         Yes             |
 +-------------------------------------------------------------------------+-------------------------+
