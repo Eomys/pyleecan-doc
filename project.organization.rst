@@ -2,7 +2,7 @@
 Project organization
 ####################
 
-This page introduce the PYLEECAN file organization, you will find out how the modules are sorted and what are the folders
+This page introduces the PYLEECAN file organization: you will find out how the modules are sorted and what are the folders
 in the project. We will also talk about PYLEECAN repositories.
 
 File organization
@@ -10,7 +10,7 @@ File organization
 
 The files of PYLEECAN 1.0 are sorted in several folders according to the following rules:
 
-- **Classes** folder contains all the classes build by the :doc:`code generator </class.generation>`.
+- **Classes** folder contains all the classes built by the :doc:`code generator </class.generation>`.
 
 - **Methods** folder contains all the methods of the classes sorted in subfolder by types:
 
