@@ -46,7 +46,7 @@ File organization
 The gen_dict structure is then used for the class generation. The corresponding code can be found in
 **/Generator/class_generator.py** file. Note that some common functions have been gathered in read_fct.
 
-To gain in readability, the generated files have been splitted in several parts and some functions have been dedicated to
+To gain in readability, the generated files have been split in several parts and some functions have been dedicated to
 generate specific parts of the code. The generation process is very complex since there are many possible cases.
 For instance, we need to adapt the code according to the type of property (a PYLEECAN type would need the corresponding
 import at the start of the file, some classes are inherited, some are not, some use numpy array, some don’t…). If you need
