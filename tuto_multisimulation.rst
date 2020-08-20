@@ -242,5 +242,5 @@ speed. To ease the access to the results, *XOutput* behaves like a dictionary to
 
 .. code:: python
 
-   xouput['Tem_av'][0:3]
+   xouput['Tem_av'].result[0:3]
 
