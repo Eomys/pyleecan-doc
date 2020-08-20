@@ -47,14 +47,14 @@ To define a multi-simulation in pyleecan, first the reference simulation must be
 | nb_simu              |    *int*             |    number of simulations  |
 +----------------------+----------------------+---------------------------+
 
-On a side note, as all pyleecan object, *VarParam* also has a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
+On a side note, as all pyleecan object, *VarParam* also has a parent property that links to the reference simulation.
 
 Input parameters: *ParamExplorerSet*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*ParamExplorerSet* is a *ParamExplorer* that enables to set the parameters variations by defining a function that takes a *Simulation* and a value in argument. Using such a function enables to link some input parameters together. This setter can also be defined as a string to target directly a parameter. 
+The parameter to change in the reference simulation and how are defined with *ParamExplorer* objects. *ParamExplorerSet* is a *ParamExplorer* that enables to set the parameters variations from a list of values. The parameters to change are defined with a function (setter) which enables to do complex operation with the value as argument (cf example below). This setter can also be defined as a string to target directly a parameter. 
 When generating the list of simulations to run, the function is executed before running the simulation to set the parameters as expected. 
-The object has five attributes:
+The *ParamExplorerSet* has five attributes:
 
 +--------------+------------+----------------------------------------+
 | Attribute    | Type       | Description                            |
@@ -73,7 +73,9 @@ The object has five attributes:
 |              |            | parameter values to explore            |
 +--------------+------------+----------------------------------------+
 
-*VarParam* creates every simulation by making the cartesian product of *ParamExplorerSet* values:
+When a *VarParam* is defined with several *ParamExplorer*, it will creates every simulation by making the cartesian product of every *ParamExplorerSet* values.
+
+In the following example, two *ParamExplorer* are defined, the first one scales every parameter of the slot according to a single value, the second directly update the current matrix:
 
 .. code:: python
 
@@ -110,7 +112,7 @@ The object has five attributes:
        ),
    ]
 
-``slot_scale`` function variates every slot parameters in one function. The list above creates the six following simulations:
+A *VarParam* with both the *ParamExplorer* above creates the six following simulations:
 
 +-------------------+-----------------------------+----------------------+
 | simulation number | Stator slot scale factor    | Stator current       |
@@ -186,14 +188,12 @@ This following datakeepers enable to store the average torque and the radial mag
        )
    ]
 
-DataKeepers with their results are stored in a dict whose keys are the data symbol. DataKeepers results contain results from *DataKeeper.keeper(output)* or *DataKeeper.error_keeper(simu)*.
+DataKeepers with their results are stored in a dict whose keys are the data symbol. DataKeepers results contain results from *DataKeeper.keeper(output)* (or *DataKeeper.error_keeper(simu)* when the simulation raise an error).
 
 Running *VarParam*
 ^^^^^^^^^^^^^^^^^^
 
 When the method ``Simulation.run`` is called, the reference simulation is executed first. Then, if a VarParam is defined, the corresponding list of simulations is generated and run. If a VarParam is defined, ``Simulation.run`` returns an *XOutput* object else it returns an *Output*.
-
-If the simulation has no *Output* defined as a parent, it is now created in the method.
 
 *XOutput* class
 ~~~~~~~~~~~~~~~
