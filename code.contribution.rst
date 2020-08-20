@@ -2,7 +2,7 @@
 Code contribution
 ##################
 
-Welcome to the PYLEECAN code contributing guidelines. On this page we will define the different steps you may follow to
+Welcome to the PYLEECAN code contributing guidelines. On this page we will define the different steps you can follow to
 contribute to the code:
 
 - **First step: talk about it**
@@ -14,18 +14,18 @@ Talk about it
 ==============
 
 As a first step to contribute to PYLEECAN code (to fix a bug, add a new feature, a new topology, etc.), we recommend to talk
-about it to make sure that it doesn't already exist (for instance) or to be guided on how to do it. There is two ways to
-talk about contributing to pyleecan :
+about it to make sure that it doesn't already exist (for instance) or to be guided on how to do it. Thereare two ways to
+talk about contributing to pyleecan:
 
 - open an `issue <https://github.com/Eomys/pyleecan/issues>`__ on github
-- send message to the PYLEECAN mailing list pyleecan@framalistes.org to contact the maintainers.
+- send a message to the PYLEECAN mailing list pyleecan@framalistes.org to contact the maintainers.
 
 Contribute to the code
 =======================
 
 Prerequisites
 ```````````````
-Before contributing to the code, you may want to read how we organize the classes and what is the PYLEECAN coding convention.
+Before contributing to the code, you may want to read about how we organize the classes and what is the PYLEECAN coding convention.
 
 .. toctree::
     :maxdepth: 1
@@ -38,14 +38,14 @@ How to add new topologies
 
 The main steps to add a new topology (machine, slot, etc.) are:
 
-- create a class that represent this topology by adapting an existing similar one
+- create a class that represents this topology by adapting an existing similar one
 - develop the class methods
 - validate that it works (and that it will always do) by adding tests
 
 Create class
 '''''''''''''
 
-In PYLEECAN, classes are generated automatically, to know how to generate a class we invite you to read the
+In PYLEECAN, classes are automatically generated. To know how to generate a class, we invite you to read the
 documentation about it:
 
 .. toctree::
@@ -56,9 +56,9 @@ documentation about it:
 Develop class methods
 ''''''''''''''''''''''
 
-The methods of the class are developed in the folder **Methods/subfolder1/subfolder2**.
+The methods of the classes are developed in the folder **Methods/subfolder1/subfolder2**.
 
-- **subfolder1** corresponds to the type of the topology( machine, lamination, slot, etc.)
+- **subfolder1** corresponds to the type of the topology (machine, lamination, slot, etc.)
 - **subfolder2** is the name of the class.
 
 These  methods  are  imported  and assigned to the correct class during the automated code generation according to the csv doc.
@@ -76,5 +76,5 @@ Submit your contribution
 
 Once the development step done, you will be able to share your work to the PYLEECAN community. To do that, Github provides the
 **Pull requests**, which  is a method of submitting contributions to an open development project. You can visit this
-`page <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`__ to know how to make pull request from
+`page <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`__ to know how to make pull requests from a
 forked repository.
