@@ -11,11 +11,11 @@ order.
 
     tuto_Machine
     tuto_Simulation_FEMM
+    tuto_Plots
     tuto_Operating_point
     tuto_Elec
-    tuto_Plots
-    tuto_Optimization
     tuto_Force
+    tuto_Optimization
     tuto_mutlisimulation
     tuto.add.slot
 
