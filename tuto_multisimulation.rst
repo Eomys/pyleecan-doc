@@ -6,7 +6,7 @@ The objective of this tutorial is to explain the definition, the postprocessings
 The following organization aims to enable:
 
 -  multi-simulation of a single model or a complete workflow
--  multi-simulation of multi-simulation
+-  multi-simulation of multi-simulations
 -  parallelization to speed up calculations
 -  errors management
 -  built-in postprocessings
@@ -18,7 +18,7 @@ The following organization aims to enable:
 A simulation, as defined by the *Simulation* object, corresponds to the computation of machine quantities on a single operating point. 
 A multi-simulation is defined as a list of simulations, all based on a reference simulation with variations of its parameters.
 
-To define a multi-simulation in pyleecan, first the reference simulation must be defined as a *Simulation* object. Then an optional *VarParam* object (that inherit from an abstract *VarSimu* class) is set as a property of the reference simulation object. *VarParam* object defines how to generate the simulation list, how to parallelize (or not) the computation and which data to gather. To do so, *VarParam* class contains :
+To define a multi-simulation in pyleecan, first the reference simulation must be defined as a *Simulation* object. Then an optional *VarParam* object (that inherits from an abstract *VarSimu* class) is set as a property of the reference simulation object. *VarParam* object defines how to generate the simulation list, how to parallelize (or not) the computation and which data to gather. To do so, *VarParam* class contains :
 
 +----------------------+----------------------+---------------------------+
 | Attribute            | Type                 | Description               |
@@ -47,13 +47,13 @@ To define a multi-simulation in pyleecan, first the reference simulation must be
 | nb_simu              |    *int*             |    number of simulations  |
 +----------------------+----------------------+---------------------------+
 
-On a side note, as all pyleecan object, *VarParam* also have a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
+On a side note, as all pyleecan object, *VarParam* also has a parent property that links to the reference simulation. *VarParam* must be defined as a property of a *Simulation*. 
 
 Input parameters: *ParamExplorerSet*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*ParamExplorerSet* is a *ParamExplorer* that enables to set the parameters variations by defining a function that takes a *Simulation* and a value in argument. Using such function enable to link some input parameters together. This setter can also be defined as a string to target directly a parameter. 
-When generating the list of simulation to run, the function is executed before running the simulation to set the parameters as expected. 
+*ParamExplorerSet* is a *ParamExplorer* that enables to set the parameters variations by defining a function that takes a *Simulation* and a value in argument. Using such a function enables to link some input parameters together. This setter can also be defined as a string to target directly a parameter. 
+When generating the list of simulations to run, the function is executed before running the simulation to set the parameters as expected. 
 The object has five attributes:
 
 +--------------+------------+----------------------------------------+
@@ -70,7 +70,7 @@ The object has five attributes:
 |              |            | simulation                             |
 +--------------+------------+----------------------------------------+
 | value        | *list*     | list that contains the different       |
-|              |            | parameters values to explore           |
+|              |            | parameter values to explore            |
 +--------------+------------+----------------------------------------+
 
 *VarParam* creates every simulation by making the cartesian product of *ParamExplorerSet* values:
@@ -110,7 +110,7 @@ The object has five attributes:
        ),
    ]
 
-``slot_scale`` function variate every slot parameters in one function. The list above creates the six following simulations:
+``slot_scale`` function variates every slot parameters in one function. The list above creates the six following simulations:
 
 +-------------------+-----------------------------+----------------------+
 | simulation number | Stator slot scale factor    | Stator current       |
@@ -150,7 +150,7 @@ A *DataKeeper* is a class with six attributes:
 | unit         | *str*      | data unit                              |
 +--------------+------------+----------------------------------------+
 | keeper       | *function* | function that takes an *Output* in     |
-|              |            | argument and return a value            |
+|              |            | argument and returns a value           |
 +--------------+------------+----------------------------------------+
 | error_keeper | *function* | function that takes a *Simulation* in  |
 |              |            | argument and returns a value, this     |
@@ -191,7 +191,7 @@ DataKeepers with their results are stored in a dict whose keys are the data symb
 Running *VarParam*
 ^^^^^^^^^^^^^^^^^^
 
-When the method ``Simulation.run`` is called, the reference simulation is executed first if . Then, if a VarParam is defined, the corresponding list of simulation is generated and run. If a VarParam is defined, ``Simulation.run`` returns a *XOutput* object else it returns an *Output*.
+When the method ``Simulation.run`` is called, the reference simulation is executed first. Then, if a VarParam is defined, the corresponding list of simulations is generated and run. If a VarParam is defined, ``Simulation.run`` returns an *XOutput* object else it returns an *Output*.
 
 If the simulation has no *Output* defined as a parent, it is now created in the method.
 
@@ -223,7 +223,7 @@ If the simulation has no *Output* defined as a parent, it is now created in the 
 | post           | *OutPost*    | Reference *Simulation*                |
 |                |              | post-processing settings              |
 +----------------+--------------+---------------------------------------+
-| input_param    | *list*       | list of *ParamExplorerSet* containing |
+| input_param    | *list*       | List of *ParamExplorerSet* containing |
 |                |              | values for each simulation            |
 +----------------+--------------+---------------------------------------+
 | output_list    | *list*       | List containing each *Output*         |
@@ -232,13 +232,13 @@ If the simulation has no *Output* defined as a parent, it is now created in the 
 |                |              | *VarParam* *DataKeeper*               |
 +----------------+--------------+---------------------------------------+
 
-Reference simulation results are stored in the properties inherited from Output and other simulation results are stored in a list of *Output* and/or in a dict containing *DataKeeper*, according to *VarParam* parameters. Paramaters variation are stored in a specific list of *ParamExplorerSet* created at the beginning of the simulation.
+Reference simulation results are stored in the properties inherited from Output and other simulation results are stored in a list of *Output* and/or in a dict containing *DataKeeper*, according to *VarParam* parameters. Paramater variations are stored in a specific list of *ParamExplorerSet* created at the beginning of the simulation.
 
-If ``VarParam.is_keep_all_output`` is True, each output of each simulation is stored in the output_list. This option is set as False by default to avoid memory issues. 
+If ``VarParam.is_keep_all_output`` is True, then each output of each simulation is stored in the output_list. This option is set as False by default to avoid memory issues. 
 
-The class has some getters to gather results: list slice can be extracted according to some input values
+The class has some getters to gather results: list slices can be extracted according to some input values
 e.g. extract average torque for simulations with a specific value of slot angle or a specific
-speed. To ease the access to the results, *XOutput* behave like a dictionary to access directly to ``XOutput.xout_dict`` and like a list to access directly to ``XOuput.output_list``. Furthermore, ``len(XOutput)`` returns the number of simulation, which is 6 in this case. For this example, the following call returns a list containing the average torque for each simulation with the stator scale factor set to 0.99. 
+speed. To ease the access to the results, *XOutput* behaves like a dictionary to access directly to ``XOutput.xout_dict`` and like a list to access directly to ``XOuput.output_list``. Furthermore, ``len(XOutput)`` returns the number of simulations, which is 6 in this case. For this example, the following call returns a list containing the average torque for each simulation with the stator scale factor set to 0.99. 
 
 .. code:: python
 
