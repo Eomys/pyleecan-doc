@@ -101,11 +101,11 @@ doc and update the website ourselves.
 
 - **By adding (or correcting) a .rst file**, for instance
 
-    * if you have developed a new feature and you want to make tutorial, you can add new ".rst" files.
+    * if you have developed a new feature and you want to make a tutorial, you can add new ".rst" files.
 
-    * if you find some errors (typos) in the documentation and you want to correct it. In this case you can correct them on
+    * if you have found some errors (typos) in the documentation and you want to correct it. In this case you can correct them on
       `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__  by finding and correcting the corresponding "rst" file.
-      You can do that directly though Github (it will automatically create a fork of the repository in your github account).
+      You can do that directly through Github (it will automatically create a fork of the repository in your github account).
 
 
 Then you should :doc:`submit your contribution <code.contribution>` on `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__ to
