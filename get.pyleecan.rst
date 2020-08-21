@@ -66,7 +66,7 @@ You can now **clone** the forked version of Pyleecan in your Github projects but
 You can also click on "Watch" (red square on the image) to choose how you want to be notified of the activities of the community. 
 As a reminder, before contributing, please read the :ref:`project.organization:Project organization` and the :ref:`development:Development guidelines`.
 
-**Step 2.2: install dependencies**
+**Step 2.2: Install dependencies**
 
 Now that you downloaded PYLEECAN, you need to install the dependencies. All of them are gathered in the file `requirements.txt <https://github.com/Eomys/pyleecan/blob/master/requirements.txt>`__. You can install them with one single command with `pip <https://pypi.org/project/pip/>`__ (which should have been installed with python):
 ::
