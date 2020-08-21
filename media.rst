@@ -10,6 +10,8 @@ Media
 .. image:: _static/fig_16_WindingUD.svg
 .. image:: _static/fig_18_BoreFlower.svg
 .. image:: _static/XMAS_SRM_Pyleecan.gif
+.. image:: _static/tuto_plots_B.gif
+.. image:: _static/tuto_plots_B_fft.gif
 .. image:: _static/tuto_plots_B.png
 .. image:: _static/tuto_plots_B_time.png
 .. image:: _static/tuto_plots_B_surf.png
@@ -20,3 +22,4 @@ Media
 .. image:: _static/tuto_force_P_time.png
 .. image:: _static/tuto_optim.png
 .. image:: _static/ICEM_optim.png
+
