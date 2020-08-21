@@ -3,14 +3,21 @@
 <div class="well sidebar-nav">
     <h3><a href="{{ pathto('development.html', 1) }}" title="Development">How to Contribute</a></h3>
   <ul class="nav nav-list">
+      <div>
       <li {% if pagename == 'Project organization' -%}class=""{%- endif -%}>
         <a href="{{ pathto('project.organization.html', 1) }}" title="Project organization">Project organization</a></li>
-      <br /><li {% if pagename == 'Code contribution' -%}class=""{%- endif -%}>
+      </div>
+      <div>
+      <li {% if pagename == 'Code contribution' -%}class=""{%- endif -%}>
       <a href="{{ pathto('code.contribution.html', 1) }}" title="Code contribution">Code contribution</a></li>
-      <br /><li {% if pagename == 'Doc contribution' -%}class=""{%- endif -%}>
+      </div>
+      <div>
+      <li {% if pagename == 'Doc contribution' -%}class=""{%- endif -%}>
         <a href="{{ pathto('doc.contribution.html', 1) }}" title="Doc contribution">Doc contribution</a></li>
-      <br /><li {% if pagename == 'Test contribution' -%}class=""{%- endif -%}>
+      <div>
+      <li {% if pagename == 'Test contribution' -%}class=""{%- endif -%}>
         <a href="{{ pathto('test.contribution.html', 1) }}" title="Test contribution">Test contribution</a></li>
+      </div>
   </ul>
 </div>
 
