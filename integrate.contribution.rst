@@ -78,7 +78,7 @@ The modifications are ready, and everything is commited. You now need to send yo
 
 Pull Request
 ============
-Finally, you can now propose your modification to be included in pyleecan with a Pull Request. Go into your forked repository on github and select the branch "new_slot". Github should provide a "Compare & pull request" button. 
+Finally, you can now propose your modification to be included in pyleecan with a Pull Request. Go into your forked repository on github and select the branch "new_slot". Github should provide a "Compare & pull request" button. You can also visit this `page <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`__ to know how to make pull requests from a forked repository.
 
 .. image:: _static/tuto_slot_PR_1.PNG
 
