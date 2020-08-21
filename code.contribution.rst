@@ -51,4 +51,4 @@ This :doc:`tutorial<tuto.add.slot>` on how to add a new slot gives an example of
 Submit your contribution
 =========================
 
-Once the development steps done, you will be able to share your work to the PYLEECAN community. To do that, please follow this :doc:`tutorial<integrate.contribution>`
+Once the development steps done, you will be able to share your work to the PYLEECAN community. To do that, please follow this :doc:`tutorial<integrate.contribution>`.
