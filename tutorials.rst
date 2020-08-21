@@ -16,7 +16,7 @@ order.
     tuto_Elec
     tuto_Force
     tuto_Optimization
-    tuto_mutlisimulation
+    tuto_multisimulation
     tuto.add.slot
 
 Each tutorial is generated from a Jupyter Notebook and can be downloaded
