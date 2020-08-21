@@ -33,48 +33,22 @@ Before contributing to the code, you may want to read about how we organize the 
     object.organization
     coding.convention
 
-How to add new topologies
-``````````````````````````
+How to create your own branch
+`````````````````````````````
+Before starting to develop, we recommend that you create your own branch in order to cleanly track your modifications. To do so, please follow this :doc:`tutorial<creating.branch>`.
 
-The main steps to add a new topology (machine, slot, etc.) are:
+How to implement your modifications
+```````````````````````````````````
 
-- create a class that represents this topology by adapting an existing similar one
-- develop the class methods
-- validate that it works (and that it will always do) by adding tests
+The main steps to implement a new feature are:
 
-Create class
-'''''''''''''
+- create a class that represents a new object (e.g. machine, slot, model, etc., optional)
+- develop class methods and functions
+- validate that everything works (and that it will always do) by adding tests
 
-In PYLEECAN, classes are automatically generated. To know how to generate a class, we invite you to read the
-documentation about it:
-
-.. toctree::
-    :maxdepth: 1
-
-    class.generation
-
-Develop class methods
-''''''''''''''''''''''
-
-The methods of the classes are developed in the folder **Methods/subfolder1/subfolder2**.
-
-- **subfolder1** corresponds to the type of the topology (machine, lamination, slot, etc.)
-- **subfolder2** is the name of the class.
-
-These  methods  are  imported  and assigned to the correct class during the automated code generation according to the csv doc.
-Note that you can also add a third layer of subfolder by naming a method **<folder_name>.<method_name>** in the csv file. For instance,
-a method named "femm.draw" in the csv file of the Magnetics object would be stored in the folder Methods.Simulation.Magnetics.femm
-(and the method is called with "draw")
-
-Develop tests
-''''''''''''''
-
-To know more about tests development, please visit our :doc:`test contribution guideline </test.contribution>`.
+This :doc:`tutorial<tuto.add.slot>` on how to add a new slot gives an example of code contribution. We recommend to read it before starting a contribution.
 
 Submit your contribution
 =========================
 
-Once the development step done, you will be able to share your work to the PYLEECAN community. To do that, Github provides the
-**Pull requests**, which  is a method of submitting contributions to an open development project. You can visit this
-`page <https://help.github.com/articles/creating-a-pull-request-from-a-fork/>`__ to know how to make pull requests from a
-forked repository.
+Once the development steps done, you will be able to share your work to the PYLEECAN community. To do that, please follow this :doc:`tutorial<integrate.contribution>`
