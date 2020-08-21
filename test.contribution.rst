@@ -73,7 +73,7 @@ How to run the tests
 To run the tests, you need to open a terminal, go into the folder which contains PYLEECAN and execute the command: 
 ::
 
-    python -m pytest ./pyleecan/Tests
+    python -m pytest
     
 How to mark a test
 ``````````````````
@@ -90,7 +90,7 @@ The complete list is available in the file pyleecan/pytest.ini
 The following command is an example to execute only validations test that don't use FEMM: 
 ::
 
-    python -m pytest ./pyleecan/Tests -m "validation and not FEMM"
+    python -m pytest -m "validation and not FEMM"
     
 To mark a test, you just need to add it a decorator: 
 
@@ -151,7 +151,7 @@ To run tests with coverage, use the following command:
 
 ::
 
-        python -m pytest --cov ./pyleecan/Tests --cov-report=html:report_folder
+        python -m pytest --cov --cov-report=html:report_folder
 
 The report is located in *report_folder*. Then open the index.html file:
 
