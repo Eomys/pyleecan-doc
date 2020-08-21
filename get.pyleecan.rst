@@ -29,7 +29,7 @@ PYLEECAN is available on `pip <https://pypi.org/project/pip/>`__. Simply type in
 
         pip install pyleecan
         
-This command line should download and install pyleecan on your computer, along with all the needed dependencies (see `Prerequisites </pyleecan.prerequisites>`__). You can then jump to Step 3.
+This command line should download and install pyleecan on your computer, along with all the needed dependencies (see :doc:`Prerequisites </pyleecan.prerequisites>`__). You can then jump to Step 3.
 
 
 
@@ -61,7 +61,7 @@ This method will enable you to get the upcoming modifications of the Pyleecan's 
 
 - The "I want to contribute" way:
 
-You will need a Github account to `fork <https://help.github.com/en/articles/fork-a-repo>`__ (bleu square on the image) the `pyleecan repository <https://github.com/Eomys/pyleecan>`__ which will create a copy of the repository in your Github projects. The forked repository will allow you to freely experiment with changes without affecting the original project. Later you will be able to send modifications from your fork to the main project on Github with :ref:`code.contribution:"pull-request"`.
+You will need a Github account to `fork <https://help.github.com/en/articles/fork-a-repo>`__ (bleu square on the image) the `pyleecan repository <https://github.com/Eomys/pyleecan>`__ which will create a copy of the repository in your Github projects. The forked repository will allow you to freely experiment with changes without affecting the original project. Later you will be able to send modifications from your fork to the main project on Github with :ref:`code.contribution:"pull-request"` (see also this :doc:`tutorial<integrate.contribution>`).
 You can now **clone** the forked version of Pyleecan in your Github projects but following the "I want to use it" way above. 
 You can also click on "Watch" (red square on the image) to choose how you want to be notified of the activities of the community. 
 As a reminder, before contributing, please read the :ref:`project.organization:Project organization` and the :ref:`development:Development guidelines`.
