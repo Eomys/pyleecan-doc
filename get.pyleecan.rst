@@ -98,6 +98,6 @@ Step 4: Launch tests
 You can finally launch some tests to check that everything is working correctly:
 ::
 
-        python -m pytest pyleecan -m "not long"
+        python -m pytest -m "not long"
 
 More details on this command are available in the :doc:`tests contribution page </test.contribution>`.
