@@ -118,7 +118,7 @@ Now that your slot is ready, you need to share it with the community. Please fol
 
 Step 7: Adding some tests
 =========================
-Writing in process...
+Any new feature should come with a test script. Please visit our :doc:`test contribution guideline </test.contribution>` page for advice on how to write good tests.
 
 Step 8: Adding your Slot to the GUI
 ===================================
