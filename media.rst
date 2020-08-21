@@ -1,6 +1,8 @@
 Media
 =====
 
+Hereafter is an overview of some figures created by PYLEECAN (machines, plots, gif, etc.). Some of these figures have been published in "Design optimization of innovative electrical machines topologies based on Pyleecan open-source object-oriented software", ICEM 2020.
+
 .. image:: _static/BPMSM.png
 .. image:: _static/IPMSM.png
 .. image:: _static/SyRM.png
