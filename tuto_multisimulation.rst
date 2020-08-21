@@ -1,5 +1,5 @@
-Multi-simulation organization
--------------------------------
+How to run a multi-simulation
+-----------------------------
 
 The objective of this tutorial is to explain the definition, the postprocessings and the storage of a multi-simulation in Pyleecan.
 
