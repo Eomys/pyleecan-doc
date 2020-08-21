@@ -108,6 +108,6 @@ doc and update the website ourselves.
       You can do that directly through Github (it will automatically create a fork of the repository in your github account).
 
 
-Then you should :doc:`submit your contribution <code.contribution>` on `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__ to
+Then you should :doc:`submit your contribution <integrate.contribution>` on `pyleecan-doc repository <https://github.com/Eomys/pyleecan-doc>`__ to
 share with the community. After your modifications merged and the html pages regenerated, the submitted documentation will be
 available on the PYLEECAN website.
