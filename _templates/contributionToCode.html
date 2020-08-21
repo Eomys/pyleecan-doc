@@ -3,10 +3,12 @@
 <div class="well sidebar-nav">
     <h3><a href="{{ pathto('code.contribution.html', 1) }}" title="Code contribution">Code contribution</a></h3>
   <ul class="nav nav-list">
+      <div>
       <li {% if pagename == 'Object organization' -%}class=""{%- endif -%}>
         <a href="{{ pathto('object.organization.html', 1) }}" title="Object Organization">Object organization</a></li>
       <li {% if pagename == 'Coding convention' -%}class=""{%- endif -%}>
         <a href="{{ pathto('coding.convention.html', 1) }}" title="Coding Convention">Coding convention</a></li>
+      </div>
   </ul>
 </div>
 
