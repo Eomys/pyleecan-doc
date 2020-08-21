@@ -21,7 +21,4 @@ Hereafter is an overview of some figures created by PYLEECAN (machines, plots, g
 .. image:: _static/fig_13_LamSlotMulti.svg
 .. image:: _static/fig_16_WindingUD.svg
 .. image:: _static/fig_18_BoreFlower.svg
-.. image:: _static/BPMSM.png
-.. image:: _static/IPMSM.png
-.. image:: _static/SyRM.png
 
