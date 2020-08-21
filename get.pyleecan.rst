@@ -29,7 +29,7 @@ PYLEECAN is available on `pip <https://pypi.org/project/pip/>`__. Simply type in
 
         pip install pyleecan
         
-This command line should download and install pyleecan on your computer, along with all the needed dependencies (see :doc:`Prerequisites </pyleecan.prerequisites>`). You can then jump to Step 3.
+This command line should download and install pyleecan on your computer, along with all the needed dependencies (see :doc:`Prerequisites <prerequisite>`). You can then jump to Step 3.
 
 
 
