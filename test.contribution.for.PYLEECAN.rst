@@ -9,7 +9,7 @@ If you are not used to write test in pytest, check this `Test Development Guidel
 An example of a Pyleecan test with a fixture method
 ```````````````
 
-Once you how to write a pytest test, you'll be able to understand the following code :
+Once you know how to write a pytest test, you'll be able to understand the following code :
 
 
 .. code-block:: python
@@ -90,12 +90,12 @@ Once you how to write a pytest test, you'll be able to understand the following 
                 return test_obj
 
 Here is a test class for pytest. Most of the tests in Pyleecan are in a test class. 
-It is very important to put a pytest mark before the declaration of the class ! 
-Moreover, every tests classes must starting their name with an uppercase. If not, pytest will not run it. 
+It is very important to put a pytest mark before the declaration of the class.
+Moreover, every test classes must starting their name with an uppercase. If not, pytest will not run it. 
 In an another way, every test classes doesn't have to inherit of **object**.
 
-At the line 43, we are using a fixture, it's one of the two way to make a set_up method. You'll see the second later.
-So, the fixture method is just a simple function that we launch before every tests functions in the test class. Here they are :
+At the line 43, we are using a fixture, it's one of the two way to make a set_up function. You'll see the second later.
+So, the fixture function is just a simple function that we launch before every test functions in the test class. Here they are :
 
 .. code-block:: python
 
