@@ -232,3 +232,29 @@ It is important to use **self.** in your **setup_method** to use them in the tes
                 
 Here, each computer variable are accessed with the **self.** syntax. It's because we are using a setup function and not a fixture function.
 In the same way of the first method, you have to comment your code.
+
+
+Multiple mark in a test file
+```````````````
+
+You may ask: "How can we put multiple mark to specific tests in a test class ?". You can't. If you put marks for a class, they will be priority on those which are for a simple test. If you want to keep a class, you can just put marks on every test functions. **Caution :** Doing that can slow the test execution.
+
+
+Where to create a test file
+```````````````
+
+In the **Tests** directory, you can find some various subdirectories. 
+If you're writing a test which it concerns the GUI, you'll have to put your test in the subdirectory **GUI**.
+In a same way, if you're writing a test which it concerns a Plot, you'll have to put your test in the subdirectory **Plot**.
+
+
+Black: The code formatter
+```````````````
+
+::
+
+                 pip install black
+                 python -m black {source_file_or_directory}
+        
+You can install the package Black by using the line code above. Black allow you to enhance your code by formatting it.
+Feel free to check the documentation : `Black <https://black.readthedocs.io/en/stable/>`__.
