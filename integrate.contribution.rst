@@ -32,7 +32,7 @@ When adding the contribution to pyleecan, we need to make sure that it won't bre
 The command to run all the tests is:
 ::
 
-        python -m pytest ./pyleecan/Tests
+        python -m pytest
 More details on this command are available in the :doc:`tests contribution page </test.contribution>`.
 
 Commit
