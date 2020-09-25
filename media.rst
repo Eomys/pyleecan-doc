@@ -3,6 +3,7 @@ Media
 
 Hereafter is an overview of some figures created by PYLEECAN (machines, plots, gif, etc.). Some of these figures have been published in "Design optimization of innovative electrical machines topologies based on Pyleecan open-source object-oriented software", ICEM 2020.
 
+.. image:: _static/GUI_view.png
 .. image:: _static/IPMSM_A.png
 .. image:: _static/tuto_plots_B.gif
 .. image:: _static/tuto_plots_B_fft.gif
