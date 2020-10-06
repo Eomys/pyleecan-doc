@@ -4,6 +4,8 @@
   <ul class="nav-list">
       <li {% if pagename == 'Objectives & features' -%}class="active"{%- endif -%}>
         <a href="{{ pathto('objectives&features.html', 1) }}" title="Objectives & features">Objectives & features</a></li>
+      <li {% if pagename == 'Install PYLEECAN' -%}class="active"{%- endif -%}>
+        <a href="{{ pathto('get.pyleecan.html', 1) }}" title="Install PYLEECAN">Install PYLEECAN</a></li>
   	  <!-- add link to the main page. pathto('index')
   	  referees to the path to index.html --
   	  <!-- add link to pyleecan project and subpackages. pathto('pyleecan')
