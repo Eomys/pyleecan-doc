@@ -41,9 +41,9 @@ If you have any question or if you want to request a new tutorial please `contac
 
 Webinar
 #######
-Three public and free webinars will be organized by `Green Forge Coop`_:
+Three public and free webinars will be organized by `Green Forge Coop`_ and UNICAS University:
 
-- Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the Graphical User Interface
+- Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the GUI
 - Friday 30th October 15h-17h (GMT+1): How to use pyleecan (advanced)? Optimization tools, meshing, plot commands
 - Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan? Github projects, Object Oriented Programming
 
