@@ -39,8 +39,21 @@ Upcoming tutorials
 
 If you have any question or if you want to request a new tutorial please `contact us`_.
 
+Webinar
+#######
+Three public and free webinars will be organized by `Green Forge Coop`_:
+
+- Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the Graphical User Interface
+- Friday 30th October 15h-17h (GMT+1): How to use pyleecan (advanced)? Optimization tools, meshing, plot commands
+- Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan? Github projects, Object Oriented Programming
+
+The webinar will be based on the tutorial, please follow "How to run the tutorial" instructions. `The registration form is available here`_.
+The webinars will be recorded and the video will be available on this page.
+
 .. _on GitHub: https://github.com/Eomys/pyleecan/tree/master/Tutorials
 .. _contact us: contact.html
 .. _Anaconda: https://www.anaconda.com/products/individual
 .. _Pyleecan: get.pyleecan.html
 .. _FEMM: http://www.femm.info/wiki/Download
+.. _Green Forge Coop: https://www.linkedin.com/company/greenforgecoop/about/
+.. _The registration form is available here: https://us02web.zoom.us/meeting/register/tZYsc-mppz8pE9UYGaTYWe6m8117qgi44EKi
