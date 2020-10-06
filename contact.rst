@@ -38,3 +38,5 @@ Newsletter
 .. raw:: html
 
     </p>
+
+Pyleecan projet is supported by `Green Forge Coop <https://www.linkedin.com/company/greenforgecoop/about/>`__ non-profit association.
