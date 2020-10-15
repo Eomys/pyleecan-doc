@@ -22,13 +22,23 @@ order.
 How to run the tutorial
 #######################
 Each tutorial is generated from a Jupyter Notebook and can be downloaded
-`on GitHub`_. To run the tutorials notebook, please install:
+`on GitHub`_. To run the tutorials notebook, here is the full procedure:
 
-- `Anaconda`_
-- `Pyleecan`_
-- `FEMM`_ (Windows only)
+- Install the latest version of `Anaconda`_
+- Open an "Anaconda Prompt" and run the command "pip install pyleecan"
+- Install the latest version of `FEMM`_ (Windows only)
+- Download the tutorial notebooks on your computer
+- Open the program "Anaconda Navigator" and launch "Jupyter Notebook"
 
-Anaconda include the IDE "Spyder" that enables to read notebook.
+.. image:: _static/Anaconda-navigator.PNG
+
+- In your web browser a tab should open, move to the folder containing the notebooks
+
+.. image:: _static/jupyter-browser.PNG
+
+- Double click on the notebook to run
+
+Anaconda also include the IDE "Spyder" that enables to read notebook.
 
 Validation simulations are also available in the Tests/Validation folder for inspiration.
 
@@ -48,12 +58,14 @@ Three public and free webinars will be organized by `Green Forge Coop`_ and UNIC
 - Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan? Github projects, Object Oriented Programming
 
 The webinar will be based on the tutorial, please follow "How to run the tutorial" instructions. `The registration form is available here`_.
+The notebook of the webinar can be `downloaded here`_.
+
 The webinars will be recorded and the video will be available on this page.
 
 .. _on GitHub: https://github.com/Eomys/pyleecan/tree/master/Tutorials
 .. _contact us: contact.html
 .. _Anaconda: https://www.anaconda.com/products/individual
-.. _Pyleecan: get.pyleecan.html
 .. _FEMM: http://www.femm.info/wiki/Download
 .. _Green Forge Coop: https://www.linkedin.com/company/greenforgecoop/about/
 .. _The registration form is available here: https://us02web.zoom.us/meeting/register/tZYsc-mppz8pE9UYGaTYWe6m8117qgi44EKi
+.. _downloaded here: https://www.dropbox.com/sh/f3mmf4evdeg1jmb/AACFSBx-hKYlQFWY8ytwX9JUa?dl=0
