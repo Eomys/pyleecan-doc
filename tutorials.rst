@@ -57,8 +57,37 @@ Three public and free webinars will be organized by `Green Forge Coop`_ and UNIC
 - Friday 30th October 15h-17h (GMT+1): How to use pyleecan (advanced)? Optimization tools, meshing, plot commands
 - Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan? Github projects, Object Oriented Programming
 
-The webinar will be based on the tutorial, please follow "How to run the tutorial" instructions. `The registration form is available here`_.
-The notebook of the webinar can be `downloaded here`_.
+.. raw:: html
+
+    <p>
+
+    The webinar will be based on the tutorial, please follow "How to run the tutorial" instructions.
+
+.. raw:: html
+
+    <a href="https://us02web.zoom.us/meeting/register/tZYsc-mppz8pE9UYGaTYWe6m8117qgi44EKi">
+
+    The registration form is available here.
+
+.. raw:: html
+
+    </a> 
+
+    The notebook of the webinar can be  
+    
+.. raw:: html
+
+    <a href="https://www.pyleecan.org/notebook/Webinar_Pyleecan_Basics.ipynb" download>
+
+    downloaded here.
+
+.. raw:: html
+
+    </a>
+
+.. raw:: html
+
+    </p>
 
 The webinars will be recorded and the video will be available on this page.
 
@@ -67,5 +96,3 @@ The webinars will be recorded and the video will be available on this page.
 .. _Anaconda: https://www.anaconda.com/products/individual
 .. _FEMM: http://www.femm.info/wiki/Download
 .. _Green Forge Coop: https://www.linkedin.com/company/greenforgecoop/about/
-.. _The registration form is available here: https://us02web.zoom.us/meeting/register/tZYsc-mppz8pE9UYGaTYWe6m8117qgi44EKi
-.. _downloaded here: https://www.dropbox.com/sh/f3mmf4evdeg1jmb/AACFSBx-hKYlQFWY8ytwX9JUa?dl=0
