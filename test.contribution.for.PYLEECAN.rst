@@ -9,7 +9,7 @@ If you are not used to write test in pytest, check this `Test Development Guidel
 An example of a Pyleecan test with a fixture method
 ```````````````
 
-Once you know how to write a pytest test, you'll be able to understand the following code :
+Once you know how to write a pytest test, you'll be able to understand the following code (There is just the beginning of the test class):
 
 
 .. code-block:: python
@@ -94,7 +94,7 @@ It is very important to put a pytest mark before the declaration of the class.
 Moreover, every test classes must starting their name with an uppercase. If not, pytest will not run it. 
 In an another way, every test classes doesn't have to inherit of **object**.
 
-At the line 43, we are using a fixture, it's one of the two way to make a set_up function. You'll see the second later.
+At the line with **pytest.fixture**, we are using a fixture, it's one of the two way to make a set_up function. You'll see the second later.
 So, the fixture function is just a simple function that we launch before every test functions in the test class. Here they are :
 
 .. code-block:: python
@@ -183,8 +183,8 @@ An example of a Pyleecan test without a fixture method
                     cls.app.quit()
                   
                   
-As you can see, there is no **@pytest.fixture here**. We are using the simple setup and teardown method. Note that those **@classmethod** are not mandatory.
-It is important to use **self.** in your **setup_method** to use them in the test methods.
+As you can see, there is no **@pytest.fixture here**. We are using the simple setup and teardown method provided by pytest itself. Please notice that those **@classmethod** are not mandatory.
+It is important to use **self.** to setup your variables in your **setup_method** to use them in the test methods.
 
 .. code-block:: python
 
