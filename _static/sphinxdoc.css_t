@@ -418,6 +418,14 @@ table td, table th {
     padding: 0.2em 0.5em 0.2em 0.5em;
 }
 
+div.section::after{
+    clear: none;
+}
+
+table.align-default {
+    margin-left: unset;
+}
+
 div.admonition, div.warning {
     font-size: 0.9em;
     margin: 1em 0 1em 0;

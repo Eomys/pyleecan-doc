@@ -18,10 +18,14 @@ import sys
 sys.path.insert(0, normpath(abspath(join(dirname(__file__), "../pyleecan/"))))
 from datetime import date
 
+# At top on conf.py
+from sphinx_markdown_parser.transform import AutoStructify
+
+
 # -- Project information -----------------------------------------------------
 
 project = "pyleecan"
-copyright = u"%s pyleecan developers. Last update on %s" % (
+copyright = u"%s Green Forge Coop (GFC). Last update on %s" % (
     date.today().year,
     date.today(),
 )
@@ -68,8 +72,11 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
+
 
 # The master toctree document.
 master_doc = "documentation"
@@ -84,7 +91,13 @@ language = "en"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    "pyleecan.GUI.rst",
+    "pyleecan.run_GUI.rst",
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -315,3 +328,32 @@ epub_exclude_files = ["search.html"]
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# for MarkdownParser
+from sphinx_markdown_parser.parser import MarkdownParser
+
+
+def setup(app):
+    app.add_source_suffix(".md", "markdown")
+    app.add_source_parser(MarkdownParser)
+    app.add_config_value(
+        "markdown_parser_config",
+        {
+            "auto_toc_tree_section": "Content",
+            "enable_auto_doc_ref": True,
+            "enable_auto_toc_tree": True,
+            "enable_eval_rst": True,
+            "extensions": [
+                "extra",
+                "nl2br",
+                "sane_lists",
+                "smarty",
+                "toc",
+                "wikilinks",
+                "pymdownx.arithmatex",
+            ],
+        },
+        True,
+    )
+    # in setup function after configuration of the parser
+    app.add_transform(AutoStructify)
