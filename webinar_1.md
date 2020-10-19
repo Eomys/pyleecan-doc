@@ -14,7 +14,7 @@ The presentation and the notebook are available [here](https://www.pyleecan.org/
 
 The notebook is also available [on Github](https://github.com/Eomys/pyleecan/tree/master/Tutorials)
 
-To use the notebook, please follow the guide "[How to run the tutorial](tutorial.md)"
+To use the notebook, please follow the guide "[How to run the tutorial](tutorials.md)"
 
 During the webinar, three surveys were organized, here are the results:
 
