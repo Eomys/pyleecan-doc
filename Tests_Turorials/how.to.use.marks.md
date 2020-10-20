@@ -42,7 +42,8 @@ If the test methods are in a test class, you can also put markers for the class.
 Also, the mark on the class has the priority. It means that if you don't want to launch the class test, you won't be able to run test methods in the class whatever you do.
 
 
-
+__Please notice__ : If you can make a test class and put mark on it, it will be more efficient than putting markers on each test methods. Because when pytest is running with
+a mark specification, it'll search for all matching markers. It can slow the running of the tests.
 
 
 ## Markers in Pyleecan ?
@@ -55,4 +56,4 @@ Here is the list of some of the current markers used in PYLEECAN:
 * GMSH : test using GMSH
 * etc...
 
-The complete list is available in the file pyleecan/pytest.ini. If you want to create some, you'll have to write them in this file.
+The complete list is available in the file __pyleecan/pytest.ini__. If you want to create some, you'll have to write them in this file.
