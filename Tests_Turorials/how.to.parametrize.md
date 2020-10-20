@@ -40,3 +40,7 @@ lst = ((1,2,2),(2,2,4),(50,10,500))
 def test_multiply(x, y, result):
     assert multiply(x,y) == result
 ```
+
+## Go Further
+
+Pytest allow us to make setup and teardown function with something called __fixture__. [Here is one more tutorial.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/make.setup.function.md)
