@@ -122,7 +122,7 @@ In this list, build_geometry and build_geometry_wind are the only two
 mandatory methods to define. All the other can be computed numerically
 according to the result of these two methods. The numerical computation
 code is defined as methods of the *Slot* or *SlotWind* classes. The
-other methods (comp_surface, comp_height,\...) can be defined to
+other methods (comp_surface, comp_height,...) can be defined to
 provide a faster analytical way of computing these values. We recommend
 defining all the methods, but the fastest way to add a new slot is just
 to define build_geometry and build_geometry_wind. Once you know which

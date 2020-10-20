@@ -31,11 +31,11 @@ following rules:
 
 -   **Function** folder contains general functions that can be used by
     several methods (for instance FFT computation, interaction with
-    other software\...).
+    other software...).
 
 -   **Tests** folder contains all the unittest and the validation cases.
     The subfolders follow the organization of the tested folders
-    (Classes, Methods, GUI\...).
+    (Classes, Methods, GUI...).
 
 PYLEECAN repositories
 ---------------------

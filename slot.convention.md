@@ -61,8 +61,8 @@ Slot geometry convention (internal lamination):
 Several of these methods use polar definitions for the height or for the angle to be able to easily define a polar equivalent of the machine (for instance for subdomain model -- Magnetic module).
 
 All the SlotWind objects have the following methods: 
-- _comp_coordinates(): (optional) Returns a list of the complex point coordinates in the order (P1, P2, P3\...). If there are some arcs 
-between the points (for instance an arc between (P2, P3) of center Pc1), the convention is to return the center coordinates too (P1, P2, Pc1, P3, P4 \...) 
+- _comp_coordinates(): (optional) Returns a list of the complex point coordinates in the order (P1, P2, P3...). If there are some arcs 
+between the points (for instance an arc between (P2, P3) of center Pc1), the convention is to return the center coordinates too (P1, P2, Pc1, P3, P4 ...) 
 - build_geometry(): Returns a list of Line objects that enables to draw in 2D one slot in trigonometric direction (no bore arc, the beginning of each Line is the end of the previous one). 
 - build_geometry_wind(): Returns a list of Surface objects that enables to draw in 2D the winding zones (taking 2 integer, Nrad and Ntan, as arguments to set the number of winding zones to be drawn). 
 - check(): Checks that all the geometrical constraints are respected, throw exceptions otherwise. 

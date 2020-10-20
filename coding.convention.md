@@ -9,7 +9,7 @@ provide a « simple » code that anyone can contribute to. Python is a
 language that was thought to be readable. The Python community has
 written some rules about how a good readable Python code should be
 written. These rules are known as the Python Enhancement Proposal 8
-(PEP8): https://www.python.org/dev/peps/pep-0008/.
+(PEP8): <https://www.python.org/dev/peps/pep-0008/>.
 
 The **PYLEECAN project follows the PEP8 rules** to unify the coding
 style of all the contributors. The code will be more homogenous and

@@ -3,7 +3,7 @@ Output object
 =============
 
 The Output class is composed of several subclasses corresponding to
-physical domains (Output.Electrical, Output.Structural\...). The Output
+physical domains (Output.Electrical, Output.Structural...). The Output
 object is instantiated by the Simulation method run(). Each Output
 sub-object (i.e. physics) contains mostly the same data, organized in
 the same way whatever model was used to compute it. For instance an
