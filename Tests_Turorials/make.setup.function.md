@@ -29,3 +29,7 @@ but return doesn't allow us to continue the function after it happens. When pyte
 finished, the setup function continue after the yield, it becomes now a __teardown__ function.
 
 A fixture allow us to setup some data before a test function process and after it has done its work. After the yield we can free some memory or close an application etc...
+
+## Go Further
+
+If you want to contribute : [check those guidelines](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.contribute.md)
