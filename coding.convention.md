@@ -182,7 +182,7 @@ commit message to indicate the nature of the commit:
     important to be tagged separately
 
 When possible, please refer to the corresponding issue in your commit
-message with #\<issue number\>, Github will automatically add a link to
+message with #\<issue number>, Github will automatically add a link to
 the commit in the issue.
 
 Geometrical convention
