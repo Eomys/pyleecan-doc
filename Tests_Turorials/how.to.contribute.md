@@ -11,6 +11,36 @@ In the Tests directory, you can find some various subdirectories.
 If you're writing a test which it concerns the GUI, you'll have to put your test in the subdirectory GUI. 
 In a same way, if you're writing a test which it concerns a Plot, you'll have to put your test in the subdirectory Plot.
 
+## Which tests to develop
+
+An easy way to find a PYLEECAN part that needs to be tested is to use [coveragepy](https://github.com/nedbat/coveragepy/blob/coverage-5.3/doc/index.rst). This pytest extension enables to see which lines in the code are not executed by the existing tests. It can be installed with this command:
+```
+pip install coverage
+```
+If you usually use:
+```
+pytest arg1 arg2 arg3
+```
+Then you can run your tests under coverage with:
+```
+coverage run -m pytest arg1 arg2 arg3
+```
+Once your tests have been executed, you can start the report of the coverage by doing those two commands:
+```
+coverage report -m
+coverage html
+```
+The first one will allow you to print the report in your computer prompt, the second one will create a file html for each files. If you open the index.html, you should see:
+
+![img](https://pyleecan.org/_images/coverage_report.png)
+
+Within the report, you will see which files and which code lines are not covered and find what to test next.
+For example the Arc3 method discretize is not covered at 100%, there are some lines not covered as line 40 and 42 colored in pink :
+
+![img](https://pyleecan.org/_images/coverage1.png)
+
+In this case, there is no test to check that the discretization can handle strange arguments.
+
 ## How to make a good formated code
 
 First of all, you have to name your variables correctly by describing what they are doing. You can make it better by commenting your code.
