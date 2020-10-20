@@ -76,8 +76,7 @@ Webinar
 Three public and free webinars will be organized by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/about/) and UNICAS
 University:
 
--   Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)?
-    Pyleecan basics, call of FEMM, use of the GUI
+-   [Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the GUI](webinar_1.md)
 -   Friday 30th October 15h-17h (GMT+1): How to use pyleecan (advanced)?
     Optimization tools, meshing, plot commands
 -   Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan?
