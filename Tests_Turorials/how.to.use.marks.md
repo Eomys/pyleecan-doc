@@ -57,3 +57,7 @@ Here is the list of some of the current markers used in PYLEECAN:
 * etc...
 
 The complete list is available in the file __pyleecan/pytest.ini__. If you want to create some, you'll have to write them in this file.
+
+## Go Further
+
+Pytest allow to parametrize tests. [Here is a another tutorial.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.parametrize.md)
