@@ -69,3 +69,7 @@ To run the tests, you need to open a terminal, go into the folder which contains
 ```
 python -m pytest
 ```
+
+## Go Further
+
+Pytest allow to put makrs on tests. [Here is a tutorial for Pyleecan.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.use.marks.md)
