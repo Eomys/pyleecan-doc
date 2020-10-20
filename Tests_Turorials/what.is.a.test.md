@@ -9,7 +9,7 @@ def multiply(x, y):
     return x * y
 
 
-def test_answer():
+def test_multiply():
     assert multiply(3, 3) == 9            #True
     assert multiply(4, 9) >= 36           #True
     assert multiply(10, 3) < 30           #False (And will cause an error that stops your program)
