@@ -79,7 +79,7 @@ In this case you then need to commit your modifications and make a pull request 
 [submit your contribution](https://pyleecan.org/code.contribution.html) to the [pyleecan](https://github.com/Eomys/pyleecan) code repository. 
 Once your modifications merged, we will regenerate the doc and update the website ourselves.
 * By adding (or correcting) a .md file, for instance
-  * if you have developed a new feature and you want to make a tutorial, you can add new “.md” files.
+  * if you have developed a new feature and you want to make a tutorial, you can add new “.md” files. [Check this documentation](https://agea.github.io/tutorial.md/)
   * if you have found some errors (typos) in the documentation and you want to correct it. In this case you can correct them on [pyleecan-doc](https://github.com/Eomys/pyleecan-doc) repository by finding and correcting the corresponding “md” file. You can do that directly through Github (it will automatically create a fork of the repository in your github account).
   
   Then you should again submit your contribution on pyleecan-doc repository to share with the community. 
