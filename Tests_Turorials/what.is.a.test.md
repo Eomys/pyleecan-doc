@@ -12,7 +12,7 @@ def multiply(x, y):
 def test_multiply():
     assert multiply(3, 3) == 9            #True
     assert multiply(4, 9) >= 36           #True
-    assert multiply(10, 3) < 30           #False (And will cause an error that stops your program)
+    assert multiply(10, 3) < 30           #False (And will cause an error that stops the program)
     assert not multiply(10, 3) < 30       #True
 ```
 
