@@ -31,18 +31,18 @@ It will launch only test_multiply. It is possible to make the command more preci
 ```
 python -m pytest -m "operation and not syntaxChange"
 ```
-With this idea you can specify the mark you don't want to launch :
+With this idea it is possible to specify the mark the test should not launch :
 ```
 python -m pytest -m "not operation"
 ```
 It'll launch all tests except __mark.operation__ ones. Notice that it is possible to put multiple marks on a single test.
 
 
-If the test methods are in a test class, you can also put markers for the class. But be carefull ! If you put a mark on a class, the mark will be on every test in the class.
-Also, the mark on the class has the priority. It means that if you don't want to launch the class test, you won't be able to run test methods in the class whatever you do.
+If the test methods are in a test class, one can also put markers for the class. But be carefull ! If one put a mark on a class, the mark will be on every test in the class.
+Also, the mark on the class has the priority. It means that if someone doesn't want to launch the class test, he won't be able to run test methods in the class whatever he does.
 
 
-__Please notice__ : If you can make a test class and put mark on it, it will be more efficient than putting markers on each test methods. Because when pytest is running with
+__Please notice__ : It is possible to make a test class and put mark on it, it will be more efficient than putting markers on each test methods. Because when pytest is running with
 a mark specification, it'll search for all matching markers. It can slow the running of the tests.
 
 
@@ -56,7 +56,7 @@ Here is the list of some of the current markers used in PYLEECAN:
 * GMSH : test using GMSH
 * etc...
 
-The complete list is available in the file __pyleecan/pytest.ini__. If you want to create some, you'll have to write them in this file.
+The complete list is available in the file __pyleecan/pytest.ini__. If one wants to create some, he'll have to write them in this file.
 
 ## Go Further
 
