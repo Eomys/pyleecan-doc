@@ -24,7 +24,7 @@ def test_multiply():
     assert multiply(3, 3) == 9            #True
 ```
 
-When you want to test a simple method without a class, you can just write your test function like above. 
+To test a simple method without a class, it is possible to write the test function like above. 
 Please notice that with pytest, a test is a function located in file starting with “test_” or ending with “test”. Test function name has to begin with “test” in Pyleecan.
 
 Sometimes, It'll be necessary to create a test class to make files cleaner or because it can't work without it. Here is how to do :
@@ -65,11 +65,11 @@ usefull to test errors.
 
 ## How to run the tests ?
 
-To run the tests, you need to open a terminal, go into the folder which contains PYLEECAN and execute the command:
+To run the tests, open a terminal, go into the folder which contains PYLEECAN and execute the command:
 ```
 python -m pytest
 ```
 
 ## Go Further
 
-Pytest allow to put makrs on tests. [Here is a tutorial for Pyleecan.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.use.marks.md)
+Pytest allow to put markers on tests. [Here is a tutorial for Pyleecan.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.use.marks.md)
