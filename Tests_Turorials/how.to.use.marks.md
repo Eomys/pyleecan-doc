@@ -41,6 +41,26 @@ It'll launch all tests except __mark.operation__ ones. Notice that it is possibl
 If the test methods are in a test class, one can also put markers for the class. But be carefull ! If one put a mark on a class, the mark will be on every test in the class.
 Also, the mark on the class has the priority. It means that if someone doesn't want to launch the class test, he won't be able to run test methods in the class whatever he does.
 
+```py
+def multiply(x,y):
+    return x * y
+
+@pytest.mark.long
+class Test_Operation(object):
+
+    @pytest.mark.http
+    def test_multiply_http(self):
+        assert multiply(3, 3) == 9
+
+    def test_multiply(self):
+        assert multiply(3, 3) == 9
+
+```
+If he wants to launch the test with this command:
+```
+pytest -m "http and not long"
+```
+No test will be executed because the class mark take the priority.
 
 __Please notice__ : It is possible to make a test class and put mark on it, it will be more efficient than putting markers on each test methods. Because when pytest is running with
 a mark specification, it'll search for all matching markers. It can slow the running of the tests.
@@ -57,6 +77,12 @@ Here is the list of some of the current markers used in PYLEECAN:
 * etc...
 
 The complete list is available in the file __pyleecan/pytest.ini__. If one wants to create some, he'll have to write them in this file.
+
+__Please notice__ : To do a rapid check of the test in pyleccan, the "long" marker should be excluded when the test are running :
+
+```
+pytest -m "not long"
+```
 
 ## Go Further
 
