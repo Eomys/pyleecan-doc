@@ -1,6 +1,6 @@
 # Parametrizing test
 
-Pytest enables to go much further and test more cases on a single test by running a test with different input data. To do so, you just need to use the parametrize marker. This marker has two arguments:
+Pytest enables to go much further and test more cases on a single test by running a test with different input data. To do so, just need to use the parametrize marker. This marker has two arguments:
 * a tuple containing the test parameters names
 * a list containing tuples, each tuple contains the input data for one test run
 
