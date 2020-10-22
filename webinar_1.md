@@ -8,7 +8,7 @@ This page gather the resources of the first webinar that was organized by [Green
 
 Here is the replay of the webinar:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7qojT14URBQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e_jbbsHUq3E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The presentation and the notebook are available [here](https://www.pyleecan.org/notebook/PYLEECAN_webinar_2020_10_16.zip). 
 
