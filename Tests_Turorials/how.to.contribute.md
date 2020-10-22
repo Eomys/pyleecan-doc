@@ -5,6 +5,7 @@
 PYLEECAN classes are generated automatically, all the classes are built in the same way. 
 This fact enables us to test all the classes with one test file which can be find in Tests/Classes. 
 So it's useless to develop tests for the class itself but it's still use to develop the tests for the methods defined in the Class Creation.
+But it's still usefull to test your classes in case of some issue appears after the automatic generator process.
 
 All the methods tests are gathered in Tests/Methods/\<subfolder> with Subfolder the type of the class (Geometry, Machine, Slot, etc.). And everything goes like that.
 In the Tests directory, there are some various subdirectories. 
