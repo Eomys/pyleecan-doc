@@ -25,6 +25,10 @@ pytest arg1 arg2 arg3
 Then launch tests under coverage with:
 ```
 coverage run -m pytest arg1 arg2 arg3
+
+coverage run -m pytest ./Tests
+coverage run -m pytest -v ./Tests/GUI
+coverage run -m pytest -v -m "not long"
 ```
 Once tests have been executed, the report of the coverage is accessible by doing those two commands:
 ```
@@ -41,6 +45,8 @@ For example the Arc3 method discretize is not covered at 100%, there are some li
 ![img](https://pyleecan.org/_images/coverage1.png)
 
 In this case, there is no test to check that the discretization can handle strange arguments.
+
+__Please notice__ : A file at 100% of coverage isn't a file without bugs. The coverage show just which lines are tested or not !
 
 ## How to make a good formated code
 
