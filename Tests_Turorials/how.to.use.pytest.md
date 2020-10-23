@@ -85,6 +85,21 @@ pytest ./Tests/GUI
 pytest ./Tests/Functions
 ```
 
+## Some useful function of pytest
+
+Some functions that are important to know:
+```
+with pytest.raises(ZeroDivisionError):
+    something_that_will_cause_the_error :    1/0
+    
+assert 0.1 + 0.2 == 0.3                     ----> False  due to that :  https://docs.python.org/3/tutorial/floatingpoint.html
+assert 0.1 + 0.2 == pytest.approx(0.3)      ----> True
+
+numpy.testing.assert_array_almost_equal([1.0,2.333],[1.0,2.333])               ----> True
+np.testing.assert_array_almost_equal([1.0,2.33333],[1.0,2.33339], decimal=5)   ----> False    2.33333 != 2.33339
+```
+There is also pytest-mock to use but [this tutotial](https://changhsinlee.com/pytest-mock/) is very comprehensive.
+
 ## Go Further
 
 Pytest allow to put markers on tests. [Here is a tutorial for Pyleecan.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.use.marks.md)
