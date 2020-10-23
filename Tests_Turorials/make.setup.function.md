@@ -1,6 +1,6 @@
 # How to make a setup function with Pytest
 
-To make a setup function, Pytest provide fixture functions. It's just a simple function that we launch before every test functions in the test class. It can also be a
+To make a setup function, Pytest provide fixture functions. It's just a simple function that we launch before every test functions in the test class. This method allow to make a common setup funcion for all the tests in the file/class. This is very useful. It can also be a
 function we launch before only one test not in a class. Here is an example :
 
 ```py
