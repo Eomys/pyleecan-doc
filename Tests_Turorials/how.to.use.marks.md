@@ -1,4 +1,4 @@
-# How to mark a test
+# How to launch some specific tests but not all in a class/file/folder ?
 
 Pytest enables to set metadata on the test functions with markers. This feature enables to easily exclude or include some tests from the test execution. 
 
@@ -36,7 +36,6 @@ With this idea it is possible to specify the mark the test should not launch :
 python -m pytest -m "not operation"
 ```
 It'll launch all tests except __mark.operation__ ones. Notice that it is possible to put multiple marks on a single test.
-
 
 If the test methods are in a test class, one can also put markers for the class. But be carefull ! If one put a mark on a class, the mark will be on every test in the class.
 Also, the mark on the class has the priority. It means that if someone doesn't want to launch the class test, he won't be able to run test methods in the class whatever he does.
