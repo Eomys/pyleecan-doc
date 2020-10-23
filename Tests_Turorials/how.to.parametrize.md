@@ -1,6 +1,6 @@
 # Parametrizing test
 
-Pytest enables to go much further and test more cases on a single test by running a test with different input data. To do so, just need to use the parametrize marker. This marker has two arguments:
+Pytest enables to go much further and test more cases on a single test by running a test with different input data. This is a very good alternative to test different data without duplicating the code. With that, it is possible to have a set of data which will be right and one another false. The speed of the tests will be increase by doing parametrization ! To do so, just need to use the parametrize marker. This marker has two arguments:
 * a tuple containing the test parameters names
 * a list containing tuples, each tuple contains the input data for one test run
 
@@ -8,22 +8,41 @@ One can also add markers to a specific input. In the following example we use th
 ```py
 import pytest
 
-@pytest.mark.parametrize(
-    ("n", "expected"),
-    [
-        (1, 2),
-        (4, 5),
-        pytest.param(1, 0, marks=pytest.mark.xfail), # <-- The test is supposed to fail with this data
-    ],
+"""Tests of the function is_on_line from Arc meth"""
+
+is_on_line_list = list()
+
+# 1  Check not on the circle
+is_on_line_list.append(
+    {
+        "arc": Arc1(begin=-2j, end=-1 - 1j, radius=-1, is_trigo_direction=False),
+        "Z": -1 - 2j,  # First point of cutting line
+        "result": False,
+    }
 )
-def test_increment(n, expected):
-    assert n + 1 == expected
+
+# 2  Check on the circle
+is_on_line_list.append(
+    {
+        "arc": Arc1(begin=-2j, end=-1 - 1j, radius=-1, is_trigo_direction=False),
+        "Z": -1j + exp(1j * 5 * pi / 4),  # First point of cutting line
+        "result": True,
+    }
+)
+
+@pytest.mark.parametrize("test_dict", is_on_line_list)
+def test_is_on_line(test_dict):
+    """Check is_on_line method"""
+    arc_obj = test_dict["arc"]
+
+    result = arc_obj.is_on_line(test_dict["Z"])
+
+    assert result == test_dict["result"]
 ```
 
-With this code, pytest will execute test_increment 3 times. First with n=1 & expected=2, second with n=4 & expected=5 and the last call. __Pytest.parm__ allow us to input
-more value than expected to give more information to the test.
+With this code, pytest will execute __test_is_on_line__ 2 times. First with the first element of the list named __is_on_line_list__ and the second element of the list. With this line __@pytest.mark.parametrize("test_dict", is_on_line_list)__ we can tell that the function __test_is_on_line__ will have in its parameters the list __is_on_line_list__ renamed by __test_dict__. And after that, the data can be used like a classic paramter. There is only one test function and it is possible to test it with plenty of different data to cover all the case.
 
-It is possible to set a list for the parametrize mark :
+Also, it is possible to set a list for the parametrize mark :
 
 ```py
 import pytest
