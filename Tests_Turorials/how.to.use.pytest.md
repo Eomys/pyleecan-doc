@@ -69,6 +69,21 @@ To run the tests, open a terminal, go into the folder which contains PYLEECAN an
 ```
 python -m pytest
 ```
+It is possible to launch a test of a precise folder or all the tests in a folder. To do it:
+```
+python -m pytest ./<Folder>/<SubFolder>/.../<File>.py
+or
+python -m pytest ./<Folder>
+```
+If the input of the tests does not give enough information, verbose can be add by adding __-v__ like this:
+```
+pytest -v ...
+```
+Functions and GUI folder can be test by doing that in pyleecan :
+```
+pytest ./Tests/GUI
+pytest ./Tests/Functions
+```
 
 ## Go Further
 
