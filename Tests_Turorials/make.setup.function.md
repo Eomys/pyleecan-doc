@@ -10,17 +10,29 @@ def multiply(x, y):
     
 @pytest.fixture
 def setup():
+    
+    # SETUP
+    
     lst = []
     for i in range(10):
         lst.append((i, i*2, i*i*2))
 
     yield lst
-
+    
+    # TEARDOWN
+    
     lst = []
 
-def test_multiply(setup):
-    for i in lst:
+def test_multiply(setup):                           #setup = lst
+    for i in setup:
         assert multiply(i[0],i[1]) == i[2]
+        
+def test_reverse_lst(setup):
+    setup.reverse()
+    assert setup[0][2] == 162    #(9*9*2)
+
+def test_lst(setup):
+    assert setup[0][2] == 0      #(0*0*2)
 ```
 
 The first method is multiplying x by y. Then the test_multiply function has __setup__ in his parameter. It means that the test function is calling the fixture one specified by
