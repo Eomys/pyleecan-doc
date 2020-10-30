@@ -43,7 +43,7 @@ model granularity (e.g. analytic, semi-analytic, finite element):
 -   Structural Mechanics
 -   Acoustics
 
-Status of the project (06th October 2020)
+Status of the project (30th October 2020)
 -----------------------------------------
 
 EOMYS initiated in 2018 the open-source project named PYLEECAN (Python
