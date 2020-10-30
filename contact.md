@@ -11,7 +11,7 @@ You can report to us on
 Mailing list
 ------------
 
-You can contact us at <pyleecan@framalistes.org> that redirect to all
+You can contact us at [pyleecan@framalistes.org](mailto:pyleecan@framalistes.org) that redirect to all
 the maintainers.
 
 Newsletter

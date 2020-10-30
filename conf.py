@@ -66,6 +66,9 @@ autosectionlabel_prefix_document = True
 googleanalytics_id = "UA-161753839-3"
 googleanalytics_enabled = True
 
+# Allow errorw in the code when generating the website
+nbsphinx_allow_errors = True
+nbsphinx_execute = "never"
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
