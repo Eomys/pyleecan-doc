@@ -248,6 +248,8 @@ html_sidebars = {
     "tuto_Plots": ["localtoc.html", "newsletter.html", "git_info.html"],
     "tuto_Optimization": ["localtoc.html", "newsletter.html", "git_info.html"],
     "tuto.add.slot": ["localtoc.html", "newsletter.html", "git_info.html"],
+    "webinar_1": ["newsletter.html", "git_info.html", "sourcelink.html"],
+    "webinar_2": ["newsletter.html", "git_info.html", "sourcelink.html"],
 }
 
 html_title = "PYthon Library for Electrical Engineering Computational ANalysis"
