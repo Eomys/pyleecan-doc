@@ -26,7 +26,7 @@ To test the widget of the class, it is advised to check which are the events tha
 ```
 
 PHoleM50 contains different interactions possible : __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are parts of the widget that can be updated by the user. The test will obviously
-modify them to simulate an user interaction. The __ls_W0__ is a field (Known because it start with a "lf"), and this field can be filled by a value by the user and also by the test.
+modify them to simulate an user interaction. The __ls_W0__ is a float_field (Known because it start with a "lf"), and this field can be filled by a value by the user and also by the test.
 If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we'll just have to clear the field, enter a value in it like a user'll do
 and call the signal __editingFinished__. Like this :
 
@@ -127,5 +127,11 @@ class TestPHoleM50(object):
 We are using a fixture to setup the widget. [Here](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/make.setup.function.md)
 is a tutorial to explain what it is.
 
+We saw how to test the user input in a field. But we can also test combobox and his choice. It is more easily. In PHoleM50 we have these lines we didn't speak yet :
 
+```py
+        self.w_mat_0.saveNeeded.connect(self.emit_save)
+        self.w_mat_1.saveNeeded.connect(self.emit_save)
+        self.w_mat_2.saveNeeded.connect(self.emit_save)
+```
 
