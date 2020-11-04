@@ -1,4 +1,4 @@
-# How to make test for the GUI (Graphical User Interface)
+# (WORK IN PROGRESS)How to make test for the GUI (Graphical User Interface)
 
 Something that can be hard to guess is how to unit test the GUI. How is it possible to interact with the GUI during tests without an user can interact with. Because a test is
 automatic, no one has to interact with them when they are launched. In fact, we can test the GUI by simulating an interaction with the GUI. But first, let's give a look this class :
