@@ -124,7 +124,7 @@ class TestPHoleM50(object):
         assert setup["test_obj"].hole[0].W0 == 0.31
 ```
 
-We are using a fixture to setup the widget. [Here](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/make.setup.function.md)
+We are using a fixture to setup the widget. [Here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/make.setup.function.md)
 is a tutorial to explain what it is.
 
 We saw how to test the user input in a field. But we can also test combobox and his choice. It is more easily. In PHoleM50 we have these lines we didn't speak yet :
