@@ -44,4 +44,4 @@ A fixture allow us to setup some data before a test function process and after i
 
 ## Go Further
 
-Want to contribute ? [Check those guidelines](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.contribute.md)
+Want to contribute ? [Check those guidelines](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.contribute.md)
