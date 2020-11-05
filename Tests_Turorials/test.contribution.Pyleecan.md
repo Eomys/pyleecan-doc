@@ -11,8 +11,8 @@ This tutorial concerns only Pyleecan and its conventions. Jump into it :
 * ## [Make setup function](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/make.setup.function.md)
 * ## [How to contribute to test development](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.contribute.md)
 * ## [How to unit test the GUI](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.unit.test.GUI.md)
-* ## [More Conventions](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/more.conventions.md)
 * ## [How to debug with pytest](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.debug.with.pytest.md)
+* ## [More Conventions](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/more.conventions.md)
 
 
 __Please notice__ : If at the end of the tutorial you don't want to develop test, know that every validation data that can help us to develop them are recquired.
