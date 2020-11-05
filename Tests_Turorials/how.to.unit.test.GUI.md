@@ -1,4 +1,4 @@
-# (WORK IN PROGRESS)How to make test for the GUI (Graphical User Interface)
+# How to make test for the GUI (Graphical User Interface)
 
 Something that can be hard to guess is how to unit test the GUI. How is it possible to interact with the GUI during tests without an user can interact with. Because a test is
 automatic, no one has to interact with them when they are launched. In fact, we can test the GUI by simulating an interaction with the GUI. But first, let's give a look this class :
@@ -135,3 +135,21 @@ We saw how to test the user input in a field. But we can also test combobox and 
         self.w_mat_2.saveNeeded.connect(self.emit_save)
 ```
 
+__W_mat_0__, __w_mat_1__ and __w_mat_2__ are the widgets that are defining the material of the magnet of the Lamination. To trigger those __saveNeeded__ signals,
+we can simply trigger the index of the combobox c_mat_type. Like this : 
+
+```py
+    def test_set_material_0(self, setup):
+        """Check that you can change the material of magnet_0"""
+        setup["widget"].w_mat_0.c_mat_type.setCurrentIndex(0)
+
+        assert setup["widget"].w_mat_0.c_mat_type.currentText() == "Magnet1"
+        assert setup["test_obj"].hole[0].mat_void.name == "Magnet1"
+
+        setup["widget"].w_mat_0.c_mat_type.setCurrentIndex(1)
+
+        assert setup["widget"].w_mat_0.c_mat_type.currentText() == "Magnet2"
+        assert setup["test_obj"].hole[0].mat_void.name == "Magnet2"
+```
+
+Like the example before, __setup["test_obj"]__ is set in a setup function. When we change the current index, a save signal is sent and the type will be changed automaticaly.
