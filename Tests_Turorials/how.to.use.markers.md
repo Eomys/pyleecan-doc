@@ -85,4 +85,4 @@ pytest -m "not long"
 
 ## Go Further
 
-Pytest allow to parametrize tests. [Here is a another tutorial.](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.parametrize.md)
+Pytest allow to parametrize tests. [Here is a another tutorial.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.parametrize.md)
