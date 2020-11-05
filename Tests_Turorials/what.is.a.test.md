@@ -21,7 +21,7 @@ with different values to ensure that is working. One of them is false and will c
 If it happens, either the function is wrong, or the test itself.
 
 We invite everyone contributing to the project to systematically add tests to all their contributions if possible. 
-You'll learn how to use pytest more precisely [here](https://github.com/BenjaminGabet/pyleecan-doc/blob/patch-1/Tests_Turorials/how.to.use.pytest.md) !
+You'll learn how to use pytest more precisely [here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.use.pytest.md) !
 
 ## Validation tests
 
