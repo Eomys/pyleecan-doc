@@ -84,7 +84,10 @@ Functions and GUI folder can be test by doing that in pyleecan :
 pytest ./Tests/GUI
 pytest ./Tests/Functions
 ```
-
+It is possible to combine -m, -v like this :
+```
+pytest -v -m "GUI" ./Tests/Methods/Slot/test_HoleM50_meth.py
+```
 ## Some useful function of pytest
 
 Some functions that are important to know:
