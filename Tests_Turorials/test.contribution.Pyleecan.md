@@ -15,5 +15,4 @@ This tutorial concerns only Pyleecan and its conventions. Jump into it :
 * ## [More Conventions](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/more.conventions.md)
 
 
-__Please notice__ : If at the end of the tutorial you don't want to develop test, know that every validation data that can help us to develop them are recquired.
-We are interested in validation datas, publications or everything you have.
+__Please notice__, if you don't have time to develop test, please talk about what are the expected results of your model / topology on the Github issues (or in the code itself). We are always looking for validation data, simulation results, experimental measuments, new machines, publications... Anything that can help us making sure that our models are working and will always be.
