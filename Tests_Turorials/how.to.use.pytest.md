@@ -1,9 +1,9 @@
 # How to write a test with pytest
 
-The python test package was initially based on unittest, but it have been decided to switch to pytest package for its ease of use. Every new test should use pytest. 
+The python test package was initially based on unittest, but it has been decided to switch to pytest package for its ease of use. Every new test should use pytest. 
 To test a code, it is recommended to develop its specific test code for each method and each class.
 
-## How to install pytest ?
+## How to install pytest?
 
 To install pytest, one can use the following command:
 ```
@@ -11,9 +11,9 @@ pip install -U pytest
 ```
 After that, pytest will be installed and ready to be used.
 
-## How to write a test with pytest
+## How to write a test with pytest?
 
-Here is an example :
+Here is an example:
  
  ```py
 def multiply(x, y):
@@ -25,9 +25,9 @@ def test_multiply():
 ```
 
 To test a simple method without a class, it is possible to write the test function like above. 
-Please notice that with pytest, a test is a function located in file starting with “test_” or ending with “test”. Test function name has to begin with “test” in Pyleecan.
+Please notice that with pytest, a test is a function located in file starting with “test_” or ending with “test”. Test function names have to begin with “test” in Pyleecan.
 
-Sometimes, It'll be necessary to create a test class to make files cleaner or because it can't work without it. Here is how to do :
+Sometimes, it will be necessary to create a test class to make files cleaner or because it cannot work without it. Here is how to do it:
 
 ```py
 class Operation(object):
@@ -60,10 +60,10 @@ class Test_operation(object):
 
 ```
 
-The class test is always beginning with __Test___. In the test_divide, the method is dividing 3 by 0 and pytest is raising the error __ZeroDivisionError__. It's quite
+The class test is always beginning with __Test___. In the test_divide, the method is dividing 3 by 0 and pytest is raising the error __ZeroDivisionError__. It is quite
 usefull to test errors.
 
-## How to run the tests ?
+## How to run the tests?
 
 To run the tests, open a terminal, go into the folder which contains PYLEECAN and execute the command:
 ```
@@ -79,7 +79,7 @@ If the input of the tests does not give enough information, verbose can be add b
 ```
 pytest -v ...
 ```
-Functions and GUI folder can be test by doing that in pyleecan :
+Functions and GUI folder can be tested using the following commands:
 ```
 pytest ./Tests/GUI
 pytest ./Tests/Functions
@@ -101,8 +101,8 @@ assert 0.1 + 0.2 == pytest.approx(0.3)      ----> True
 numpy.testing.assert_array_almost_equal([1.0,2.333],[1.0,2.333])               ----> True
 np.testing.assert_array_almost_equal([1.0,2.33333],[1.0,2.33339], decimal=5)   ----> False    2.33333 != 2.33339
 ```
-There is also pytest-mock to use but [this tutotial](https://changhsinlee.com/pytest-mock/) is very comprehensive.
+pytest-mock can also be very handy. Have a look at [this tutorial](https://changhsinlee.com/pytest-mock/) for more details.
 
-## Go Further
+## To go Further
 
-Pytest allow to put markers on tests. [Here is a tutorial for Pyleecan.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.use.markers.md)
+Pytest allows to put markers on tests. [Here is a tutorial for how to use markers in PYLEECAN.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.use.markers.md)
