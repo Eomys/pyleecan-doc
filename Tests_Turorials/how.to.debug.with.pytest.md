@@ -1,6 +1,6 @@
 # Debugging with pytest
 
-Debugging allow us to print variable during the execution of the test. If the test is false and the reason why is not obvious, debugging is a solution to find where is the problem.
+Debugging allows us to print variables during the execution of the test. If the test fails and the reason why is not obvious, debugging is a solution to find where the problem is.
 
 To debug with pytest, we are using this line : 
 ```py
@@ -43,9 +43,9 @@ Here is an example in __pyleecan\Tests\Methods\Slot\test_HoleM50_meth.py__:
         assert len(result[0].line_list) == 7
 ```
 
-The tests will be paused when the line will be called and the terminal will allow us to debug. With it we can print variables and objects. We can exit the debug mode
+The tests will be paused when the line will be reached and the terminal will allow us to debug. With it we can print variables and objects. We can exit the debug mode
 by typing __exit__ or __continue__ in the terminal : __exit__ will stop and quit the tests, __continue__ will stop the debug mode and continue the tests.
-__Notice__ : It's impossible to test the lines after the line print by the debugger at the start of the debug mode.
+__Note__ : It is impossible to test the lines after the line print by the debugger at the start of the debug mode.
 
 Here is an example :
 ```
