@@ -11,6 +11,9 @@ All the methods tests are gathered in Tests/Methods/\<subfolder> with Subfolder 
 In the Tests directory, there are some various subdirectories. 
 If the test concerns the GUI, it have to be in the subdirectory GUI. 
 In a same way, if the test which concerns a Plot, it have to be in the subdirectory Plot.
+There is the list of subdirectories: __Classes__, __Functions__, __GUI__, __Methods__, __Plot__, __Simulation__, __Tutorials__, __Validation__.
+The subdirectory __Functions__ contains tests of the methods that are not from an object. __Methods__ contains tests of the methods of the objects, __Simu__ contains
+tests of the __Simu__ object. And __Validation__ are complete tests of true machine.
 
 ## Which tests to develop
 
@@ -56,7 +59,7 @@ Also, there is a package which enhance the code by formatting it. It's called Bl
 
 Install it and run it by using those commands:
 ```
-pip install black
+pip install -Iv black==20.8b1
 python -m black {source_file_or_directory}
 ```
 
