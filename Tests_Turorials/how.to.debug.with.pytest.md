@@ -57,7 +57,9 @@ Tests\Methods\Slot\test_HoleM50_meth.py .......
 5
 ```
 
+## To go further
 
+To see more conventions: [click here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/more.conventions.md).
 
 
 
