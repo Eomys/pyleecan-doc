@@ -151,3 +151,7 @@ we can simply trigger the index of the combobox c_mat_type:
 ```
 
 Similarly to the previous example, __setup["test_obj"]__ is set in a setup function. When we change the current index, a save signal is sent and the type will be changed automatically.
+
+## To go further
+
+Pytest allow to debug the code during the test. [Here is an another tutorial.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.debug.with.pytest.md)
