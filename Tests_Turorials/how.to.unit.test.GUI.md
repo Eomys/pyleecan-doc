@@ -1,7 +1,6 @@
 # How to make test for the GUI (Graphical User Interface)
 
-Something that can be hard to guess is how to unit test the GUI. How is it possible to interact with the GUI during tests without an user can interact with. Because a test is
-automatic, no one has to interact with them when they are launched. In fact, we can test the GUI by simulating an interaction with the GUI. But first, let's give a look this class :
+Pyleecan also includes some tests for the GUI. These tests are able to simulate the interaction of a user with the GUI (a button is clicked, a field is edited...) and check that the GUI reacted as expected. Here is a first example of such test:
 
 ## PHoleM50
 
@@ -27,7 +26,7 @@ To test the widget of the class, it is advised to check which are the events tha
 
 PHoleM50 contains different interactions possible : __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are parts of the widget that can be updated by the user. The test will obviously
 modify them to simulate an user interaction. The __ls_W0__ is a float_field (Known because it start with a "lf"), and this field can be filled by a value by the user and also by the test.
-If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we'll just have to clear the field, enter a value in it like a user'll do
+If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we'll just have to clear the field, enter a value in it a user would do
 and call the signal __editingFinished__. Like this :
 
 ```py
