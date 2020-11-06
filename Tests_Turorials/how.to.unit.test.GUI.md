@@ -1,11 +1,11 @@
-# How to make test for the GUI (Graphical User Interface)
+# How to make tests for the GUI (Graphical User Interface)
 
-Pyleecan also includes some tests for the GUI. These tests are able to simulate the interaction of a user with the GUI (a button is clicked, a field is edited...) and check that the GUI reacted as expected. Here is a first example of such test:
+Pyleecan also includes some tests for the GUI. These tests enable to simulate the interaction of a user with the GUI (a button is clicked, a field is edited...) and check that the GUI reacted as expected. Here is a first example of such tests:
 
 ## PHoleM50
 
-This class is [the perfect example](https://github.com/Eomys/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMHoleMag/PHoleM50/PHoleM50.py) of a GUI class to test.
-To test the widget of the class, it is advised to check which are the events that the user can perform on it. In the init of the class, there is those line :
+[This class](https://github.com/Eomys/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMHoleMag/PHoleM50/PHoleM50.py) is the perfect example of a GUI class to test.
+To test the widget of the class, it is advised to check which are the events that the user can perform on it. In the init of the class, there are those lines:
 
 ```py
         # Connect the signal
@@ -24,10 +24,9 @@ To test the widget of the class, it is advised to check which are the events tha
         self.w_mat_2.saveNeeded.connect(self.emit_save)
 ```
 
-PHoleM50 contains different interactions possible : __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are parts of the widget that can be updated by the user. The test will obviously
-modify them to simulate an user interaction. The __ls_W0__ is a float_field (Known because it start with a "lf"), and this field can be filled by a value by the user and also by the test.
-If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we'll just have to clear the field, enter a value in it a user would do
-and call the signal __editingFinished__. Like this :
+PHoleM50 contains different possible interactions: __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are part of the widget that can be updated by the user. The test will obviously modify them to simulate a user interaction. The __lf_W0__ is a float_field (known because it starts with a "lf"), and this field can be filled by a value by the user and also by the test.
+If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we just have to clear the field, enter a value in it as a user would do
+and call the signal __editingFinished__:
 
 ```py
     def test_set_W0(self, setup):
@@ -40,9 +39,9 @@ and call the signal __editingFinished__. Like this :
         assert widget.hole.W0 == 0.31
 ```
 
-This code is not complete but it explain how the test will work with the GUI. First we clear the field to enter a value without having trouble with some text that was here at start.
-Once it's done, we call a specific method of QTest (to import: __from PySide2.QtTest import QTest__) that allow us to fill the field with the value __0.31__ like if it was the user.
-And after that we are emitting the signal. When th signal is emitted, the function __set_W0__ of PHoleM50 is called :
+This code is not complete but it explains how the test will work with the GUI. First we clear the field to enter a value without having trouble with some text that was here at the start.
+Once it is done, we call a specific method of QTest (to import: __from PySide2.QtTest import QTest__) that allows us to fill the field with the value __0.31__ as if it were the user.
+And after that we are emitting the signal. Once the signal is emitted, the function __set_W0__ of PHoleM50 is called:
 
 ```py
     def set_W0(self):
@@ -58,13 +57,13 @@ And after that we are emitting the signal. When th signal is emitted, the functi
         self.saveNeeded.emit()
 ```
 
-If the function is correclty working, the widget will update the value W0 of his hole it concerns (here HoleM50). That's why we are testing it :
+If the function is correctly working, the widget will update the value W0 of the concerned hole (here HoleM50):
 
 ```py
         assert widget.hole.W0 == 0.31
 ```
 
-A question is still unanswered. How is defined __widget__ ? Here is the correct code to use : 
+A question is still unanswered. How is __widget__ defined? Here is the correct code to use: 
 
 ```py
 @pytest.mark.GUI
@@ -126,7 +125,7 @@ class TestPHoleM50(object):
 We are using a fixture to setup the widget. [Here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/make.setup.function.md)
 is a tutorial to explain what it is.
 
-We saw how to test the user input in a field. But we can also test combobox and his choice. It is more easily. In PHoleM50 we have these lines we didn't speak yet :
+We saw how to test the user input in a field. We can also test comboboxes, which is actually easier. In PHoleM50 we have these lines that we haven't spoken of yet:
 
 ```py
         self.w_mat_0.saveNeeded.connect(self.emit_save)
@@ -134,8 +133,8 @@ We saw how to test the user input in a field. But we can also test combobox and 
         self.w_mat_2.saveNeeded.connect(self.emit_save)
 ```
 
-__W_mat_0__, __w_mat_1__ and __w_mat_2__ are the widgets that are defining the material of the magnet of the Lamination. To trigger those __saveNeeded__ signals,
-we can simply trigger the index of the combobox c_mat_type. Like this : 
+__W_mat_0__, __w_mat_1__ and __w_mat_2__ are the widgets that are defining the materials of the magnet of the Lamination. To trigger those __saveNeeded__ signals,
+we can simply trigger the index of the combobox c_mat_type: 
 
 ```py
     def test_set_material_0(self, setup):
@@ -151,4 +150,4 @@ we can simply trigger the index of the combobox c_mat_type. Like this :
         assert setup["test_obj"].hole[0].mat_void.name == "Magnet2"
 ```
 
-Like the example before, __setup["test_obj"]__ is set in a setup function. When we change the current index, a save signal is sent and the type will be changed automaticaly.
+Similarly to the previous example, __setup["test_obj"]__ is set in a setup function. When we change the current index, a save signal is sent and the type will be changed automatically.
