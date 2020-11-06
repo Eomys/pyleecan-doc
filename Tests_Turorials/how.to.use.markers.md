@@ -1,10 +1,10 @@
-# How to launch some specific tests but not all in a class/file/folder ?
+# How to launch some specific tests but not all in a class/file/folder?
 
 Pytest enables to set metadata on the test functions with markers. This feature enables to easily exclude or include some tests from the test execution. 
 
-## How to use them ?
+## How to use them?
 
-Here is an example :
+Here is an example:
 
 ```py
 def multiply(x,y):
@@ -23,21 +23,20 @@ def test_lowerCase():
     assert lowerCase("HELLO WORLD") == "hello world"
 ```
 
-Here is two test methods which have different markers. To run the test with the __operation__ mark, the command line will be like :
+Here there are two test methods which have different markers. To run the test with the __operation__ mark, the command line will be:
 ```
 python -m pytest -m "operation"
 ```
-It will launch only test_multiply. It is possible to make the command more precise :
-```
-python -m pytest -m "operation and not syntaxChange"
-```
-With this idea it is possible to specify the mark the test should not launch :
+It is also possible to specify which mark the test should not launch:
 ```
 python -m pytest -m "not operation"
 ```
-It'll launch all tests except __mark.operation__ ones. Notice that it is possible to put multiple marks on a single test.
+This will launch all tests except __mark.operation__ ones. Finally, several markers can be called in a single test:
+```
+python -m pytest -m "operation and not syntaxChange"
+```
 
-If the test methods are in a test class, one can also put markers for the class. But be carefull ! If one put a mark on a class, the mark will be on every test in the class.
+If the test methods are in a test class, one can also put markers for the class. But be carefull! If one put a mark on a class, the mark will be applied on every test in the class.
 Also, the mark on the class has the priority. It means that if someone doesn't want to launch the class test, he won't be able to run test methods in the class whatever he does.
 
 ```py
@@ -55,17 +54,17 @@ class Test_Operation(object):
         assert multiply(3, 3) == 9
 
 ```
-If he wants to launch the test with this command:
+If the test is launched with this command:
 ```
 pytest -m "http and not long"
 ```
-No test will be executed because the class mark take the priority.
+No test will be executed because the class mark has the priority.
 
-__Please notice__ : It is possible to make a test class and put mark on it, it will be more efficient than putting markers on each test methods. Because when pytest is running with
-a mark specification, it'll search for all matching markers. It can slow the running of the tests.
+__Please note__: Putting a marker on a test class is more efficient than putting markers on each test methods, because when pytest is running with
+a mark specification, it will search for all matching markers, which can slow the running of the tests if there are many of them.
 
 
-## Markers in Pyleecan ?
+## Markers in Pyleecan?
 
 Here is the list of some of the current markers used in PYLEECAN:
 
@@ -75,14 +74,14 @@ Here is the list of some of the current markers used in PYLEECAN:
 * GMSH : test using GMSH
 * etc...
 
-The complete list is available in the file __pyleecan/pytest.ini__. If one wants to create some, he'll have to write them in this file.
+The complete list is available in the file __pyleecan/pytest.ini__. To create a new marker, please add it in this file.
 
-__Please notice__ : To do a rapid check of the test in pyleccan, the "long" marker should be excluded when the test are running :
+__Please note__: To do a rapid check of the tests in pyleccan, the "long" marker should be excluded when the test are running:
 
 ```
 pytest -m "not long"
 ```
 
-## Go Further
+## To go Further
 
-Pytest allow to parametrize tests. [Here is a another tutorial.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.parametrize.md)
+Pytest allows to parametrize tests. [Here is a another tutorial.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.parametrize.md)
