@@ -40,7 +40,7 @@ def test_is_on_line(test_dict):
     assert result == test_dict["result"]
 ```
 
-With this code, pytest will execute __test_is_on_line__ 2 times. First with the first element of the list named __is_on_line_list__ and the second element of the list. With this line __@pytest.mark.parametrize("test_dict", is_on_line_list)__ we can tell that the function __test_is_on_line__ will have in its parameters the list __is_on_line_list__ renamed by __test_dict__. And after that, the data can be used like a classic paramter. There is only one test function and it is possible to test it with plenty of different data to cover all the case.
+With this code, pytest will execute __test_is_on_line__ 2 times. First with the first element of the list named __is_on_line_list__ and the second element of the list. With this line __@pytest.mark.parametrize("test_dict", is_on_line_list)__ we can tell that the function __test_is_on_line__ will have in its parameters the list __is_on_line_list__ renamed by __test_dict__. And after that, the data can be used like a classic parameter. There is only one test function and it is possible to test it with plenty of different data to cover all the cases.
 
 Also, it is possible to set a list for the parametrize mark :
 
