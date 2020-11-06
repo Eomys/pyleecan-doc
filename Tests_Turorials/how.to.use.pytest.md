@@ -98,6 +98,13 @@ with pytest.raises(ZeroDivisionError):
 assert 0.1 + 0.2 == 0.3                     ----> False  due to that :  https://docs.python.org/3/tutorial/floatingpoint.html
 assert 0.1 + 0.2 == pytest.approx(0.3)      ----> True
 
+Both the relative and absolute tolerances can be changed by passing arguments to the approx constructor:
+1 + 1e-8 == approx(1)                       ----> True
+1 + 1e-8 == approx(1, abs=1e-12)            ----> False
+1 + 1e-8 == approx(1, rel=1e-6, abs=1e-12)  ----> True
+If you specify abs but not rel, the comparison will not consider the relative tolerance at all. In other words, two numbers that are within the default relative tolerance of 1e-6 will still be considered unequal if they exceed the specified absolute tolerance. If you specify both abs and rel, the numbers will be considered equal if either tolerance is met.
+
+
 numpy.testing.assert_array_almost_equal([1.0,2.333],[1.0,2.333])               ----> True
 np.testing.assert_array_almost_equal([1.0,2.33333],[1.0,2.33339], decimal=5)   ----> False    2.33333 != 2.33339
 ```
