@@ -35,7 +35,7 @@ organize the classes and what is the PYLEECAN coding convention.
 
 ### How to fork Pyleecan
 
-In order to develop in PYLEECAN, you first need to download the source code, following this [tutorial](fork.pyleecan.md).
+In order to develop in PYLEECAN, you first need to fork and download the source code, following this [tutorial](fork.pyleecan.md).
 
 ### How to create your own branch
 
