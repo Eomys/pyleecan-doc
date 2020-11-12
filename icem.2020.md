@@ -39,5 +39,4 @@ roadmap of Pyleecan project is given.
 Pre-print
 ---------
 
-The paper can be downloaded here:
-![](_static/icem2020_pyleecan.pdf)
+The paper can be downloaded [here](www.pyleecan.org/publications/icem2020_pyleecan.pdf).
