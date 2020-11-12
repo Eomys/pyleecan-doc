@@ -9,6 +9,8 @@ code:
 -   **Second step: Contribute to the code**
 -   **Third step: Submit your contribution**
 
+You can also watch the first part of this [webinar replay](webinar_3.md) for a step-by-step video tutorial.
+
 Talk about it
 -------------
 
@@ -30,6 +32,10 @@ organize the classes and what is the PYLEECAN coding convention.
 
 * [Object Organization](object.organization.md)
 * [Coding Convention](coding.convention.md)
+
+### How to fork Pyleecan
+
+In order to develop in PYLEECAN, you first need to download the source code, following this [tutorial](fork.pyleecan.md).
 
 ### How to create your own branch
 
