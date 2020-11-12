@@ -71,3 +71,20 @@ correctly: :
     python -m pytest -m "not long"
 
 More details on this command are available in the [tests contribution page](test.contribution.md).
+
+Step 5: Launch the GUI
+----------------------
+
+Before launching the Graphical User Interface and if you are using Anaconda on Windows,
+you will need to add a new variable to the system environment variables:
+- variable name: `QT_QPA_PLATFORM_PLUGIN_PATH`
+- value: `path\to\anaconda3\Lib\site-packages\PySide2\plugins\platforms`
+
+You can have a look at this [forum](https://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10) 
+if you don't know how to add an environment variable.
+
+You should now be able to launch the GUI with the command:
+`run -m pyleecan`
+
+Note that this command launched from the IPython console of Spyder will probably crash. We advise
+to launch it from a separate console.
