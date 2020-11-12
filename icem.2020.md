@@ -3,7 +3,7 @@
 
 Authors
 -------
-Pierre Bonneel ; Jean Le Besnerais ; Emile Devillers; Cédric Marinel; Raphaël Pile
+Pierre Bonneel ; Jean Le Besnerais ; Emile Devillers ; Cédric Marinel ; Raphaël Pile
 
 Status
 ------
