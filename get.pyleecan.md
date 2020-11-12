@@ -84,6 +84,7 @@ You can have a look at this [forum](https://superuser.com/questions/949560/how-d
 if you don't know how to add an environment variable.
 
 You should now be able to launch the GUI with the command:
+
 `run -m pyleecan`
 
 Note that this command launched from the IPython console of Spyder will probably crash. We advise
