@@ -70,16 +70,6 @@ Main Features:
 -   PYLEECAN is coupled to a **multiobjective optimization** library to
     carry design optimization of electrical machines.
 
-Webinar
--------
-
-Three public and free webinars have been be organized by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/about/) and UNICAS
-University. All the resources are available here:
-
--   [Friday 16th October 15h-17h (GMT+2): How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the GUI](webinar_1.md)
--   [Friday 30th October 15h-17h (GMT+1): How to use pyleecan (advanced)? Optimization tools, meshing, plot commands](webinar_2.md)
--   [Friday 6th November 15h-17h (GMT+1): How to contribute to pyleecan? Github projects, Object Oriented Programming](webinar_3.md)
-
 
 Getting started
 ---------------
