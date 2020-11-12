@@ -8,6 +8,10 @@ plots, gif, etc.).
 
 ![](_static/IPMSM_A.png)
 
+![](_static/opti_1.gif)
+
+![](_static/opti_2.gif)
+
 ![](_static/tuto_plots_B.gif)
 
 ![](_static/tuto_plots_B_fft.gif)
