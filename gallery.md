@@ -1,3 +1,6 @@
+Gallery
+=======
+
 Hereafter is an overview of some figures created by PYLEECAN (machines,
 plots, gif, etc.).
 
