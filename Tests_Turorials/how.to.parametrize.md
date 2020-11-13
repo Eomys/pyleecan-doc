@@ -1,10 +1,34 @@
 # Parametrizing test
 
 Pytest enables to go much further and test more cases on a single test by running a test with different input data. This is a very good alternative to test different data without duplicating the code. With this method, it is possible to have a set of data for which the test should pass and another one for which it should fail. The speed of the tests will also be increased by using parametrization. To do so, the parametrize marker simply needs to be used. This marker has two arguments:
-* a tuple containing the test parameters names
-* a list containing tuples, each tuple containing the input data for one test run
+* the name of the parameter;
+* the parameter which can be a dict, a list, a simple value or everything.
 
-One can also add markers to a specific input. In the following example, we use the xfail marker to specify that the test is supposed to fail with (1, 0) in input:
+Here is an example with a dict:
+
+```py
+import pytest
+
+"""Tests of the function is_on_line from Arc meth"""
+dict = {
+    "arc": Arc1(begin=-2j, end=-1 - 1j, radius=-1, is_trigo_direction=False),
+    "Z": -1 - 2j,  # First point of cutting line
+    "result": False,
+}
+
+@pytest.mark.parametrize("test_dict", dict)
+def test_is_on_line(test_dict):
+    """Check is_on_line method"""
+    arc_obj = test_dict["arc"]
+
+    result = arc_obj.is_on_line(test_dict["Z"])
+
+    assert result == test_dict["result"]
+```
+
+
+Here is an example with a list containing two dict:
+
 ```py
 import pytest
 
