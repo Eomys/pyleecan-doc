@@ -24,9 +24,8 @@ To test the widget of the class, it is advised to check which are the events tha
         self.w_mat_2.saveNeeded.connect(self.emit_save)
 ```
 
-PHoleM50 contains different possible interactions: __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are part of the widget that can be updated by the user. The test will obviously modify them to simulate a user interaction. The __lf_W0__ is a float_field (known because it starts with a "lf"), and this field can be filled by a value by the user and also by the test.
-If we want to test the function self.set_W0 which is connected to the field by a signal (__editingFinished__), we just have to clear the field, enter a value in it as a user would do
-and call the signal __editingFinished__:
+PHoleM50 contains different possible interactions: __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are part of the widget that can be updated by the user. The test will modify them to simulate a user interaction. The __lf_W0__ is a widget to enter a float (known because it starts with a "lf"). To test the function self.set_W0 which is connected to the __lf_W0__ by a signal (__editingFinished__), we need to clear the field, enter a value in it as a user would do
+and manually call the signal __editingFinished__:
 
 ```py
     def test_set_W0(self, setup):
@@ -39,8 +38,7 @@ and call the signal __editingFinished__:
         assert widget.hole.W0 == 0.31
 ```
 
-This code is not complete but it explains how the test will work with the GUI. First we clear the field to enter a value without having trouble with some text that was here at the start.
-Once it is done, we call a specific method of QTest (to import: __from PySide2.QtTest import QTest__) that allows us to fill the field with the value __0.31__ as if it were the user.
+A specific method of QTest (to import: __from PySide2.QtTest import QTest__) is used to fill the field with the value __0.31__ as if it were the user.
 And after that we are emitting the signal. Once the signal is emitted, the function __set_W0__ of PHoleM50 is called:
 
 ```py
@@ -63,7 +61,7 @@ If the function is correctly working, the widget will update the value W0 of the
         assert widget.hole.W0 == 0.31
 ```
 
-A question is still unanswered. How is __widget__ defined? Here is the correct code to use: 
+Finally to make this test work, the widget needs to be initialized. Here is a complete example: 
 
 ```py
 @pytest.mark.GUI
