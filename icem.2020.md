@@ -1,5 +1,5 @@
-[ICEM] Design Optimization of Innovative Electrical Machines Topologies Based on Pyleecan Opensource Object-Oriented Software
-=============================================================================================================================
+**[ICEM]** Design Optimization of Innovative Electrical Machines Topologies Based on Pyleecan Opensource Object-Oriented Software
+=================================================================================================================================
 
 Authors
 -------

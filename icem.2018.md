@@ -1,5 +1,5 @@
-[ICEM] Pyleecan: an open-source Python object-oriented software for the multiphysic design optimization of electrical machines
-==============================================================================================================================
+**[ICEM]** Pyleecan: an open-source Python object-oriented software for the multiphysic design optimization of electrical machines
+==================================================================================================================================
 
 Authors
 -------
