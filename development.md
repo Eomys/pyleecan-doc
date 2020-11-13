@@ -54,6 +54,4 @@ do. We have sorted the guidelines in three groups:
 * [Doc Contribution](doc.contributions.md)
     * [Docstring & Sphinx](doc.contribution.md#docstring-sphinx)
     * [Doc contributing guidelines](doc.contribution.md#doc-contributing-guidelines)
-* [Test Contribution](test.contribution.md)
-    * [Test development guidelines](test.contribution.md#test-development-guidelines)
-    * [Which tests to develop](test.contribution.md#which-tests-to-develop)
+* [Test Contribution](tests_tutorials/test.contribution.Pyleecan.md)

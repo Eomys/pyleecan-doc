@@ -20,7 +20,7 @@ with different values to ensure that it is working. One of them is false and wil
 If it happens, either the function is wrong, or the test itself.
 
 We invite everyone contributing to the project to systematically add tests to all their contributions if possible. 
-You can learn how to use pytest [here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.use.pytest.md).
+You can learn how to use pytest [here](how.to.use.pytest.md).
 
 ## Validation tests
 

@@ -34,6 +34,6 @@ including electromagnetics, heat transfer and vibro-acoustic analysis.
 Pre-print
 ---------
 
-The paper can be downloaded [here](www.pyleecan.org/publications/pid5329885.pdf).
+The paper can be downloaded [here](https://www.pyleecan.org/publications/pid5329885.pdf).
 
-The oral presentation can be downloaded [here](www.pyleecan.org/publications/2018_09_05_pyleecan_a_new_open_software_project.pdf).
+The oral presentation can be downloaded [here](https://www.pyleecan.org/publications/2018_09_05_pyleecan_a_new_open_software_project.pdf).

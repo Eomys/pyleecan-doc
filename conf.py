@@ -133,7 +133,12 @@ html_static_path = ["_static"]
 # 'searchbox.html']``.
 #
 html_sidebars = {
-    "**": ["relations.html", "searchbox.html", "sourcelink.html"],
+    "**": [
+        "relations.html",
+        "searchbox.html",
+        "git_info.html",
+        "sourcelink.html",
+    ],
     "index": [
         "sitenav.html",
         "localtoc.html",

@@ -112,4 +112,4 @@ pytest-mock can also be very handy. Have a look at [this tutorial](https://chang
 
 ## To go Further
 
-Pytest allows to put markers on tests. [Here is a tutorial for how to use markers in PYLEECAN.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.use.markers.md)
+Pytest allows to put markers on tests. [Here is a tutorial for how to use markers in PYLEECAN.](how.to.use.markers.md)

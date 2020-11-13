@@ -10,4 +10,4 @@ Here is an example :
 
 ## To return to the beginning of this tutorial:
 
-[Here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/what.is.a.test.md).
+[Here](what.is.a.test.md).

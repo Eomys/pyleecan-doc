@@ -2,11 +2,9 @@
 Media
 =====
 
-[Videos](videos.md)
---------
+This page regroups videos, publications and image gallery related to PYLEECAN.
 
-[Publications](publications.md)
---------------
+* [Videos](videos.md)
+* [Publications](publications.md)
+* [Gallery](gallery.md)
 
-[Gallery](gallery.md)
----------

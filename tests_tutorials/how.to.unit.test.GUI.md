@@ -120,7 +120,7 @@ class TestPHoleM50(object):
         assert setup["test_obj"].hole[0].W0 == 0.31
 ```
 
-We are using a fixture to setup the widget. [Here](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/make.setup.function.md)
+We are using a fixture to setup the widget. [Here](make.setup.function.md)
 is a tutorial to explain what it is.
 
 We saw how to test the user input in a field. We can also test comboboxes, which is actually easier. In PHoleM50 we have these lines that we haven't spoken of yet:
@@ -152,4 +152,4 @@ Similarly to the previous example, __setup["test_obj"]__ is set in a setup funct
 
 ## To go further
 
-Pytest allow to debug the code during the test. [Here is an another tutorial.](https://github.com/Eomys/pyleecan-doc/blob/master/Tests_Turorials/how.to.debug.with.pytest.md)
+Pytest allow to debug the code during the test. [Here is an another tutorial.](how.to.debug.with.pytest.md)
