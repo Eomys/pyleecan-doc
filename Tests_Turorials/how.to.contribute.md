@@ -7,15 +7,18 @@ This fact enables us to test all the classes with one test file which can be fin
 It's still usefull to test your classes and its methods in case of some issue appears after the automatic generator process.
 
 All the methods tests are gathered in Tests/Methods/\<subfolder> with Subfolder the type of the class (Geometry, Machine, Slot, etc.). And everything goes like that.
-In the Tests directory, there are some various subdirectories. 
-If the test concerns the GUI, it have to be in the subdirectory GUI. 
-In a same way, if the test which concerns a Plot, it have to be in the subdirectory Plot.
-There is the list of subdirectories: __Classes__, __Functions__, __GUI__, __Methods__, __Plot__, __Simulation__, __Tutorials__, __Validation__.
-The subdirectory __Functions__ contains tests of the methods that are not from an object. __Methods__ contains tests of the methods of the objects, __Simu__ contains
-tests of the __Simu__ object. And __Validation__ are complete tests of true machine.
+In the Tests directory, there are some various subdirectories:
+__Classes__ is for tests concerning the class themselves (making sure that the class generator return a correct class)
+__Functions__ is for tests on the generic function that can be found in the function folder of pyleecan
+__GUI__ is for all the tests regarding the GUI
+__Methods__ is for checking that each method of each class behave as it should. 
+__Plot__ is to gather the plot methods test with various data or topologies
+__Tutorials__ is to include the tutorial and webinar notebook into the tests
+__Validation__ gather the tests that running one or several simulations to compare pyleecan with other software or publication results
 
 ## Which tests to develop
 
+As always, if you want to contribute to the validation of pyleecan, start by [opening an issue to talk](https://github.com/Eomys/pyleecan/issues) about it. 
 An easy way to find a PYLEECAN part that needs to be tested is to use [coveragepy](https://github.com/nedbat/coveragepy/blob/coverage-5.3/doc/index.rst). This pytest extension enables to see which lines in the code are not executed by the existing tests. It can be installed with this command:
 ```
 pip install coverage
