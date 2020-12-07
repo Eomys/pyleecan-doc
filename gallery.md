@@ -45,3 +45,5 @@ plots, gif, etc.).
 ![](_static/fig_16_WindingUD.svg)
 
 ![](_static/fig_18_BoreFlower.svg)
+
+![](_static/LSRPM.png)
