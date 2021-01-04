@@ -13,9 +13,9 @@ Step 1: Getting python
 ----------------------
 
 To be able to use PYLEECAN you will need to download
-[Python](https://www.python.org/downloads/). We recommend a version
-\>3.6 to be able to use [black](https://pypi.org/project/black/) but
-this is not mandatory. Support with older Python version haven't been
+[Python](https://www.python.org/downloads/). We recommend a python version
+between 3.6 (to be able to use [black](https://pypi.org/project/black/) but
+this is not mandatory) and 3.8 for the GUI (if you want to use it). Support with older Python version haven't been
 checked and can be possible. If you experience difficulties with running
 Pyleecan with any version of Python, please [open an issue on
 Github](https://github.com/Eomys/pyleecan/issues) to talk about it.
