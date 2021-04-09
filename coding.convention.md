@@ -193,3 +193,4 @@ pyleecan:
 
 * [Slot Conventions](slot.convention.md)
 * [Winding Conventons](winding.convention.md)
+* [Label Conventons](label.convention.md)
