@@ -70,10 +70,10 @@ you may also want to install [Tortoisegit](https://tortoisegit.org/download/)
 (or any equivalent) for a more convenient use of git. 
 
 Once git is installed you can **"clone"** the repository (either though command 
-line or the tool you have installed with git) with the following command 
+line or the tool you have installed with git) by getting the link on your fork
 (green square on the picture):
 
-`git clone https://github.com/Eomys/pyleecan`
+`git clone https://github.com/<Your Github name>/pyleecan`
 
 This method will enable you to get the upcoming modifications of the Pyleecan's code in a more convenient way.
 
