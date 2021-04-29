@@ -28,7 +28,7 @@ Origin and Current Status of the Project
 * PYLEECAN is coupled to a **multiobjective optimization** library to carry design optimization of electrical machines.
 * PYLEECAN enables to define **Parameter Sweep** of variable speed simulations.
 
-**Main Topologies Features:*
+**Main Topologies Features:**
 * PYLEECAN includes a **Graphical User Interface** to define main 2D radial flux topologies parametrized geometries (**SPMSM, IPMSM, SCIM, DFIM, WRSM, SRM, SynRM**) including material library.
 * Possibility to import Slot or Hole from DXF files
 * User Defined Winding or automatic algorithm
