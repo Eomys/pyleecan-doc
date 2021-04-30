@@ -19,9 +19,9 @@ Step 1: Installing Pyleecan
 
 To contribute to Pyleecan the first required tool is... Pyleecan. ou
 will first need to install **Python** and an **IDE** (Integrated
-Development Environment), then to **download Pyleecan**. Please follow
-[the procedure](get.pyleecan.md) to **"fork"
-Pyleecan with git** (the "I want to contribute way"), it will be
+Development Environment), then please follow
+[the procedure](fork.pyleecan.md) to **"fork"
+Pyleecan with git**, it will be
 required for the next part of this tutorial.
 
 Step 2: Defining the Slot
