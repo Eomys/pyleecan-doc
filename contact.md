@@ -17,7 +17,7 @@ the maintainers.
 Newsletter
 ----------
 
-<p>You can subscribe to <a href="#" id="newsletter" onclick="popUp()"> PYLEECAN newsletter </a> to be notified on recent developments.</p>
+<p>You can subscribe to <a href="http://eepurl.com/gYV_C1"> PYLEECAN newsletter </a> to be notified on recent developments.</p>
 
 Pyleecan projet is supported by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/about/) non-profit
 association.
