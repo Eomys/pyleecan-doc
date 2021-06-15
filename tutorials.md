@@ -14,6 +14,7 @@ we recommand to read in order.
 * [How to solve optimization problem in Pyleecan](tuto_Optimization.md) 
 * [How to run a multi-simulation](tuto_multisimulation.md)
 * [How to add a new slot in Pyleecan](tuto.add.slot.md)
+* [How to run a Parameter Sweep of Variable speed simulation](tuto_MultiSim.md)
 
 How to run the tutorial
 -----------------------
