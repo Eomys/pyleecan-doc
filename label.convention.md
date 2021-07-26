@@ -14,16 +14,28 @@ For a lamination with a rotor and a stator the corresponding labels would be "St
 
 Surface label conventions:
 --------------------------
-Surface label must be unique within the machine to enable defining different property in any surface. The surface label is organized as follow: <lamination_label>_<surface_type>_<surface_index> with:
+Surface label must be unique within the machine to enable defining different property in any surface (for magnet demagnetization for instance). All the surface label are organized as follow: <lamination_label>_<surface_type>_<surface_index> with:
 - <lamination_label> as described above ("Stator-0" for instance)
-- <surface_type> one from the following list: "Winding", "Magnet", "HoleMag", "HoleVoid", "Ventilation", "Lamination"
+- <surface_type> one from the following list: "Winding", "Magnet", "HoleMag", "HoleVoid", "Ventilation", "Lamination" etc
 - <surface_index> RX-TY-SZ with "R" for Radial, "T" for Tangential and "S" for Slot. This coordinate system is further details in the corresponding article ([winding/slot](https://pyleecan.org/winding.convention.html), Holes - To Be Added)
-For instance the label of the 1st radial layer, 2nd tangential layer of the winding in the 8th slot of the first rotor would be: "Rotor-0_Winding_R0-T1_S7"
+For instance the label of the 1st radial layer, 2nd tangential layer of the winding in the 8th slot of the first rotor would be: "Rotor-0_Winding_R0-T1-S7"
+
+Line property dictionnary:
+--------------------------
+On a same line, several couplings/models may need to set different properties. Instead of a label, all the Line objects have a "prop_dict" property. As an example, all the lines where the boundary conditions needs to be defined have a key "Boundary" and a value for instance within "YokeSide", "sliding_line", etc.
 
 How to handle labels:
 ---------------------
-All labels definition and important functions are gathered in pyleecan/Functions/labels.py. All label definition (in build_geometry methods for instance) must use the variables defined in this file to make sure that the label are consistant and to enable renaming them (Stator => stat for instance).
+All labels definition and important functions are gathered in pyleecan/Functions/labels.py. All label definition (in build_geometry methods for instance) must use the variables defined in this file to make sure that the label are consistant and to enable renaming/extend them ("Stator" => "Stat" for instance).
 
     | <span style="color:red">NOT TO DO</span> | if "Stator" in label:   |
     | ---------------------------------------- | ------------------------|
     | <span style="color:green">TO DO</span>   | if STATOR_LAB in label: |
+
+It also enables to find quickly where each label is used by serching for the corresponding import.
+
+The function "decode_label" must be called when checking a surface type. It enables to check the proper part of the label easily: 
+
+    | <span style="color:red">NOT TO DO</span> | if WIND_LAB in label:   |
+    | ---------------------------------------- | ------------------------|
+    | <span style="color:green">TO DO</span>   | if WIND_LAB in decode_label(label)["surf_type"]): |
