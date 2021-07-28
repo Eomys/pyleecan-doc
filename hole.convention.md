@@ -21,7 +21,7 @@ For the definition of the hole geometry with build_geometry() the following conv
 
 Example:
 
-![](_static/Hole_Convention/Hole_RTS.png)
+![](_static/Hole_Convention/Hole_RTS.PNG)
 
 In the example magnet_1 of the R0 hole is None, so there is no R0-T1-S0 for magnet, pyleecan skip to R0-T2-S0. Then HoleMag_R0-T2 will always correspond to lamination.hole[0].magnet_2
 
