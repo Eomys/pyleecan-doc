@@ -494,6 +494,10 @@ div.code-block-caption {
     border: 1px solid #ccc;
 }
 
+dl.field-list {
+    display: block;
+}
+
 /* -- @media ----------------------------------------------------------- */
 @media (min-width: 1200px) {
     .pageheader {
