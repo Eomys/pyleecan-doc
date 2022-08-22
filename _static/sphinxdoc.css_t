@@ -498,6 +498,10 @@ dl.field-list {
     display: block;
 }
 
+pre, div[class*="highlight-"] {
+    clear: inherit;
+}
+
 /* -- @media ----------------------------------------------------------- */
 @media (min-width: 1200px) {
     .pageheader {
