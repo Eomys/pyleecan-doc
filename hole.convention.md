@@ -1,7 +1,7 @@
 Hole Conventions
 ================
 
-The magnets of each all are defined as a property like "magnet_X" with X the index of the magnet. It enables to define different material/magnetization for each magnet of the hole. The magnets index correspond to the trigonometrical order starting from 0:
+The magnets of each hole are defined as a property like "magnet_X" with X the index of the magnet. It enables to define different material/magnetization for each magnet of the hole. The magnets index correspond to the trigonometrical order starting from 0:
 
 ![](_static/Hole_Convention/Hole_magnet_id.png)
 
