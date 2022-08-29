@@ -1,44 +1,55 @@
 Install PYLEECAN
 ================
 
-Welcome to the PYLEECAN installation page. There are several ways to
-install PYLEECAN, whether you want to simply use it, or to contribute.
-In both cases, you will need to install Python and preferably an **IDE**
-(Integrated Development Environment). To **simply use it**, please follow the 
-following guidelines. If you want to **contribute** to PYLEECAN, you will 
-have to download the source code and create a fork on your GitHub account: 
-see this [tutorial](fork.pyleecan.md).
+Welcome to the PYLEECAN installation page. There are three ways to
+install PYLEECAN:
+- 1) Use the GUI installer (fastest and simpliest but limited)
+- 2) Get the code from pypi (for scripting in python)
+- 3) Get the code from Github (enables contributing to pyleecan)
 
-Step 1: Getting python
+Installing third party software (all three methods)
+---------------------------------------------------
+
+The principle of Pyleecan is to enable the user to choose between
+several models to compute the same quantities. Some of them call other
+software that you need to install as well (if you plan to use them). For
+now, the following software have a coupling with pyleecan:
+
+-   [FEMM](http://www.femm.info/wiki/Download) (Windows only for now)
+-   [GMSH](http://gmsh.info/)
+-   [Elmer](
+
+GUI installer
+-------------
+For the first method, you will find here the installer of the different pyleecan versions:
+- v1.4.0 released 29/08/22
+
+This installer is available only for windows. It enables to define a machine and to run single speed magnetic current driven FEMM simulations. At the end of the simulations all the meaningful results are gathered in the result folder:
+[add images]
+
+This installer is the fastest way to define and run this kind of simulation but several important features (like variable speed simulations, parameter sweep or optimization) are not available.
+
+Getting python
 ----------------------
+For method two and three, you will need to install Python and preferably an **IDE** (Integrated Development Environment).
 
 To be able to use PYLEECAN you will need to download
-[Python](https://www.python.org/downloads/). We recommend a python version
-between 3.6 (to be able to use [black](https://pypi.org/project/black/) but
-this is not mandatory) and 3.8 for the GUI (if you want to use it). Support with older Python version haven't been
-checked and can be possible. If you experience difficulties with running
+[Python](https://www.python.org/downloads/). We recommend to use python version 3.8.X
+Support with older Python version haven't been tested and can be possible. If you experience difficulties with running
 Pyleecan with any version of Python, please [open an issue on
 Github](https://github.com/Eomys/pyleecan/issues) to talk about it.
 
-The next needed tool is an **IDE** (Integrated Development Environment).
+The next needed tool is an **IDE** (Integrated Development Environment) to write and execute python code/scripts.
 There are too many IDE to count and each developer has its own
-preference (and we know that the following list will never be satisfying
-enough for everyone). Here we will only detail few of the one that the
-community use (without quality ordering):
+preference. We recommend to install [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial), this
+is Microsoft’s IDE (accessible on all platform) that provides a [plugin
+dedicated to Python](https://code.visualstudio.com/docs/python/python-tutorial) that you need to install as well. 
 
--   [Spyder](https://docs.spyder-ide.org/index.html): this one is
-    directly included in the
-    [Anaconda](https://www.anaconda.com/distribution/) distribution
-    which provides python with several useful scientific packages
--   [PyCharm](https://www.jetbrains.com/fr-fr/pycharm/): This IDE was
-    specially designed for python. The free version is great, but you
-    can have a look to the commercial one if you feel that you need it.
+If you don't want to use VScode, You can take a look at [Spyder](https://docs.spyder-ide.org/index.html), [Anaconda](https://www.anaconda.com/distribution/), [PyCharm](https://www.jetbrains.com/fr-fr/pycharm/) or any results from “best IDE for
+python” on your favorite web browser. 
+We used to recommend Anaconda/Spyder since it's meant to be used in scientific environment, but we had several issues with pyleecan GUI (that may be corrected now).
 
-- [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial): This
-is Microsoft’s IDE (accessible on all platform) that provides a plugin
-dedicated to Python. Last method to find an IDE: type “best IDE for
-python” on your favorite web browser and you will be able to find the
-latest debate on this topic.
+
 
 Step 2: Getting PYLEECAN
 ------------------------
@@ -50,17 +61,6 @@ type in a shell the following command: :
 
 This command line should download and install pyleecan on your computer,
 along with all the needed dependencies (see [Prerequisites](prerequisites.md).
-
-Step 3: Installing third party software
----------------------------------------
-
-The principle of Pyleecan is to enable the user to choose between
-several models to compute the same quantities. Some of them call other
-software that you need to install as well (if you plan to use them). For
-now, the following software have a coupling with pyleecan:
-
--   [FEMM](http://www.femm.info/wiki/Download) (Windows only for now)
--   [GMSH](http://gmsh.info/)
 
 Step 4: Launch tests
 --------------------
