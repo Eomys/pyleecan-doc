@@ -58,11 +58,12 @@ Slot geometry convention (internal lamination):
     the active height for external lamination, or as the slot top
     radius plus half the active height for internal lamination.
 
-Several of these methods use polar definitions for the height or for the angle to be able to easily define a polar equivalent of the machine (for instance for subdomain model -- Magnetic module). It also enables to define the numerical methods in the Slot class which enables to skip the definition of these methods in the daughters classes (in particular for SlotUD).
+Several of these methods use polar definitions for the height or for the angle to be able to easily define a polar equivalent of the machine (for instance for subdomain model -- Magnetic module). It also enables to define the numerical methods in the Slot class which enables to skip the definition of these methods in the daughters classes (in particular for SlotUD/SlotUD2).
 
 All the Slot objects have the following methods:
 
--  _comp_coordinates(): (optional) Returns a list of the complex point coordinates of the slot in a dictionnary
+-  _comp_coordinates(): (optional) Returns a dict of the complex point coordinates of the slot (Key = "Zx")
+-  _comp_line_dict(): (optinal) Returns a dict of the main lines to draw the slot (key: "X-Y" = line begin=Zx, end=Zy)
 -  build_geometry(): Returns a list of Line objects that enables to draw in 2D a single slot centered on Ox with lines ordered in trigonometric direction (no bore arc, the beginning of each Line is the end of the previous one). 
 -  build_geometry_active(): Returns a list of Surface objects that enables to draw in 2D the active surface (taking 2 integer, Nrad and Ntan, to split the original surface). 
 -  check(): Checks that all the geometrical constraints are respected, throw exceptions otherwise. 
