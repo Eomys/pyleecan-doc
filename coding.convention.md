@@ -193,3 +193,6 @@ pyleecan:
 
 * [Slot Conventions](slot.convention.md)
 * [Winding Conventons](winding.convention.md)
+* [Hole Conventons](hole.convention.md)
+* [Label Conventons](label.convention.md)
+* [Axis Conventons](axis.convention.md)
