@@ -102,3 +102,4 @@ Once his modifications merged, the doc will be regenerated and update the websit
 ## To go Further
 
 In pyleecan, we can also test the GUI. [Here is a another tutorial.](how.to.unit.test.GUI.md)
+You can also investigate the performances of your code with the [profiler](how.to.profile.md).

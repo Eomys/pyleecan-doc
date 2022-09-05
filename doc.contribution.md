@@ -66,8 +66,8 @@ PYLEECAN website by parsing the project and generating ".rst" files
 numpydoc) in each module of the project. These ".rst" files will then be
 used by Sphinx to generate the html pages of this website.
 
-To add pages to PYLEECAN website, one can directly add a .rst file and
-regenerate the html pages. You can see the .rst file used to generate
+To add pages to PYLEECAN website, one can directly add a ".md" file ([Markdown](https://www.markdownguide.org/basic-syntax/)) and
+regenerate the html pages. You can see the .md file used to generate
 each page by clicking on **show source** on the left side bar of each
 page.
 

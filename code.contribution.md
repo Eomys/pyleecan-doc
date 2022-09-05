@@ -17,9 +17,9 @@ Talk about it
 As a first step to contribute to PYLEECAN code (to fix a bug, add a new
 feature, a new topology, etc.), we recommend to talk about it to make
 sure that it doesn't already exist (for instance) or to be guided on how
-to do it. Thereare two ways to talk about contributing to pyleecan:
+to do it. There are two ways to talk about contributing to pyleecan:
 
--   open an [issue](https://github.com/Eomys/pyleecan/issues) on github
+-   open an [issue](https://github.com/Eomys/pyleecan/issues) or a [discussion](https://github.com/Eomys/pyleecan/discussions) on github
 -   send a message to the [PYLEECAN mailing list](mailto:pyleecan@framalistes.org) to contact the maintainers.
 
 Contribute to the code
@@ -56,6 +56,8 @@ The main steps to implement a new feature are:
 This [tutorial](tuto.add.slot.md) on how to add a new slot gives an example
 of code contribution. We recommend to read it before starting a
 contribution.
+
+This [tutorial](test.contribution.md) provides guidelines to add tests.
 
 Submit your contribution
 ------------------------

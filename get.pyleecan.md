@@ -3,7 +3,7 @@ Install PYLEECAN
 
 Welcome to the PYLEECAN installation page. There are three different methods to
 install PYLEECAN depending on what you plan to do:
-- 1) Get the GUI from the installer (fastest and simpliest but limited to FEMM)
+- 1) Get the GUI from the installer (fastest and simplest  but limited to FEMM)
 - 2) Get the package from pypi (to use in python scripting/notebook)
 - 3) Get the code from Github (to contributing to pyleecan)
 
@@ -15,7 +15,7 @@ several models to compute the same quantities. Some of them call other
 software that you need to install as well (if you plan to use them). For
 now, the following software have a coupling with pyleecan:
 
--   [FEMM](http://www.femm.info/wiki/Download) (Windows only for now)
+-   [FEMM](http://www.femm.info/wiki/Download) (Windows only for now, soon Linux should be available)
 -   [GMSH](http://gmsh.info/)
 -   [Elmer](http://www.elmerfem.org/blog/)
 
@@ -27,7 +27,7 @@ For the first method, you will find here the installer of the different pyleecan
 - v1.4.0 released 02/09/22
 
 This installer is available only for Windows. It enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
-[add images]
+![](_static/Simu_GUI_Results.png)
 
 This installer is the fastest way to define and run this kind of simulation but several important features (like variable speed simulations, parameter sweep or optimization) are not available.
 
@@ -74,11 +74,16 @@ There are several optional dependencies that can be installed as well by using:
 
 In particular, pyleecan provide 2 solvers for optimization: deap and smoot. If you plan to use optimization you can install one or both packages depending on what you plan to use.
 
+If you plan to run the tutorials, you can also install:
+
+    pip install jupyter
+
 Method 3: Getting the code from Github
 --------------------------------------
 This method is dedicated to the ones that want to contribute to pyleecan or to interact with the code.
 All the features are available even the ones we are currently working on. 
 
+The following steps are the short version of the ["how to fork pyleecan"](fork.pyleecan.md) tutorial.
 1) Getting Git
 For this method you will first need to install
 [git](https://git-scm.com/) or [github](https://desktop.github.com/).
@@ -87,12 +92,12 @@ For Windows users, you may also want to install
 a more convenient use of git. 
 
 2) Creating a fork
+![](_static/github_get_code.PNG)
 You will need a Github account to
 [fork](https://help.github.com/en/articles/fork-a-repo) (bleu square on
 the image) the [pyleecan repository](https://github.com/Eomys/pyleecan)
 which will create a copy of the repository in your Github projects. The
-forked repository will allow you to freely experiment with changes
-without affecting the original project. Later you will be able to send
+forked repository will enable you to send
 modifications from your fork to the main project on Github with
 code.contribution:"pull-request" (see also this [tutorial](integrate.contribution.md)).
 
@@ -102,10 +107,6 @@ installed with git) with the following command (replace the official project url
 image):
 
     git clone https://github.com/Eomys/pyleecan
-
-You can also click on "Watch" (red square on the
-image) to choose how you want to be notified of the activities of the
-community. 
 
 4) Install requirements
 To be able to run the code, you will need to install all the requirements packages with:

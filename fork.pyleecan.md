@@ -1,7 +1,7 @@
 How to install PYLEECAN to contribute
 =====================================
 
-This tutorial will introduce some basic know-how on Git which is the
+This tutorial will introduce some basic know-how on Git and Github which is the
 tool that will enable you to share your work with the community. There
 are lots of tutorials and videos on the web to learn about Git, the more
 you will learn the most efficient you will be if things get complicated.
@@ -88,20 +88,5 @@ You can install them with one single command with
 with python): :
 
     pip install -r requirements.txt
-
-If you want to contribute, we recommend to set a pre-commit hook to
-automatically apply [black](https://pypi.org/project/black/) before
-every commit (if you are using python \>=3.6). First install the package
-pre-commit with the command: :
-
-    pip install pre-commit
-
-Then in the top folder of pyleecan run the command: :
-
-    pre-commit install
-
-The file "pyleecan/.pre-commit-config.yaml" is used for the
-configuration. You can edit it to set a particular python version if
-your default one is not \>=3.6 (for instance).
 
 You are now ready to contribute to PYLEECAN.

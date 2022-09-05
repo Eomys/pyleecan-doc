@@ -16,6 +16,10 @@ style of all the contributors. The code will be more homogenous and
 understandable this way. Some tools are used to « correct » any Python
 script to follow the PEP8 rules. For PYLEECAN modules, we will use
 [Black](https://black.readthedocs.io/en/stable/).
+Black can be installed with (we suggest to use this version of black but it is not mandatory):
+   pip install black==20.8b1
+And run with
+   python -m black path/to/pyleecan/folder
 
 Naming convention
 -----------------
@@ -53,8 +57,8 @@ global coding rules to improve the code quality.
     convention is to start the name by “comp_” like “computation”. By
     default, a “comp_” function will return the corresponding numerical
     value (a series of scalar, vector, matrices) and the calling
-    function stores it in the Output object. That way the user can find
-    all the available computation by typing “.comp_”.
+    function stores it in the Output object (generaly after creating a SciDataTool Data object).
+    That way the user can find all the available computation by typing “.comp_”.
 
 
     | <span style="color:red">NOT TO DO</span> | B=flux_airgap_SDM()      | Calculates airgap flux with SubDomain Model |

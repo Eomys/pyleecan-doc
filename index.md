@@ -4,11 +4,11 @@ PYLEECAN
 Presentation
 ------------
 
-PYLEECAN project provides a **user-friendly, unified, flexible simulation framework for the multiphysic design and optimization of electrical machines and drives**.
+PYLEECAN project provides a **user-friendly, unified, flexible simulation framework for the multi-physic design and optimization of electrical machines and drives**.
 
-![](_static/BPMSM.png)
-![](_static/IPMSM.png)
-![](_static/SyRM.png)
+![](_static/Topology/fig_12_MachineUD_no_frame_no_name.svg)
+![](_static/Topology/fig_14_SlotUD.svg)
+![](_static/Topology/BoreNotchMerge.png)
 
 The main objective of PYLEECAN is to boost **reproducible research** and **open-science** in electrical engineering. Thus, it is intended for researchers, R&D engineers and teachers in electrical engineering, both on standard and novel topologies of electrical machines. 
 
@@ -26,11 +26,11 @@ Origin and Current Status of the Project
 
 **Main Models and Couplings:**
 
-- PYLEECAN is fully coupled to [FEMM](http://www.femm.info) to carry **non-linear magnetostatic** analysis including sliding band and symmetries. For now this coupling is available only on Windows OS. 
+- PYLEECAN is fully coupled to [FEMM](http://www.femm.info) to carry **non-linear magnetostatic** analysis including sliding band, parallelization and symmetries. For now this coupling is available only on Windows OS (on open PR should extend FEMM to Linux soon)
 - PYLEECAN includes several losses model (based on FEMM coupling output).
 - PYLEECAN includes an electrical model to solve the equivalent circuit of PMSM and SCIM machines.
-- PYLEECAN is coupled to [GMSH](http://gmsh.info/) **2D/3D finite element mesh generator** to run third-party multiphysic solvers. 
-- PYLEECAN is coupled to two different **multiobjective optimization** libraries to carry design optimization of electrical machines.
+- PYLEECAN is coupled to [GMSH](http://gmsh.info/) **2D/3D finite element mesh generator** to run third-party multi-physic solvers. 
+- PYLEECAN is coupled to two different **multi-objective optimization** libraries  (NSGA-II and Bayesian) to carry design optimization of electrical machines.
 - PYLEECAN enables to define **Parameter Sweep** of variable speed simulations.
 
 **Main Topologies Features:**
