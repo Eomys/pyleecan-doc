@@ -57,14 +57,14 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosectionlabel",
     "nbsphinx",
-    "sphinxcontrib.googleanalytics",
+    #"sphinxcontrib.googleanalytics",
 ]
 autodoc_member_order = "bysource"
 autosectionlabel_prefix_document = True
 
 # Defning Google analytics_id
-googleanalytics_id = "UA-161753839-3"
-googleanalytics_enabled = True
+#googleanalytics_id = "UA-161753839-3"
+#googleanalytics_enabled = True
 
 # Allow errorw in the code when generating the website
 nbsphinx_allow_errors = True

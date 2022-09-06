@@ -102,6 +102,8 @@ generated in each class consists of:
 -   the method to convert the class to string.
 -   the method to convert the class to a dictionary (in general used to
     generate the init_dict).
+-   the method to compare two objects of this kind
+-   the method to deepcopy the object
 -   the getter and setter of each property. The setter checks the type,
     min and/or max of the user input value before setting the property.
 -   the method to save the class to json.

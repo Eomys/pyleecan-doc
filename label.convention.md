@@ -7,18 +7,21 @@ When drawing the machine in a FEA software, first the lines are drawn then the s
 
 Lamination label conventions:
 -----------------------------
-In pyleecan not all machines have two laminations. All laminations are referred with a unique label like "Stator-<id>" or "Rotor-<id>" with <id> the number of the lamination of this kind (rotor or stator) from in to out. Example:
+In pyleecan not all machines have two laminations. All laminations are referred with a unique label like "Stator-*id*" or "Rotor-*id*" with *id* the number of the lamination of this kind (rotor or stator) from in to out. Example:
 ![](_static/Lamination_label.png)
    
 For a lamination with a rotor and a stator the corresponding labels would be "Stator-0" and "Rotor-0".
 
 Surface label conventions:
 --------------------------
-Surface label must be unique within the machine to enable defining different property in any surface (for magnet demagnetization for instance). All the surface label are organized as follow: <lamination_label>_<surface_type>_<surface_index> with:
-- <lamination_label> as described above ("Stator-0" for instance)
-- <surface_type> one from the following list: "Winding", "Magnet", "HoleMag", "HoleVoid", "Ventilation", "Lamination" etc
-- <surface_index> RX-TY-SZ with "R" for Radial, "T" for Tangential and "S" for Slot. This coordinate system is further details in the corresponding article ([winding/slot](https://pyleecan.org/winding.convention.html), [Holes](https://pyleecan.org/hole.convention.html))
-For instance the label of the 1st radial layer, 2nd tangential layer of the winding in the 8th slot of the first rotor would be: "Rotor-0_Winding_R0-T1-S7"
+Surface label must be unique within the machine to enable defining different property in any surface (for magnet demagnetization for instance). All the surface label are organized as follow:*lamination_label*_*surface_type*_*surface_index* with:
+
+- *lamination_label* as described above ("Stator-0" for instance)
+- *surface_type* one from the following list: "Winding", "Magnet", "HoleMag", "HoleVoid", "Ventilation", "Lamination" etc
+- *surface_index* RX-TY-SZ with "R" for Radial, "T" for Tangential and "S" for Slot.
+
+The RTS coordinate system is further details in the corresponding article ([winding/slot](https://pyleecan.org/winding.convention.html), [Holes](https://pyleecan.org/hole.convention.html))
+For instance the label of the 1st radial layer, 2nd tangential layer of the winding in the 8th slot of the first rotor would be: "Rotor-0_Winding_R0-T1-S7" and is by construction unique.
 
 Line property dictionary:
 --------------------------

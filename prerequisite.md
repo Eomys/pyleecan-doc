@@ -4,13 +4,8 @@ Python
 Prerequisites
 -------------
 
-PYLEECAN is developed (for now) in Python 3.5. Python 3 has been chosen
-to be up to date with the latest developments of Python language and its
-main packages. Python 3.5 or further versions, are used to be able to
-use the package PyInstaller to generate an .exe file of the program. A
-compatibility with Python 2.7 can be considered if needed by the
-community. In this case, we would need to use unittest to make sure that
-PYLEECAN runs on both versions.
+PYLEECAN is developed and tested (for now) in Python 3.8.X. The executable is also generated with this version.
+Other Python versions should be compatible but are not tested. If you must use another version of Python or of any package, please open an issue so we can investigate how to extend the compatibility.
 
 Installation
 ------------
