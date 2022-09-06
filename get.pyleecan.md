@@ -3,6 +3,7 @@ Install PYLEECAN
 
 Welcome to the PYLEECAN installation page. There are three different methods to
 install PYLEECAN depending on what you plan to do:
+
 - 1) Get the GUI from the installer (fastest and simplest  but limited to FEMM)
 - 2) Get the package from pypi (to use in python scripting/notebook)
 - 3) Get the code from Github (to contributing to pyleecan)
@@ -24,7 +25,8 @@ Method 1: GUI installer
 This method is dedicated to the ones that want to use pyleecan to generate/run FEMM simulations without dealing with python and package management.
 
 For the first method, you will find here the installer of the different pyleecan versions:
-- v1.4.0 released 02/09/22
+
+- [v1.4.0 released 02/09/22](_static/Release/1_4_0/Pyleecan v1.4.0 installer.exe)
 
 This installer is available only for Windows. It enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
 ![](_static/Simu_GUI_Results.png)
@@ -70,7 +72,7 @@ To check that pyleecan is correctly installed, the following command should open
 
 There are several optional dependencies that can be installed as well by using:
 
-    pip install pyleecan\[full\]
+    pip install pyleecan[full]
 
 In particular, pyleecan provide 2 solvers for optimization: deap and smoot. If you plan to use optimization you can install one or both packages depending on what you plan to use.
 

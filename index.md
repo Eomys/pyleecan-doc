@@ -6,9 +6,9 @@ Presentation
 
 PYLEECAN project provides a **user-friendly, unified, flexible simulation framework for the multi-physic design and optimization of electrical machines and drives**.
 
-![](_static/Topology/fig_12_MachineUD_no_frame_no_name.svg)
-![](_static/Topology/fig_14_SlotUD.svg)
-![](_static/Topology/BoreNotchMerge.png)
+![](_static/Topology/Audi_eTron.svg)
+![](_static/Topology/Jaguar_I_Pace.svg)
+![](_static/Topology/Tesla_model_3.svg)
 
 The main objective of PYLEECAN is to boost **reproducible research** and **open-science** in electrical engineering. Thus, it is intended for researchers, R&D engineers and teachers in electrical engineering, both on standard and novel topologies of electrical machines. 
 

@@ -19,33 +19,21 @@ we recommand to read in order.
 How to run the tutorial
 -----------------------
 
-Each tutorial is generated from a Jupyter Notebook and can be downloaded
-[on GitHub](https://github.com/Eomys/pyleecan/tree/master/Tutorials). To
-run the tutorials notebook, here is the full procedure:
+Each tutorial is generated from a Jupyter Notebook and can be seen
+[on GitHub](https://github.com/Eomys/pyleecan/tree/master/Tutorials) or downloaded in [this archive](_static/Release/1_4_0/Tutorials.zip). To
+run the tutorials notebook, here is the procedure:
 
-- Install the latest version of [Anacoda](https://www.anaconda.com/products/individual)
-- Open an "Anaconda Prompt" and run the command "pip install pyleecan"
-- Install the latest version of [FEMM](http://www.femm.info/wiki/Download) (Windows only)
-- Download the tutorial notebooks on your computer
-- Open the program "Anaconda Navigator" and launch "Jupyter Notebook"
-  
-![]( _static/Anaconda-navigator.PNG)
+    - pip install jupyter
+    - open a console terminal in the folder containing the Tutorials
+    - run the command "jupyter notebook"
 
-- In your web browser a tab should open, move to the folder containing the notebooks
-  
-![](_static/jupyter-browser.PNG)
+The notebook should then be available in your web browser.
 
-- Double click on the notebook to run
-
-Anaconda include the IDE "Spyder" that enables to read notebook.
-
-Validation simulations are also available in the Tests/Validation folder
+Validation simulations are also available in the [Tests/Validation](https://github.com/Eomys/pyleecan/tree/master/Tests/Validation) folder
 for inspiration.
 
 Upcoming tutorials
 ------------------
-
--   How to generate the 3D mesh of a Lamination with GMSH
 
 If you have any question or if you want to request a new tutorial please
 [contact us](contact.html).
@@ -53,7 +41,8 @@ If you have any question or if you want to request a new tutorial please
 Webinar
 -------
 
-Three public and free webinars have been organized by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/about/) and UNICAS University. The webinar resources are available here:
+Three public and free webinars have been organized by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/about/) and UNICAS University in 2020. Warning some information from these webinar are outdated ! 
+The webinar resources are available here:
 
 -   [How to use pyleecan (basics)? Pyleecan basics, call of FEMM, use of the GUI (2020/10/16)](webinar_1.md)
 -   [How to use pyleecan (advanced)? Optimization tools, meshing, plot commands (2020/10/30)](webinar_2.md)
