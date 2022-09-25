@@ -28,10 +28,20 @@ For the first method, you will find here the installer of the different pyleecan
 
 - [v1.4.0 released 02/09/22](_static/Release/1_4_0/Pyleecan v1.4.0 installer.exe)
 
-This installer is available only for Windows. It enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
+
+This installer is available for both Windows and Linux. 
+For Linux please follow the below steps to install the GUI
+1) install [wine](https://www.winehq.org/) and [winetricks](https://wiki.winehq.org/Winetricks)
+2) install the pyleecan installer through wine
+3) install vcrun2015 through winetricks by running the following command in the terminal
+   "./winetricks vcrun2015"
+
+
+The GUI enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
 ![](_static/Simu_GUI_Results.png)
 
 This installer is the fastest way to define and run this kind of simulation but several important features (like variable speed simulations, parameter sweep or optimization) are not available.
+
 
 Getting python (Methods 2 & 3)
 ------------------------------
