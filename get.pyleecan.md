@@ -26,6 +26,7 @@ This method is dedicated to the ones that want to use pyleecan to generate/run F
 
 For the first method, you will find here the installer of the different pyleecan versions:
 
+- [v1.4.1 released 18/11/22](_static/Release/1_4_1/Pyleecan v1.4.1 installer.exe)
 - [v1.4.0 released 02/09/22](_static/Release/1_4_0/Pyleecan v1.4.0 installer.exe)
 
 This installer is available only for Windows. It enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
