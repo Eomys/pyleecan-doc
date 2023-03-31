@@ -4,7 +4,7 @@ Pyleecan also includes some tests for the GUI. These tests enable to simulate th
 
 ## PHoleM50
 
-[This class](https://github.com/Eomys/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMSlot/PMSlot10/PMSlot10.py) is the perfect example of a GUI class to test.
+[This class](https://github.com/EOMYS-Public/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMSlot/PMSlot10/PMSlot10.py) is the perfect example of a GUI class to test.
 To test the widget of the class, it is advised to check which are the events that the user can perform on it. In the init of the class, there are those lines:
 
 ```py
