@@ -4,27 +4,18 @@ Pyleecan also includes some tests for the GUI. These tests enable to simulate th
 
 ## PHoleM50
 
-[This class](https://github.com/Eomys/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMHoleMag/PHoleM50/PHoleM50.py) is the perfect example of a GUI class to test.
+[This class](https://github.com/Eomys/pyleecan/blob/master/pyleecan/GUI/Dialog/DMachineSetup/SMSlot/PMSlot10/PMSlot10.py) is the perfect example of a GUI class to test.
 To test the widget of the class, it is advised to check which are the events that the user can perform on it. In the init of the class, there are those lines:
 
 ```py
         # Connect the signal
         self.lf_W0.editingFinished.connect(self.set_W0)
-        self.lf_W1.editingFinished.connect(self.set_W1)
-        self.lf_W2.editingFinished.connect(self.set_W2)
-        self.lf_W3.editingFinished.connect(self.set_W3)
-        self.lf_W4.editingFinished.connect(self.set_W4)
+        self.lf_Wmag.editingFinished.connect(self.set_Wmag)
         self.lf_H0.editingFinished.connect(self.set_H0)
-        self.lf_H1.editingFinished.connect(self.set_H1)
-        self.lf_H2.editingFinished.connect(self.set_H2)
-        self.lf_H3.editingFinished.connect(self.set_H3)
-        self.lf_H4.editingFinished.connect(self.set_H4)
-        self.w_mat_0.saveNeeded.connect(self.emit_save)
-        self.w_mat_1.saveNeeded.connect(self.emit_save)
-        self.w_mat_2.saveNeeded.connect(self.emit_save)
+        self.lf_Hmag.editingFinished.connect(self.set_Hmag)
 ```
 
-PHoleM50 contains different possible interactions: __lf_W0__, __lf_W1__ ... __w_mat_2__. Those variables are part of the widget that can be updated by the user. The test will modify them to simulate a user interaction. The __lf_W0__ is a widget to enter a float (known because it starts with a "lf"). To test the function self.set_W0 which is connected to the __lf_W0__ by a signal (__editingFinished__), we need to clear the field, enter a value in it as a user would do
+PMSlot10 contains different possible interactions: __lf_W0__, __lf_Wmag__ ... __lf_Hmag__. Those variables are part of the widget that can be updated by the user. The test will modify them to simulate a user interaction. The __lf_W0__ is a widget to enter a float (known because it starts with a "lf"). To test the function self.set_W0 which is connected to the __lf_W0__ by a signal (__editingFinished__), we need to clear the field, enter a value in it as a user would do
 and manually call the signal __editingFinished__:
 
 ```py
@@ -39,23 +30,24 @@ and manually call the signal __editingFinished__:
 ```
 
 A specific method of QTest (to import: __from PySide2.QtTest import QTest__) is used to fill the field with the value __0.31__ as if it were the user.
-And after that we are emitting the signal. Once the signal is emitted, the function __set_W0__ of PHoleM50 is called:
+And after that we are emitting the signal. Once the signal is emitted, the function __set_W0__ of PMSlot10 is called:
 
 ```py
     def set_W0(self):
         """Signal to update the value of W0 according to the line edit
+
         Parameters
         ----------
-        self : PHoleM50
-            A PHoleM50 widget
+        self : PMSlot10
+            A PMSlot10 object
         """
-        self.hole.W0 = self.lf_W0.value()
-        self.comp_output()
+        self.slot.W0 = self.lf_W0.value()
+        self.w_out.comp_output()
         # Notify the machine GUI that the machine has changed
         self.saveNeeded.emit()
 ```
 
-If the function is correctly working, the widget will update the value W0 of the concerned hole (here HoleM50):
+If the function is correctly working, the widget will update the value W0 of the concerned slot (here SlotM10):
 
 ```py
         assert widget.hole.W0 == 0.31
@@ -64,66 +56,54 @@ If the function is correctly working, the widget will update the value W0 of the
 Finally to make this test work, the widget needs to be initialized. Here is a complete example: 
 
 ```py
-@pytest.mark.GUI
-class TestPHoleM50(object):
-    """Test that the widget PHoleM50 behave like it should"""
+class TestPMSlot10(object):
+    """Test that the widget PMSlot10 behave like it should"""
 
-    @pytest.fixture
-    def setup(self):
-        """Run at the begining of every test to setup the gui"""
+    def setup_method(self):
+        """Function that will be run before every tests"""
+        self.test_obj = LamSlotMag(Rint=0.1, Rext=0.2)
+        self.test_obj.slot = SlotM10(H0=0.10, W0=0.13, Wmag=0.14, Hmag=0.15)
+        self.widget = PMSlot10(self.test_obj)
 
+    @classmethod
+    def setup_class(cls):
+        """Start the app for the test (only done one time for the class test)"""
+        print("\nStart Test TestPMSlot10")
         if not QtWidgets.QApplication.instance():
-            self.app = QtWidgets.QApplication(sys.argv)
+            cls.app = QtWidgets.QApplication(sys.argv)
         else:
-            self.app = QtWidgets.QApplication.instance()
+            cls.app = QtWidgets.QApplication.instance()
 
-        test_obj = LamHole(Rint=0.1, Rext=0.2)
-        test_obj.hole = list()
-        test_obj.hole.append(
-            HoleM50(
-                H0=0.10,
-                H1=0.11,
-                H2=0.12,
-                W0=0.13,
-                W1=0.14,
-                W2=0.15,
-                H3=0.16,
-                W3=0.17,
-                H4=0.18,
-                W4=0.19,
-            )
-        )
-        test_obj.hole[0].magnet_0.mat_type.name = "Magnet3"
-        test_obj.hole[0].magnet_1.mat_type.name = "Magnet2"
+    @classmethod
+    def teardown_class(cls):
+        """Exit the app after the test (only done one time for the class test)"""
+        cls.app.quit()
 
-        matlib = MatLib()
-        matlib.dict_mat["RefMatLib"] = [
-            Material(name="Magnet1"),
-            Material(name="Magnet2"),
-            Material(name="Magnet3"),
-        ]
+    def test_init(self):
+        """Check that the Widget spinbox initialise to the lamination value"""
 
-        widget = PHoleM50(test_obj.hole[0], matlib)
+        assert self.widget.lf_H0.value() == 0.10
+        assert self.widget.lf_Hmag.value() == 0.15
+        assert self.widget.lf_W0.value() == 0.13
+        assert self.widget.lf_Wmag.value() == 0.14
 
-        yield {"widget": widget, "test_obj": test_obj, "matlib": matlib}
-
-        self.app.quit()
-     
-    def test_set_W0(self, setup):
+    def test_set_W0(self):
         """Check that the Widget allow to update W0"""
-        # Clear the field before writing the new value
-        setup["widget"].lf_W0.clear()
-        QTest.keyClicks(setup["widget"].lf_W0, "0.31")
-        setup["widget"].lf_W0.editingFinished.emit()  # To trigger the slot
+        # Check Unit
+        assert self.widget.unit_W0.text() == "[m]"
+        # Change value in GUI
+        self.widget.lf_W0.clear()
+        QTest.keyClicks(self.widget.lf_W0, "0.31")
+        self.widget.lf_W0.editingFinished.emit()  # To trigger the slot
 
-        assert setup["widget"].hole.W0 == 0.31
-        assert setup["test_obj"].hole[0].W0 == 0.31
+        assert self.widget.slot.W0 == 0.31
+        assert self.test_obj.slot.W0 == 0.31
 ```
 
-We are using a fixture to setup the widget. [Here](make.setup.function.md)
+We are using a setup method to setup the widget. [Here](make.a.typical.pyleecan.test.md)
 is a tutorial to explain what it is.
 
-We saw how to test the user input in a field. We can also test comboboxes, which is actually easier. In PHoleM50 we have these lines that we haven't spoken of yet:
+We saw how to test the user input in a field. We can also test comboboxes, which is actually easier. Those lines are connecting some widgets containing comboboxes to the need to save when they are edited :
 
 ```py
         self.w_mat_0.saveNeeded.connect(self.emit_save)
@@ -137,18 +117,18 @@ we can simply trigger the index of the combobox c_mat_type:
 ```py
     def test_set_material_0(self, setup):
         """Check that you can change the material of magnet_0"""
-        setup["widget"].w_mat_0.c_mat_type.setCurrentIndex(0)
+        widget.w_mat_0.c_mat_type.setCurrentIndex(0)
 
-        assert setup["widget"].w_mat_0.c_mat_type.currentText() == "Magnet1"
-        assert setup["test_obj"].hole[0].mat_void.name == "Magnet1"
+        assert self.widget.w_mat_0.c_mat_type.currentText() == "Magnet1"
+        assert self.test_obj.hole[0].mat_void.name == "Magnet1"
 
-        setup["widget"].w_mat_0.c_mat_type.setCurrentIndex(1)
+        self.widget.w_mat_0.c_mat_type.setCurrentIndex(1)
 
-        assert setup["widget"].w_mat_0.c_mat_type.currentText() == "Magnet2"
-        assert setup["test_obj"].hole[0].mat_void.name == "Magnet2"
+        assert self.widget.w_mat_0.c_mat_type.currentText() == "Magnet2"
+        assert self.test_obj.hole[0].mat_void.name == "Magnet2"
 ```
 
-Similarly to the previous example, __setup["test_obj"]__ is set in a setup function. When we change the current index, a save signal is sent and the type will be changed automatically.
+Similarly to the previous example, __self.test_obj__ is set in the setup_method. When we change the current index, a save signal is sent and the type will be changed automatically.
 
 ## To go further
 
