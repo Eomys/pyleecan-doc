@@ -7,7 +7,7 @@ This tutorial explains how to launch tests and how to contribute to tests:
 * [How to use pytest](how.to.use.pytest.md)
 * [How to use markers](how.to.use.markers.md)
 * [How to parametrize](how.to.parametrize.md)
-* [Make a typical Pyleecan test](make.a.typical.pyleecan.test.md)
+* [Make a typical Pyleecan test](typical.pyleecan.GUI.test.md)
 * [How to contribute to test development](how.to.contribute.md)
 * [How to unit test the GUI](how.to.unit.test.GUI.md)
 * [How to debug with pytest](how.to.debug.with.pytest.md)
