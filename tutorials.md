@@ -20,8 +20,11 @@ How to run the tutorial
 -----------------------
 
 Each tutorial is generated from a Jupyter Notebook and can be seen
-[on GitHub](https://github.com/Eomys/pyleecan/tree/master/Tutorials) or downloaded in [this archive](_static/Release/1_4_0/Tutorials.zip). To
-run the tutorials notebook, here is the procedure:
+[on GitHub](https://github.com/Eomys/pyleecan/tree/master/Tutorials) or downloaded in one of these archives:
+- [v1.5.0 released 28/04/23](_static/Release/1_5_0/Tutorials.zip)
+- [v1.4.0 released 02/09/22](_static/Release/1_4_0/Tutorials.zip)
+
+To run the tutorials notebook, here is the procedure:
 
     - pip install jupyter
     - open a console terminal in the folder containing the Tutorials
