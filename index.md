@@ -21,7 +21,7 @@ For example, PhD students should start with PYLEECAN:
 To achieve all of that, Pyleecan is **open source** with a very permissive license (Apache V2 license).
 
 Origin and Current Status of the Project
------------------------------------------
+----------------------------------------
 [EOMYS ENGINEERING](https://eomys.com/?lang=en) initiated this open-source project in 2018 for the study of electric motors. The project is now backed by [Green Forge Coop](https://www.linkedin.com/company/greenforgecoop/) non profit organization, who also supports the development of [Mosqito](https://github.com/Eomys/MoSQITo) for sound quality and [SciDataTool](https://github.com/Eomys/SciDataTool) for efficient scientific data exploitation. 
 
 **Main Models and Couplings:**
