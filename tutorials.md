@@ -5,16 +5,17 @@ The purpose of this section is to present some global tutorial on how to
 use Pyleecan. These first tutorials are an introduction to Pyleecan that
 we recommand to read in order.
 
-* [How to define a machine](tuto_Machine.md)
-* [How to define a simulation to call FEMM](tuto_Simulation_FEMM.md) 
-* [How to plot results](tuto_Plots.md)
-* [How to set the Operating Point](tuto_Operating_point.md)
-* [How to compute currents, voltage and torque using the Electrical Module](tuto_Elec.md)
-* [How to compute magnetic forces using Force Module](tuto_Force.md)
-* [How to solve optimization problem in Pyleecan](tuto_Optimization.md) 
+* [How to define a machine](01_tuto_Machine.md)
+* [How to define a simulation to call FEMM](02_tuto_Simulation_FEMM.md) 
+* [How to plot results](03_tuto_Plots.md)
+* [How to set the Operating Point](04_tuto_Operating_point.md)
+* [How to compute currents, voltage and torque using the Electrical Module](05_tuto_Elec.md)
+* [How to compute magnetic forces using Force Module](06_tuto_Force.md)
+* [How to compute losses using Loss Module](07_tuto_loss.md)
 * [How to run a multi-simulation](tuto_multisimulation.md)
+* [How to run a Parameter Sweep of Variable speed simulation](08_tuto_MultiSim.md)
+* [How to solve optimization problem in Pyleecan](09_tuto_Optimization.md) 
 * [How to add a new slot in Pyleecan](tuto.add.slot.md)
-* [How to run a Parameter Sweep of Variable speed simulation](tuto_MultiSim.md)
 
 How to run the tutorial
 -----------------------
