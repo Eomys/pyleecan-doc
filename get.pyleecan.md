@@ -24,17 +24,17 @@ Method 1: GUI installer
 -----------------------
 This method is dedicated to the ones that want to use pyleecan to generate/run FEMM simulations without dealing with python and package management.
 
-For the first method, you will find here the installer of the different pyleecan versions:
+For the first method, you need to download the latest version of the GUI installer (works for both Windows and Linux) from the following list:
 
+- [v1.5.0 released 28/04/23](_static/Release/1_5_0/Pyleecan v1.5.0 installer.exe)
 - [v1.4.1 released 18/11/22](_static/Release/1_4_1/Pyleecan v1.4.1 installer.exe)
 - [v1.4.0 released 02/09/22](_static/Release/1_4_0/Pyleecan v1.4.0 installer.exe)
 
-This installer is available for both Windows and Linux. 
-For Linux please follow the below steps to install the GUI
-1) install [wine](https://www.winehq.org/) and [winetricks](https://wiki.winehq.org/Winetricks)
-2) install FEMM and pyleecan installer. Both should install through wine.
-3) install vcrun2015 through winetricks by running the following command in the terminal "./winetricks vcrun2015"
+For Linux please follow the below steps to install the GUI:
 
+1. install [wine](https://www.winehq.org/) and [winetricks](https://wiki.winehq.org/Winetricks)
+2. install FEMM and pyleecan installer. Both should install through wine.
+3. install vcrun2015 through winetricks by running the following command in the terminal "./winetricks vcrun2015"
 
 The GUI enables to define a machine and to run single speed magnetic current driven FEMM simulations (with symmetry, parallelization and sliding band). At the end of the simulations all the meaningful results are gathered in the result folder:
 ![](_static/Simu_GUI_Results.png)
@@ -47,10 +47,10 @@ Getting python (Methods 2 & 3)
 For method two and three, you will need to install Python and preferably an **IDE** (Integrated Development Environment).
 
 To be able to use PYLEECAN you will need to download
-[Python](https://www.python.org/downloads/). We recommend to use python version 3.8.X
+[Python](https://www.python.org/downloads/) between 3.6 and 3.10 included. We recommend to use python version 3.8.X
 Support with older Python version haven't been tested and should be possible. If you experience difficulties with running
 Pyleecan with any version of Python, please [open an issue on
-Github](https://github.com/Eomys/pyleecan/issues) to talk about it.
+Github](https://github.com/Eomys/pyleecan/issues) to talk about it. Python 3.11 is not available (yet), we first need to upgrade PySide2 to PySide6 for the GUI (PySide2 is not available on Python 3.11).
 
 The next needed tool is an **IDE** (Integrated Development Environment) to write and execute python code/scripts.
 There are too many IDE to count and each developer has its own
