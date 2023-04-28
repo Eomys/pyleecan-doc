@@ -68,15 +68,19 @@ a mark specification, it will search for all matching markers, which can slow th
 
 Here is the list of some of the current markers used in PYLEECAN:
 
-* validation : validation test, executes a workflow to check the results validity
-* long : test that last more than 30 seconds
+* SingleOP : test on a single operating point
+* VarLoadCurrent : test using VarLoadCurrent
+* long_5s : test that last more than 5 seconds
+* long_1m : test that last more than 1 minute
+* long_10m : test that last more than 10 minutes
 * FEMM : test using FEMM
 * GMSH : test using GMSH
+* parallel : test that uses parallelization
 * etc...
 
 The complete list is available in the file __pyleecan/pytest.ini__. To create a new marker, please add it in this file.
 
-__Please note__: To do a rapid check of the tests in pyleccan, the "long" marker should be excluded when the test are running:
+__Please note__: To do a rapid check of the tests in pyleccan, the "long_5s" marker should be excluded when the test are running:
 
 ```
 pytest -m "not long"

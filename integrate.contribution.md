@@ -53,7 +53,7 @@ The command to run all the tests is: :
 
     python -m pytest
 
-More details on this command are available in the [tests contribution page](test.contribution.md).
+More details on this command are available in the [tests contribution page](./tests_tutorials/test.contribution.Pyleecan.md).
 
 Commit
 ------

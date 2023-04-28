@@ -86,4 +86,4 @@ def test_multiply(x, y, result):
 
 ## To go Further
 
-Pytest allows us to make setup and teardown function with something called __fixture__. [Here is one more tutorial.](make.setup.function.md)
+Pytest allows us to make setup and teardown methods. [Here is a tutorial for that.](typical.pyleecan.GUI.test.md)
